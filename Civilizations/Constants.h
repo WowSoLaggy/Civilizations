@@ -1,0 +1,19 @@
+#pragma once
+
+#ifndef CONSTANTS_H
+#define CONSTANTS_H
+
+#define TILESIZE				32
+
+#define MINIMAPTEXTURESIZE		114
+#define MINIMAP_COLOR_FRAME		0xFFFFFFFF
+
+#define SENS_KB_SCROLL_X		7.0
+#define SENS_KB_SCROLL_Y		7.0
+#define SENS_MOUSE_SCROLL_X		7.0
+#define SENS_MOUSE_SCROLL_Y		7.0
+
+#define SENS_MOUSE_X			1.25
+#define SENS_MOUSE_Y			1.25
+
+#endif //CONSTANTS_H

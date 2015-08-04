@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{9648f784-b656-4314-8361-b407bd42efba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Game">
+      <UniqueIdentifier>{a329b694-56b9-4de1-85b5-6d4d423c8361}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RenderDeviceManager">
+      <UniqueIdentifier>{c19acdf0-8562-45e0-9582-f30d2670d8de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\InputDeviceManager">
+      <UniqueIdentifier>{c1e02e31-4ecb-457a-8324-0e93a9ea051b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\World">
+      <UniqueIdentifier>{dff38aff-6589-4f0a-b4e5-938b312a9d62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Drawer">
+      <UniqueIdentifier>{c4f4e332-ae0c-40e6-9ec7-a931fc331a15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\World\Entities">
+      <UniqueIdentifier>{d5ba91a0-2943-4e90-8299-cb5d31579c08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\RManager">
+      <UniqueIdentifier>{e73266da-e6dd-44f6-8e7d-8e33c47fc566}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\GameLogic">
+      <UniqueIdentifier>{444f27df-f9e6-42af-b6ae-3fbc76690e30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\GameLogic\EManager">
+      <UniqueIdentifier>{bdb25123-ad46-4c0d-ab03-a7da544fe538}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\GameLogic\TManager">
+      <UniqueIdentifier>{f483f3a1-dda3-4189-90b8-559dad171b5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\GameLogic\Weather">
+      <UniqueIdentifier>{0567dbc0-e0a1-4331-a0a2-15444149525d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\GUI">
+      <UniqueIdentifier>{aac5389c-6c52-4568-9fb1-ba44538fe45e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="StartUp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>src\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderDeviceManager.cpp">
+      <Filter>src\RenderDeviceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="MainLoop.cpp">
+      <Filter>src\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="InputDeviceManager.cpp">
+      <Filter>src\InputDeviceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyboardHandler.cpp">
+      <Filter>src\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="MouseHandler.cpp">
+      <Filter>src\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>src\World</Filter>
+    </ClCompile>
+    <ClCompile Include="Drawer.cpp">
+      <Filter>src\Drawer</Filter>
+    </ClCompile>
+    <ClCompile Include="RManager.cpp">
+      <Filter>src\RManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Descriptor.cpp">
+      <Filter>src\GameLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="EManCreate.cpp">
+      <Filter>src\GameLogic\EManager</Filter>
+    </ClCompile>
+    <ClCompile Include="EManConvert.cpp">
+      <Filter>src\GameLogic\EManager</Filter>
+    </ClCompile>
+    <ClCompile Include="TManConvert.cpp">
+      <Filter>src\GameLogic\TManager</Filter>
+    </ClCompile>
+    <ClCompile Include="EManFeatures.cpp">
+      <Filter>src\GameLogic\EManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Forester.cpp">
+      <Filter>src\GameLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldUpdater.cpp">
+      <Filter>src\GameLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="GroundHumidity.cpp">
+      <Filter>src\GameLogic\Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="AirTemperature.cpp">
+      <Filter>src\GameLogic\Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="Weather.cpp">
+      <Filter>src\GameLogic\Weather</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldCreator.cpp">
+      <Filter>src\GameLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="GManager.cpp">
+      <Filter>src\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GroundProductivity.cpp">
+      <Filter>src\GameLogic\Weather</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>src\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderDeviceManager.h">
+      <Filter>src\RenderDeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="InputDeviceManager.h">
+      <Filter>src\InputDeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>src\World</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>src\World</Filter>
+    </ClInclude>
+    <ClInclude Include="Drawer.h">
+      <Filter>src\Drawer</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>src\World\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="RManager.h">
+      <Filter>src\RManager</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldConstants.h">
+      <Filter>src\World</Filter>
+    </ClInclude>
+    <ClInclude Include="Constants.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="Descriptor.h">
+      <Filter>src\GameLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="EManager.h">
+      <Filter>src\GameLogic\EManager</Filter>
+    </ClInclude>
+    <ClInclude Include="TManager.h">
+      <Filter>src\GameLogic\TManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Features.h">
+      <Filter>src\GameLogic\EManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Forester.h">
+      <Filter>src\GameLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldUpdater.h">
+      <Filter>src\GameLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="Weather.h">
+      <Filter>src\GameLogic\Weather</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldCreator.h">
+      <Filter>src\GameLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="ETables.h">
+      <Filter>src\World\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="GManager.h">
+      <Filter>src\GUI</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\Todo.txt" />
+  </ItemGroup>
+</Project>
