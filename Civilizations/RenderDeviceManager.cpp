@@ -65,7 +65,8 @@ void RenderDeviceManager::CreateRenderDevice()
 	PresentPars.BackBufferFormat = D3DFMT_A8R8G8B8;
 	PresentPars.BackBufferCount = 1;
 	PresentPars.SwapEffect = D3DSWAPEFFECT_DISCARD;
-	PresentPars.PresentationInterval = D3DPRESENT_INTERVAL_IMMEDIATE;
+	//PresentPars.PresentationInterval = D3DPRESENT_INTERVAL_IMMEDIATE;
+	PresentPars.PresentationInterval = D3DPRESENT_INTERVAL_ONE;
 	//PresentPars.FullScreen_RefreshRateInHz = 60;
 	PresentPars.hDeviceWindow = hWindow;
 	PresentPars.Windowed = true;

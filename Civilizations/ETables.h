@@ -304,33 +304,33 @@ const std::string descObjects[] = {
 	"Baobab",	// Baobab
 };
 
-const float surfProdMp[] = {
-	0.0f,	// unknown
-	0.0f,	// water
-	1.0f,	// grass
-	1.0f,	// desert
-	1.0f,	// snow
-	0.0f,	// ice
-	0.0f,	// mnt grass
-	0.0f,	// mnt snow
-	0.0f,	// mnt desert
-	0.0f,	// mnt coast
-	0.0f,	// mnt oasis
-	0.0f,	// mnt tundra
-	0.0f,	// mnt savanna
-	0.0f,	// mnt tropics
-	1.0f,	// coast
-	2.0f,	// oasis
-	1.0f,	// tropics
-	1.0f,	// savanna
-	1.0f,	// tundra
-	0.0f,	// mnt reef
-	0.0f,	// mnt reef ice
-	0.0f,	// deep water
-	0.0f,	// water fresh
-	0.0f,	// water fresh frozen
-	0.0f,	// lake
-	0.0f,	// lake frozen
+const float baseSurfProdPen[] = {
+	0.00f,	// unknown
+	0.00f,	// water
+	0.99f,	// grass
+	0.90f,	// desert
+	0.80f,	// snow
+	0.00f,	// ice
+	0.95f,	// mnt grass
+	0.80f,	// mnt snow
+	0.90f,	// mnt desert
+	0.99f,	// mnt coast
+	0.99f,	// mnt oasis
+	0.80f,	// mnt tundra
+	0.95f,	// mnt savanna
+	0.97f,	// mnt tropics
+	0.99f,	// coast
+	0.99f,	// oasis
+	0.97f,	// tropics
+	0.95f,	// savanna
+	0.80f,	// tundra
+	0.00f,	// mnt reef
+	0.00f,	// mnt reef ice
+	0.00f,	// deep water
+	0.00f,	// water fresh
+	0.00f,	// water fresh frozen
+	0.00f,	// lake
+	0.00f,	// lake frozen
 };
 
 
@@ -338,16 +338,16 @@ class ETables
 {
 public:
 
-	inline static int GetMmColor(EntityType pType) { return mmColors[pType]; }
-	inline static int GetTiSurface(EntityType pType) { return tiSurface[pType]; }
-	inline static int GetFeatsSurface(EntityType pType) { return featsSurface[pType]; }
-	inline static int GetTiTreeYoung(EntityType pType) { return tiTrees[(pType - 100) * 3 + 0]; }
-	inline static int GetTiTreeAdult(EntityType pType) { return tiTrees[(pType - 100) * 3 + 1]; }
-	inline static int GetTiTreeDead(EntityType pType) { return tiTrees[(pType - 100) * 3 + 2]; }
-	inline static EntityType GetMntForSurface(EntityType pType) { return mntsForSurfaces[pType]; }
-	inline static std::string GetDescSurface(EntityType pType) { return descSurfaces[pType]; }
-	inline static std::string GetDescObject(EntityType pType) { return descObjects[pType - 100]; }
-	inline static float GetSurfProdMp(EntityType pType) { return surfProdMp[pType]; }
+	inline static int GetMmColor(EntityType pType)				{ return mmColors[pType]; }
+	inline static int GetTiSurface(EntityType pType)			{ return tiSurface[pType]; }
+	inline static int GetFeatsSurface(EntityType pType)			{ return featsSurface[pType]; }
+	inline static int GetTiTreeYoung(EntityType pType)			{ return tiTrees[(pType - 100) * 3 + 0]; }
+	inline static int GetTiTreeAdult(EntityType pType)			{ return tiTrees[(pType - 100) * 3 + 1]; }
+	inline static int GetTiTreeDead(EntityType pType)			{ return tiTrees[(pType - 100) * 3 + 2]; }
+	inline static EntityType GetMntForSurface(EntityType pType)	{ return mntsForSurfaces[pType]; }
+	inline static std::string GetDescSurface(EntityType pType)	{ return descSurfaces[pType]; }
+	inline static std::string GetDescObject(EntityType pType)	{ return descObjects[pType - 100]; }
+	inline static float GetBaseSurfProdPen(EntityType pType)	{ return baseSurfProdPen[pType]; }
 };
 
 #endif // ETABLE_H
