@@ -50,6 +50,21 @@ enum EntityType : unsigned char
 	obj_palm				= 104,
 	obj_juniper				= 105,
 	obj_baobab				= 106,
+	obj_raspberry			= 107,
+};
+
+enum EntityState : unsigned char
+{
+	// General
+
+	state_unknown			= 0,
+	state_usual				= 0,
+
+	// Trees
+
+	state_young				= 1,
+	state_adult				= 2,
+	state_dead				= 3,
 };
 
 
@@ -117,6 +132,7 @@ const std::string resourcesNames[] = {
 	"Data\\Water_fresh.png",		/* 45 */
 	"Data\\Gui_top_2048.png",		/* 46 */
 	"Data\\Gui_bottom_2048.png",	/* 47 */
+	"Data\\Raspberry.png",			/* 48 */
 };
 
 
@@ -183,6 +199,65 @@ const int mmColors[] = {
 };
 
 
+const EntityType nativeTrees[] = {
+	obj_unknown,	// unknown
+	obj_unknown,	// water
+	obj_oak,		// grass
+	obj_cactus,		// desert
+	obj_fir,		// snow
+	obj_unknown,	// ice
+	obj_unknown,	// mnt grass
+	obj_unknown,	// mnt snow
+	obj_unknown,	// mnt desert
+	obj_unknown,	// mnt coast
+	obj_unknown,	// mnt oasis
+	obj_unknown,	// mnt tundra
+	obj_unknown,	// mnt savanna
+	obj_unknown,	// mnt tropics
+	obj_oak,		// coast
+	obj_palm,		// oasis
+	obj_palm,		// tropics
+	obj_baobab,		// savanna
+	obj_juniper,	// tundra
+	obj_unknown,	// mnt reef
+	obj_unknown,	// mnt reef ice
+	obj_unknown,	// deep water
+	obj_unknown,	// water fresh
+	obj_unknown,	// water fresh frozen
+	obj_unknown,	// lake
+	obj_unknown,	// lake frozen
+};
+
+const EntityType nativeBushes[] = {
+	obj_unknown,	// unknown
+	obj_unknown,	// water
+	obj_raspberry,	// grass
+	obj_raspberry,	// desert
+	obj_raspberry,	// snow
+	obj_unknown,	// ice
+	obj_unknown,	// mnt grass
+	obj_unknown,	// mnt snow
+	obj_unknown,	// mnt desert
+	obj_unknown,	// mnt coast
+	obj_unknown,	// mnt oasis
+	obj_unknown,	// mnt tundra
+	obj_unknown,	// mnt savanna
+	obj_unknown,	// mnt tropics
+	obj_raspberry,	// coast
+	obj_raspberry,	// oasis
+	obj_raspberry,	// tropics
+	obj_raspberry,	// savanna
+	obj_raspberry,	// tundra
+	obj_unknown,	// mnt reef
+	obj_unknown,	// mnt reef ice
+	obj_unknown,	// deep water
+	obj_unknown,	// water fresh
+	obj_unknown,	// water fresh frozen
+	obj_unknown,	// lake
+	obj_unknown,	// lake frozen
+};
+
+
 const int featsSurface[] = {
 	FEAT_NONE,										// unknown
 	FEAT_WATERTILE,									// water
@@ -212,28 +287,62 @@ const int featsSurface[] = {
 	FEAT_WATERTILE | FEAT_FRESHWATER | FEAT_LAKE,	// lake frozen
 };
 
+const int featsObjects[] = {
+	FEAT_TREE,	// oak
+	FEAT_TREE,	// fir
+	FEAT_TREE,	// cactus
+	FEAT_TREE,	// palm
+	FEAT_TREE,	// juniper
+	FEAT_TREE,	// baobab
+	FEAT_BUSH,	// raspberry
+};
+
+const int reqAfforestation[] = {
+	3,			// oak
+	3,			// fir
+	3,			// cactus
+	3,			// palm
+	3,			// juniper
+	3,			// baobab
+	0,			// raspberry
+};
+
+const EntityType nativeSurfaces[] = {
+	surf_grass,		// oak
+	surf_snow,		// fir
+	surf_desert,	// cactus
+	surf_tropics,	// palm
+	surf_tundra,	// juniper
+	surf_savanna,	// baobab
+	surf_grass,		// raspberry
+};
+
 const int tiTrees[] = {
-	5,	// Unknown
+	5,	// unknown
 	5,
 	5,
-	5,	// Oak
+	5,	// oak
 	3,
 	4,
-	16,	// Fir
+	16,	// fir
 	14,
 	15,
-	19,	// Cactus
+	19,	// cactus
 	17,
 	18,
-	26,	// Palm
+	26,	// palm
 	24,
 	25,
-	38,	// Juniper
+	38,	// juniper
 	36,
 	37,
-	41,	// Baobab
+	41,	// baobab
 	39,
 	40,
+};
+
+const int tiObjects[] = {
+	48,	// raspberry
 };
 
 const EntityType mntsForSurfaces[] = {
@@ -295,13 +404,13 @@ const std::string descSurfaces[] = {
 };
 
 const std::string descObjects[] = {
-	"Unknown",	// Unknown
-	"Oak",		// Oak
-	"Fir",		// Fir
-	"Cactus",	// Cactus
-	"Palm",		// Palm
-	"Juniper",	// Juniper
-	"Baobab",	// Baobab
+	"Oak",			// oak
+	"Fir",			// fir
+	"Cactus",		// cactus
+	"Palm",			// palm
+	"Juniper",		// juniper
+	"Baobab",		// baobab
+	"Raspberry",	// raspberry
 };
 
 const float baseSurfProdPen[] = {
@@ -341,13 +450,18 @@ public:
 	inline static int GetMmColor(EntityType pType)				{ return mmColors[pType]; }
 	inline static int GetTiSurface(EntityType pType)			{ return tiSurface[pType]; }
 	inline static int GetFeatsSurface(EntityType pType)			{ return featsSurface[pType]; }
-	inline static int GetTiTreeYoung(EntityType pType)			{ return tiTrees[(pType - 100) * 3 + 0]; }
-	inline static int GetTiTreeAdult(EntityType pType)			{ return tiTrees[(pType - 100) * 3 + 1]; }
-	inline static int GetTiTreeDead(EntityType pType)			{ return tiTrees[(pType - 100) * 3 + 2]; }
+	inline static int GetFeatsObject(EntityType pType)			{ return featsObjects[pType - 101]; }
 	inline static EntityType GetMntForSurface(EntityType pType)	{ return mntsForSurfaces[pType]; }
 	inline static std::string GetDescSurface(EntityType pType)	{ return descSurfaces[pType]; }
-	inline static std::string GetDescObject(EntityType pType)	{ return descObjects[pType - 100]; }
+	inline static std::string GetDescObject(EntityType pType)	{ return descObjects[pType - 101]; }
 	inline static float GetBaseSurfProdPen(EntityType pType)	{ return baseSurfProdPen[pType]; }
+	inline static int GetReqAfforestation(EntityType pType)		{ return reqAfforestation[pType - 101]; }
+
+	inline static EntityType GetNativeSurface(EntityType pType)	{ return nativeSurfaces[pType - 101]; }
+	inline static EntityType GetNativeTree(EntityType pType)	{ return nativeTrees[pType]; }
+	inline static EntityType GetNativeBush(EntityType pType)	{ return nativeBushes[pType]; }
+
+	static int GetTiObject(EntityType pType, EntityState pState);
 };
 
 #endif // ETABLE_H

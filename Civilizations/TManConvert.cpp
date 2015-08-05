@@ -3,12 +3,9 @@
 
 void TManager::CheckTilesClimate()
 {
-	int w = Game::world->width;
-	int h = Game::world->height;
-
-	for (int y = 0; y < h; ++y)
+	for (int y = 0; y < WHEIGHT; ++y)
 	{
-		for (int x = 0; x < w; ++x)
+		for (int x = 0; x < WWIDTH; ++x)
 		{
 			Entity *surf = SURFAT(x, y);
 

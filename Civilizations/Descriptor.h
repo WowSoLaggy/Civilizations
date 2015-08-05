@@ -11,7 +11,7 @@ class Descriptor
 {
 public:
 
-	static void GetTileDescription(Tile &pTile, std::string &pDesc);
+	static void GetTileDescription(Tile &pTile, std::string &pDesc, int pX, int pY);
 };
 
 

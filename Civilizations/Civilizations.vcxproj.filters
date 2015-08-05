@@ -117,6 +117,9 @@
     <ClCompile Include="Afforestation.cpp">
       <Filter>src\GameLogic\Weather</Filter>
     </ClCompile>
+    <ClCompile Include="ETables.cpp">
+      <Filter>src\World\Entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">

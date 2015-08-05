@@ -18,21 +18,6 @@ void EManager::InitializeEntity(Entity &pEntity)
 	pEntity.creationTime = WorldUpdater::currentTurn;
 }
 
-Entity &EManager::CreateObject(int pX, int pY)
-{
-	int cell;
-	Entity *ent = Game::world->GetFreeObjectCell(cell);
-
-	InitializeEntity(*ent);
-	TILE(pX, pY)->objectCell = cell;
-	ent->posX = pX;
-	ent->posY = pY;
-
-	AddFeature(*ent, FEAT_OBJECT);
-
-	return *ent;
-}
-
 void EManager::DeleteSurfaceAt(int pX, int pY)
 {
 	Game::world->DeleteSurface(TILE(pX, pY)->surfaceCell);
@@ -74,24 +59,23 @@ Entity &EManager::CreateSurface(EntityType pType, int pX, int pY)
 // Objects
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-Entity &EManager::CreateTree(EntityType pType, int pX, int pY, int pAge)
+Entity &EManager::CreateObject(EntityType pType, int pX, int pY, EntityState pState)
 {
-	Entity *ent = &CreateObject(pX, pY);
+	int cell;
+	Entity *ent = Game::world->GetFreeObjectCell(cell);
+
+	InitializeEntity(*ent);
+	TILE(pX, pY)->objectCell = cell;
+	ent->posX = pX;
+	ent->posY = pY;
+
+	AddFeature(*ent, FEAT_OBJECT);
 
 	ent->type = pType;
+	ent->creationTime = WorldUpdater::currentTurn;
+	ent->ti = ETables::GetTiObject(pType, pState);
 
-	if (pAge >= TREE_DISAPPEARAGE)
-		pAge = TREE_DISAPPEARAGE - 1;
-	ent->creationTime = WorldUpdater::currentTurn - pAge;
-
-	if (pAge < TREE_ADULTAGE)
-		ent->ti = ETables::GetTiTreeYoung(pType);
-	else if (pAge < TREE_DIEAGE)
-		ent->ti = ETables::GetTiTreeAdult(pType);
-	else
-		ent->ti = ETables::GetTiTreeDead(pType);
-
-	AddFeature(*ent, FEAT_TREELIKE);
+	AddFeature(*ent, ETables::GetFeatsObject(pType));
 
 	return *ent;
 }

@@ -39,14 +39,34 @@ bool EManager::IsWaterTile(Entity &pEntity)
 	return ((pEntity.feats & FEAT_WATERTILE) != 0);
 }
 
-bool EManager::IsWaterTile(EntityType &pSurfType)
+bool EManager::IsWaterTile(EntityType &pEntType)
 {
-	return ((ETables::GetFeatsSurface(pSurfType) & FEAT_WATERTILE) != 0);
+	return ((ETables::GetFeatsSurface(pEntType) & FEAT_WATERTILE) != 0);
 }
 
-bool EManager::IsTreeLike(Entity &pEntity)
+bool EManager::IsTree(Entity &pEntity)
 {
-	return ((pEntity.feats & FEAT_TREELIKE) != 0);
+	return ((pEntity.feats & FEAT_TREE) != 0);
+}
+
+bool EManager::IsTree(EntityType &pEntType)
+{
+	return ((ETables::GetFeatsObject(pEntType) & FEAT_TREE) != 0);
+}
+
+bool EManager::IsBush(Entity &pEntity)
+{
+	return ((pEntity.feats & FEAT_BUSH) != 0);
+}
+
+bool EManager::IsBush(EntityType &pEntType)
+{
+	return ((ETables::GetFeatsObject(pEntType) & FEAT_BUSH) != 0);
+}
+
+bool EManager::IsFlora(Entity &pEntity)
+{
+	return ((IsTree(pEntity)) || (IsBush(pEntity)));
 }
 
 bool EManager::IsFitForTrees(Entity &pSurface)
@@ -74,17 +94,17 @@ bool EManager::IsLakeTile(Entity &pSurface)
 
 bool EManager::IsSaplingTree(Entity &pEntity)
 {
-	return ((IsTreeLike(pEntity)) && (AGE(pEntity) < TREE_ADULTAGE));
+	return ((IsTree(pEntity)) && (AGE(pEntity) < TREE_ADULTAGE));
 }
 
 bool EManager::IsAdultTree(Entity &pEntity)
 {
-	return ((IsTreeLike(pEntity)) && (AGE(pEntity) >= TREE_ADULTAGE) && (AGE(pEntity) < TREE_DIEAGE));
+	return ((IsTree(pEntity)) && (AGE(pEntity) >= TREE_ADULTAGE) && (AGE(pEntity) < TREE_DIEAGE));
 }
 
 bool EManager::IsDeadTree(Entity &pEntity)
 {
-	return ((IsTreeLike(pEntity)) && (AGE(pEntity) >= TREE_DIEAGE));
+	return ((IsTree(pEntity)) && (AGE(pEntity) >= TREE_DIEAGE));
 }
 
 

@@ -17,7 +17,7 @@ void Game::Initialize()
 int Game::Start()
 {
 	world = new World();
-	int size = 1024;
+	int size = 128;
 	WorldCreator::GenerateWorld(*world, size, size);
 	return 0;
 }

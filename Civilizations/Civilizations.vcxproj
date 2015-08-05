@@ -91,6 +91,7 @@
     <ClCompile Include="EManConvert.cpp" />
     <ClCompile Include="EManCreate.cpp" />
     <ClCompile Include="EManFeatures.cpp" />
+    <ClCompile Include="ETables.cpp" />
     <ClCompile Include="Forester.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GManager.cpp" />

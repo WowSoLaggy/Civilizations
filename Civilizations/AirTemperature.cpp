@@ -3,34 +3,31 @@
 
 void Weather::UpdateAirTemperature()
 {
-	int w = Game::world->width;
-	int h = Game::world->height;
-
-	for (int y = 1; y < h - 1; ++y)
+	for (int y = 1; y < WHEIGHT - 1; ++y)
 	{
-		for (int x = 1; x < w - 1; ++x)
+		for (int x = 1; x < WWIDTH - 1; ++x)
 		{
-			tmp[x + y * w] = (
+			tmp[x + y * WWIDTH] = (
 				TILE(x - 1, y - 1)->temperature + TILE(x + 0, y - 1)->temperature + TILE(x + 1, y - 1)->temperature +
 				TILE(x - 1, y + 0)->temperature + TILE(x + 0, y + 0)->temperature + TILE(x + 1, y + 0)->temperature +
 				TILE(x - 1, y + 1)->temperature + TILE(x + 0, y + 1)->temperature + TILE(x + 1, y + 1)->temperature) / 9;
 
-			tmp[x + y * w] = (tmp[x + y * w] - TEMPERATURE_MIN) * TEMPERATURE_PENALTY + TEMPERATURE_MIN;
+			tmp[x + y * WWIDTH] = (tmp[x + y * WWIDTH] - TEMPERATURE_MIN) * TEMPERATURE_PENALTY + TEMPERATURE_MIN;
 
-			float heat = sinf((float)y / h * (float)M_PI) * TEMPERATURE_RANGE * (1 - TEMPERATURE_PENALTY);
+			float heat = sinf((float)y / WHEIGHT * (float)M_PI) * TEMPERATURE_RANGE * (1 - TEMPERATURE_PENALTY);
 
-			tmp[x + y * w] = tmp[x + y * w] + heat;
+			tmp[x + y * WWIDTH] = tmp[x + y * WWIDTH] + heat;
 		}
 
-		tmp[y * w] = tmp[1 + y * w];
-		tmp[(w - 1) + y * w] = tmp[(w - 2) + y * w];
+		tmp[y * WWIDTH] = tmp[1 + y * WWIDTH];
+		tmp[(WWIDTH - 1) + y * WWIDTH] = tmp[(WWIDTH - 2) + y * WWIDTH];
 	}
-	memcpy(tmp, tmp + w, w * sizeof(float));
-	memcpy(tmp + (h - 1) * w, tmp + (h - 2) * w, w * sizeof(float));
+	memcpy(tmp, tmp + WWIDTH, WWIDTH * sizeof(float));
+	memcpy(tmp + (WHEIGHT - 1) * WWIDTH, tmp + (WHEIGHT - 2) * WWIDTH, WWIDTH * sizeof(float));
 
-	for (int y = 0; y < h; ++y)
+	for (int y = 0; y < WHEIGHT; ++y)
 	{
-		for (int x = 0; x < w; ++x)
-			TILE(x, y)->temperature = tmp[x + y * w];
+		for (int x = 0; x < WWIDTH; ++x)
+			TILE(x, y)->temperature = tmp[x + y * WWIDTH];
 	}
 }

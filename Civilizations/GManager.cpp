@@ -42,8 +42,8 @@ bool GManager::CheckGuiClick(int pButton)
 	// Check for click on the minimap
 	if ((pButton == MBUTTON_LEFT) && (3 < x) && (x < 118) && (RenderDeviceManager::ResolutionHeight - 119 < y) && (y < RenderDeviceManager::ResolutionHeight - 3))
 	{
-		x = (int)((float)(x - 4) / 114 * (Game::world->width * TILESIZE));
-		y = (int)((float)(y - (RenderDeviceManager::ResolutionHeight - 119)) / 114 * (Game::world->height * TILESIZE));
+		x = (int)((float)(x - 4) / 114 * (WWIDTH * TILESIZE));
+		y = (int)((float)(y - (RenderDeviceManager::ResolutionHeight - 119)) / 114 * (WHEIGHT * TILESIZE));
 
 		Drawer::SetCamPosCenter(x, y);
 

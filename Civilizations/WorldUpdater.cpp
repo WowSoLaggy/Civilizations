@@ -27,6 +27,7 @@ void WorldUpdater::UpdateWorld()
 	Weather::UpdateGroundHumidity();
 	Weather::UpdateAirTemperature();
 	Weather::UpdateGroundProductivity();
+	Weather::UpdateAfforestation();
 	TManager::CheckTilesClimate();
 
 	Forester::UpdateTrees();

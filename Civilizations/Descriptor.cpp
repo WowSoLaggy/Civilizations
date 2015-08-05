@@ -4,7 +4,7 @@
 #include "WorldUpdater.h"
 
 
-void Descriptor::GetTileDescription(Tile &pTile, std::string &pDesc)
+void Descriptor::GetTileDescription(Tile &pTile, std::string &pDesc, int pX, int pY)
 {
 	Entity *surf = SURF(pTile.surfaceCell);
 	Entity *obj = OBJ(pTile.objectCell);
@@ -16,11 +16,14 @@ void Descriptor::GetTileDescription(Tile &pTile, std::string &pDesc)
 	else
 		pDesc.append(ETables::GetDescSurface(surf->type));
 
+	int afforest = (int)(Weather::afforestation[pX / 3 + pY / 3 * Weather::w3]);
+
 	pDesc.append("(").
 		append(std::to_string((int)pTile.humidity)).append("% h, ").
 		append(std::to_string((int)pTile.temperature)).append("°C, ").
 		append(std::to_string((int)pTile.height)).append("m, ").
-		append(std::to_string((int)pTile.productivity)).append(" prod)\n");
+		append(std::to_string((int)pTile.productivity)).append(" prod, ").
+		append(std::to_string(afforest)).append(" affor)\n");
 
 
 	pDesc.append("Object: ");

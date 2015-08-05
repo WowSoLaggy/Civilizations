@@ -50,7 +50,7 @@ void Drawer::DrawWorld()
 				pos.x = (float)((x - startX) * TILESIZE - m_camPosX % TILESIZE);
 				pos.y = (float)((y - startY) * TILESIZE - m_camPosY % TILESIZE);
 
-				if ((x < 0) || (y < 0) || (x >= Game::world->width) || (y >= Game::world->height))
+				if ((x < 0) || (y < 0) || (x >= WWIDTH) || (y >= WHEIGHT))
 					continue;
 
 				if (TILE(x, y)->surfaceCell != -1)
@@ -96,8 +96,8 @@ void Drawer::DrawWorld()
 		pos.x = 4;
 		pos.y = RenderDeviceManager::ResolutionHeight - 118;
 		m_sprite->Draw(RManager::textures[m_guiMinimapTIndex], 0, 0, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
-		pos.x = (float)(4 + m_camPosX * MINIMAPTEXTURESIZE / (Game::world->width * TILESIZE));
-		pos.y = (float)(RenderDeviceManager::ResolutionHeight - 118 + m_camPosY * MINIMAPTEXTURESIZE / (Game::world->height * TILESIZE));
+		pos.x = (float)(4 + m_camPosX * MINIMAPTEXTURESIZE / (WWIDTH * TILESIZE));
+		pos.y = (float)(RenderDeviceManager::ResolutionHeight - 118 + m_camPosY * MINIMAPTEXTURESIZE / (WHEIGHT * TILESIZE));
 		m_sprite->Draw(RManager::textures[m_guiMinimapFrameTIndex], 0, 0, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 		pos.x = 0;
 		pos.y = RenderDeviceManager::ResolutionHeight - 128;
@@ -117,7 +117,7 @@ void Drawer::DrawWorld()
 			Tile *selTile = Game::GetSelectedTile();
 			if (selTile != nullptr)
 			{
-				Descriptor::GetTileDescription(*selTile, str);
+				Descriptor::GetTileDescription(*selTile, str, Game::selectedTileX, Game::selectedTileY);
 				m_font->DrawText(0, str.c_str(), -1, &GManager::guiDescRect, 0, D3DCOLOR_ARGB(255, 255, 255, 255));
 			}
 		}
@@ -222,10 +222,10 @@ void Drawer::Load()
 
 	m_camPosXMin = 0;
 	m_camPosYMin = -TILESIZE;
-	m_camPosXMax = m_camPosXMin + Game::world->width * TILESIZE - RenderDeviceManager::ResolutionWidth;
-	m_camPosYMax = m_camPosYMin + Game::world->height * TILESIZE - RenderDeviceManager::ResolutionHeight + TILESIZE * 4;
+	m_camPosXMax = m_camPosXMin + WWIDTH * TILESIZE - RenderDeviceManager::ResolutionWidth;
+	m_camPosYMax = m_camPosYMin + WHEIGHT * TILESIZE - RenderDeviceManager::ResolutionHeight + TILESIZE * 4;
 
-	SetCamPosCenter(Game::world->width * TILESIZE / 2, Game::world->height * TILESIZE / 2);
+	SetCamPosCenter(WWIDTH * TILESIZE / 2, WHEIGHT * TILESIZE / 2);
 
 	// Font
 	D3DXCreateFont(RenderDeviceManager::RenderDevice, 20, 0, FW_BOLD, 1, FALSE, DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, 
@@ -255,8 +255,8 @@ void Drawer::UpdateMiniMap()
 	{
 		for (int i = 0; i < MINIMAPTEXTURESIZE; ++i)
 		{
-			int x = i * Game::world->width / MINIMAPTEXTURESIZE;
-			int y = j * Game::world->height / MINIMAPTEXTURESIZE;
+			int x = i * WWIDTH / MINIMAPTEXTURESIZE;
+			int y = j * WHEIGHT / MINIMAPTEXTURESIZE;
 
 			mmScan0[i] = ETables::GetMmColor(SURFAT(x, y)->type);
 		}
@@ -269,8 +269,8 @@ void Drawer::UpdateMiniMap()
 
 void Drawer::PrepareMinimapFrame()
 {
-	int frameWidth = tilesOnScreenX * MINIMAPTEXTURESIZE / Game::world->width;
-	int frameHeight = tilesOnScreenY * MINIMAPTEXTURESIZE / Game::world->height;
+	int frameWidth = tilesOnScreenX * MINIMAPTEXTURESIZE / WWIDTH;
+	int frameHeight = tilesOnScreenY * MINIMAPTEXTURESIZE / WHEIGHT;
 
 	if (frameWidth > MINIMAPTEXTURESIZE)
 		frameWidth = MINIMAPTEXTURESIZE;

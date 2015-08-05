@@ -35,4 +35,25 @@ void Game::HandleKeyboard()
 		Drawer::SetCamPosTopLeft(Drawer::camPosX(), (int)(Drawer::camPosY() - SENS_KB_SCROLL_Y));
 	if (InputDeviceManager::KeyPressed(DIK_S))
 		Drawer::SetCamPosTopLeft(Drawer::camPosX(), (int)(Drawer::camPosY() + SENS_KB_SCROLL_Y));
+
+	if (InputDeviceManager::KeyDown(DIK_LEFT))
+	{
+		if (selectedTileX > 0)
+			--selectedTileX;
+	}
+	if (InputDeviceManager::KeyDown(DIK_RIGHT))
+	{
+		if ((selectedTileX != -1) && (selectedTileX < WWIDTH - 1))
+			++selectedTileX;
+	}
+	if (InputDeviceManager::KeyDown(DIK_UP))
+	{
+		if ((selectedTileX != -1) && (selectedTileY > 0))
+			--selectedTileY;
+	}
+	if (InputDeviceManager::KeyDown(DIK_DOWN))
+	{
+		if ((selectedTileX != -1) && (selectedTileY < WHEIGHT - 1))
+			++selectedTileY;
+	}
 }
