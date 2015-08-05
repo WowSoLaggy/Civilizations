@@ -32,7 +32,7 @@ void Descriptor::GetTileDescription(Tile &pTile, std::string &pDesc)
 		if (age < TREE_ADULTAGE)
 			pDesc.append("Sapling ");
 		else if (age >= TREE_DIEAGE)
-			pDesc.append("Dead tree ");
+			pDesc.append("Dead ");
 
 		pDesc.append(ETables::GetDescObject(obj->type));
 		pDesc.append("(").append(std::to_string(age)).append(" y.o.)\n");

@@ -10,6 +10,9 @@
 
 #define AGE(x) (WorldUpdater::currentTurn - (x).creationTime)
 
+#define WWIDTH (Game::world->width)
+#define WHEIGHT (Game::world->height)
+
 #define TILE(x, y) (&Game::world->tiles[(x) + (y) * Game::world->width])
 #define TILEP(i) (&Game::world->tiles[i])
 #define SURF(pCell) (((pCell) < 0) ? nullptr : &Game::world->lsurfaces[pCell])

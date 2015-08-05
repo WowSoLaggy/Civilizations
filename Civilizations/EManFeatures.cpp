@@ -94,7 +94,7 @@ bool EManager::IsDeadTree(Entity &pEntity)
 bool EManager::IsNativeSurface(Entity &pEntity, Entity &pSurface)
 {
 	return (
-			((pSurface.type == surf_grass) && (pEntity.type == obj_tree)) ||
+			((pSurface.type == surf_grass) && (pEntity.type == obj_oak)) ||
 			((pSurface.type == surf_snow) && (pEntity.type == obj_fir)) ||
 			((pSurface.type == surf_desert) && (pEntity.type == obj_cactus)) ||
 			((pSurface.type == surf_coast) && (pEntity.type == obj_palm)) ||

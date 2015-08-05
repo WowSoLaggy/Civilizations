@@ -84,6 +84,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Afforestation.cpp" />
     <ClCompile Include="AirTemperature.cpp" />
     <ClCompile Include="Descriptor.cpp" />
     <ClCompile Include="Drawer.cpp" />

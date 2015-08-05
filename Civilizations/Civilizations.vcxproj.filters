@@ -114,6 +114,9 @@
     <ClCompile Include="GroundProductivity.cpp">
       <Filter>src\GameLogic\Weather</Filter>
     </ClCompile>
+    <ClCompile Include="Afforestation.cpp">
+      <Filter>src\GameLogic\Weather</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">

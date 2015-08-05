@@ -13,9 +13,6 @@ public:
 
 	static void UpdateTrees();
 	static void ReproduceTree(Entity &pTree);
-
-	static void MakeTreeAdult(Entity &pTree);
-	static void MakeTreeDead(Entity &pTree);
 };
 
 

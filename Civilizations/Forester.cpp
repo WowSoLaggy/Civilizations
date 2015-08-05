@@ -12,7 +12,7 @@ void Forester::UpdateTrees()
 			int age = AGE(*OBJ(cell));
 
 			if (age == TREE_ADULTAGE)
-				MakeTreeAdult(*OBJ(cell));
+				OBJ(cell)->ti = ETables::GetTiTreeAdult(OBJ(cell)->type);
 
 			if (EManager::IsAdultTree(*OBJ(cell)))
 			{
@@ -22,7 +22,7 @@ void Forester::UpdateTrees()
 			}
 
 			if (age == TREE_DIEAGE)
-				MakeTreeDead(*OBJ(cell));
+				OBJ(cell)->ti = ETables::GetTiTreeDead(OBJ(cell)->type);
 			else if (age >= TREE_DISAPPEARAGE)
 			{
 				if ((rand() % TREE_DIE_KOEF) == 0)
@@ -53,36 +53,4 @@ void Forester::ReproduceTree(Entity &pTree)
 
 		break;
 	}
-}
-
-void Forester::MakeTreeAdult(Entity &pTree)
-{
-	if (EManager::IsEntityType(pTree, obj_tree))
-		pTree.ti = 3;
-	else if (EManager::IsEntityType(pTree, obj_fir))
-		pTree.ti = 14;
-	else if (EManager::IsEntityType(pTree, obj_cactus))
-		pTree.ti = 17;
-	else if (EManager::IsEntityType(pTree, obj_palm))
-		pTree.ti = 24;
-	else if (EManager::IsEntityType(pTree, obj_juniper))
-		pTree.ti = 36;
-	else if (EManager::IsEntityType(pTree, obj_baobab))
-		pTree.ti = 39;
-}
-
-void Forester::MakeTreeDead(Entity &pTree)
-{
-	if (EManager::IsEntityType(pTree, obj_tree))
-		pTree.ti = 4;
-	else if (EManager::IsEntityType(pTree, obj_fir))
-		pTree.ti = 15;
-	else if (EManager::IsEntityType(pTree, obj_cactus))
-		pTree.ti = 18;
-	else if (EManager::IsEntityType(pTree, obj_palm))
-		pTree.ti = 25;
-	else if (EManager::IsEntityType(pTree, obj_juniper))
-		pTree.ti = 37;
-	else if (EManager::IsEntityType(pTree, obj_baobab))
-		pTree.ti = 40;
 }

@@ -44,7 +44,7 @@ enum EntityType : unsigned char
 
 	// Objects
 
-	obj_tree				= 101,
+	obj_oak					= 101,
 	obj_fir					= 102,
 	obj_cactus				= 103,
 	obj_palm				= 104,
@@ -61,9 +61,9 @@ const std::string resourcesNames[] = {
 	"Data\\Water.png",				/* 1 */
 	"Data\\Desert.png",				/* 2 */
 	
-	"Data\\Tree_adult.png",			/* 3 */
-	"Data\\Tree_dead.png",			/* 4 */
-	"Data\\Tree_young.png",			/* 5 */
+	"Data\\Oak_adult.png",			/* 3 */
+	"Data\\Oak_dead.png",			/* 4 */
+	"Data\\Oak_young.png",			/* 5 */
 	
 	"Data\\Cursor.png",				/* 6 */
 	"Data\\Grid.png",				/* 7 */
@@ -216,7 +216,7 @@ const int tiTrees[] = {
 	5,	// Unknown
 	5,
 	5,
-	5,	// Tree
+	5,	// Oak
 	3,
 	4,
 	16,	// Fir
@@ -296,7 +296,7 @@ const std::string descSurfaces[] = {
 
 const std::string descObjects[] = {
 	"Unknown",	// Unknown
-	"Tree",		// Tree
+	"Oak",		// Oak
 	"Fir",		// Fir
 	"Cactus",	// Cactus
 	"Palm",		// Palm

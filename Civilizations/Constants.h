@@ -16,4 +16,6 @@
 #define SENS_MOUSE_X			1.25
 #define SENS_MOUSE_Y			1.25
 
+#define AFFORESTATIONSTEP		3
+
 #endif //CONSTANTS_H
