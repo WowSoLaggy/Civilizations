@@ -21,12 +21,12 @@ LPD3DXFONT Drawer::m_font = nullptr;
 int Drawer::m_verticesCount;
 D3DXVECTOR2 *Drawer::m_vertices;
 
-int Drawer::m_cursorTIndex = 6;
-int Drawer::m_gridTIndex = 7;
-int Drawer::m_guiTopTIndex = 46;
-int Drawer::m_guiBottomTIndex = 47;
-int Drawer::m_guiMinimapTIndex = 10;
-int Drawer::m_guiMinimapFrameTIndex = 11;
+int Drawer::m_cursorTIndex = 7;
+int Drawer::m_gridTIndex = 8;
+int Drawer::m_guiTopTIndex = 9;
+int Drawer::m_guiBottomTIndex = 10;
+int Drawer::m_guiMinimapTIndex = 11;
+int Drawer::m_guiMinimapFrameTIndex = 12;
 
 
 void Drawer::DrawWorld()
@@ -54,9 +54,9 @@ void Drawer::DrawWorld()
 					continue;
 
 				if (TILE(x, y)->surfaceCell != -1)
-					m_sprite->Draw(RManager::textures[SURFAT(x, y)->ti], 0, 0, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
+					m_sprite->Draw(RManager::textures[SURFAT(x, y)->blueprint->tis[SURFAT(x, y)->state]], 0, 0, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 				if (TILE(x, y)->objectCell != -1)
-					m_sprite->Draw(RManager::textures[OBJAT(x, y)->ti], 0, 0, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
+					m_sprite->Draw(RManager::textures[OBJAT(x, y)->blueprint->tis[OBJAT(x, y)->state]], 0, 0, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 			}
 		}
 
@@ -258,7 +258,7 @@ void Drawer::UpdateMiniMap()
 			int x = i * WWIDTH / MINIMAPTEXTURESIZE;
 			int y = j * WHEIGHT / MINIMAPTEXTURESIZE;
 
-			mmScan0[i] = ETables::GetMmColor(SURFAT(x, y)->type);
+			mmScan0[i] = SURFAT(x, y)->blueprint->mmColor;
 		}
 
 		mmScan0 += rect.Pitch / sizeof(int);

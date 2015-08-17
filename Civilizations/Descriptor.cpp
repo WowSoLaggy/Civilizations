@@ -14,7 +14,7 @@ void Descriptor::GetTileDescription(Tile &pTile, std::string &pDesc, int pX, int
 	if (surf == nullptr)
 		pDesc.append("None ");
 	else
-		pDesc.append(ETables::GetDescSurface(surf->type));
+		pDesc.append(surf->blueprint->description);
 
 	int afforest = (int)(Weather::afforestation[pX / 3 + pY / 3 * Weather::w3]);
 
@@ -37,7 +37,7 @@ void Descriptor::GetTileDescription(Tile &pTile, std::string &pDesc, int pX, int
 		else if (age >= TREE_DIEAGE)
 			pDesc.append("Dead ");
 
-		pDesc.append(ETables::GetDescObject(obj->type));
+		pDesc.append(obj->blueprint->description);
 		pDesc.append("(").append(std::to_string(age)).append(" y.o.)\n");
 	}
 }

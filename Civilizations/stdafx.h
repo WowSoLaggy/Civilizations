@@ -13,6 +13,7 @@
 #include <vector>
 #include <math.h>
 #include <limits>
+#include <map>
 
 
 #define DIRECTINPUT_VERSION 0x0800

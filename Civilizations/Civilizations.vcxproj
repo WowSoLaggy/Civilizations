@@ -88,10 +88,9 @@
     <ClCompile Include="AirTemperature.cpp" />
     <ClCompile Include="Descriptor.cpp" />
     <ClCompile Include="Drawer.cpp" />
-    <ClCompile Include="EManConvert.cpp" />
     <ClCompile Include="EManCreate.cpp" />
     <ClCompile Include="EManFeatures.cpp" />
-    <ClCompile Include="ETables.cpp" />
+    <ClCompile Include="EBlueprint.cpp" />
     <ClCompile Include="Forester.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GManager.cpp" />
@@ -119,12 +118,14 @@
     <ClInclude Include="Drawer.h" />
     <ClInclude Include="EManager.h" />
     <ClInclude Include="Entity.h" />
-    <ClInclude Include="ETables.h" />
+    <ClInclude Include="EntityTypes.h" />
+    <ClInclude Include="EBlueprint.h" />
     <ClInclude Include="Features.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GManager.h" />
     <ClInclude Include="InputDeviceManager.h" />
     <ClInclude Include="RenderDeviceManager.h" />
+    <ClInclude Include="ResourcesNames.h" />
     <ClInclude Include="RManager.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Tile.h" />

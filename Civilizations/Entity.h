@@ -3,21 +3,23 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
-#include "ETables.h"
+#include "EBlueprint.h"
 
 
 struct Entity
 {
+	EBlueprint *blueprint;
+
 	int id;
 	EntityType type;
-	int feats;			// Features
-
-	int creationTime;
+	EntityState state;
 
 	int posX;
 	int posY;
 
-	int ti;				// Texture index
+	int creationTime;
+
+	inline void UpdateBlueprint() { blueprint = &EBlueprint::GetBlueprint(type); }
 
 	inline bool operator == (const Entity &pEnt) { return (id == pEnt.id); }
 	inline bool operator != (const Entity &pEnt) { return (id != pEnt.id); }

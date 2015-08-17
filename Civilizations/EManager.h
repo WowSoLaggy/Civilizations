@@ -22,13 +22,9 @@ public:
 	// Entities
 
 	static Entity &CreateSurface(EntityType pType, int pX, int pY);
-	static Entity &CreateObject(EntityType pType, int pX, int pY, EntityState pState);
-	static void ConvertTreeToType(Entity &pTree, EntityType pType);
+	static Entity &CreateObject(EntityType pType, int pX, int pY);
 
 	// Features
-
-	static void AddFeature(Entity &pEntity, int pFeature);
-	static void RemoveFeature(Entity &pEntity, int pFeature);
 
 	static bool IsEntityType(Entity &pEntity, EntityType pType);
 

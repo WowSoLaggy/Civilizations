@@ -11,9 +11,8 @@ int EManager::m_nextId = 1;
 void EManager::InitializeEntity(Entity &pEntity)
 {
 	pEntity.id = m_nextId++;
-	pEntity.ti = 0;
 	pEntity.type = type_unknown;
-	pEntity.feats = 0x00000000;
+	pEntity.state = state_unknown;
 
 	pEntity.creationTime = WorldUpdater::currentTurn;
 }
@@ -31,7 +30,7 @@ void EManager::DeleteObjectAt(int pX, int pY)
 }
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-// Surfaces
+// Entities
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 Entity &EManager::CreateSurface(EntityType pType, int pX, int pY)
@@ -48,19 +47,16 @@ Entity &EManager::CreateSurface(EntityType pType, int pX, int pY)
 	ent->posY = pY;
 
 	ent->type = pType;
-	ent->ti = ETables::GetTiSurface(pType);
-
-	AddFeature(*ent, ETables::GetFeatsSurface(pType));
+	ent->UpdateBlueprint();
 
 	return *ent;
 }
 
-// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-// Objects
-// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-
-Entity &EManager::CreateObject(EntityType pType, int pX, int pY, EntityState pState)
+Entity &EManager::CreateObject(EntityType pType, int pX, int pY)
 {
+	if (TILE(pX, pY)->objectCell != -1)
+		Game::world->DeleteObject(TILE(pX, pY)->objectCell);
+
 	int cell;
 	Entity *ent = Game::world->GetFreeObjectCell(cell);
 
@@ -69,13 +65,8 @@ Entity &EManager::CreateObject(EntityType pType, int pX, int pY, EntityState pSt
 	ent->posX = pX;
 	ent->posY = pY;
 
-	AddFeature(*ent, FEAT_OBJECT);
-
 	ent->type = pType;
-	ent->creationTime = WorldUpdater::currentTurn;
-	ent->ti = ETables::GetTiObject(pType, pState);
-
-	AddFeature(*ent, ETables::GetFeatsObject(pType));
+	ent->UpdateBlueprint();
 
 	return *ent;
 }

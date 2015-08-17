@@ -81,9 +81,6 @@
     <ClCompile Include="EManCreate.cpp">
       <Filter>src\GameLogic\EManager</Filter>
     </ClCompile>
-    <ClCompile Include="EManConvert.cpp">
-      <Filter>src\GameLogic\EManager</Filter>
-    </ClCompile>
     <ClCompile Include="TManConvert.cpp">
       <Filter>src\GameLogic\TManager</Filter>
     </ClCompile>
@@ -117,7 +114,7 @@
     <ClCompile Include="Afforestation.cpp">
       <Filter>src\GameLogic\Weather</Filter>
     </ClCompile>
-    <ClCompile Include="ETables.cpp">
+    <ClCompile Include="EBlueprint.cpp">
       <Filter>src\World\Entities</Filter>
     </ClCompile>
   </ItemGroup>
@@ -182,11 +179,17 @@
     <ClInclude Include="WorldCreator.h">
       <Filter>src\GameLogic</Filter>
     </ClInclude>
-    <ClInclude Include="ETables.h">
-      <Filter>src\World\Entities</Filter>
-    </ClInclude>
     <ClInclude Include="GManager.h">
       <Filter>src\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityTypes.h">
+      <Filter>src\World\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="EBlueprint.h">
+      <Filter>src\World\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourcesNames.h">
+      <Filter>src\RManager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

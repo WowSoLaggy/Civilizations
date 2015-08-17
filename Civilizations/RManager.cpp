@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "RManager.h"
 
+
 std::vector<LPDIRECT3DTEXTURE9> RManager::textures;
 
 

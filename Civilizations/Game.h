@@ -12,6 +12,7 @@
 #include "World.h"
 #include "Drawer.h"
 #include "GManager.h"
+#include "EBlueprint.h"
 
 
 class Game

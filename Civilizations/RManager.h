@@ -3,8 +3,8 @@
 #ifndef RMANAGER_H
 #define RMANAGER_H
 
+#include "ResourcesNames.h"
 #include "RenderDeviceManager.h"
-#include "ETables.h"
 
 
 class RManager

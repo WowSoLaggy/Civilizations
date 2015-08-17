@@ -12,12 +12,14 @@ void Game::Initialize()
 	srand((unsigned int)time(0));
 	selectedTileX = -1;
 	selectedTileY = -1;
+
+	EBlueprint::InitBlueprints();
 }
 
 int Game::Start()
 {
 	world = new World();
-	int size = 128;
+	int size = 512;
 	WorldCreator::GenerateWorld(*world, size, size);
 	return 0;
 }

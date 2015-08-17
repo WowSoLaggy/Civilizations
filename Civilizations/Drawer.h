@@ -9,7 +9,6 @@
 #include "InputDeviceManager.h"
 #include "World.h"
 #include "Descriptor.h"
-#include "ETables.h"
 #include "GManager.h"
 
 

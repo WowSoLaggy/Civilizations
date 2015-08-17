@@ -75,7 +75,7 @@ void TManager::ConvertSurfaceToType(Tile &pTile, EntityType pType)
 
 	if (EManager::IsMountain(*surf))
 	{
-		EntityType mntType = ETables::GetMntForSurface(pType);
+		EntityType mntType = EBlueprint::GetBlueprint(pType).nativeMnts[0];
 
 		if (EManager::IsEntityType(*surf, mntType))
 			return;
@@ -84,7 +84,7 @@ void TManager::ConvertSurfaceToType(Tile &pTile, EntityType pType)
 			return;
 
 		surf->type = mntType;
-		surf->ti = ETables::GetTiSurface(mntType);
+		surf->UpdateBlueprint();
 	}
 	else
 	{
@@ -95,6 +95,6 @@ void TManager::ConvertSurfaceToType(Tile &pTile, EntityType pType)
 			return;
 
 		surf->type = pType;
-		surf->ti = ETables::GetTiSurface(pType);
+		surf->UpdateBlueprint();
 	}
 }
