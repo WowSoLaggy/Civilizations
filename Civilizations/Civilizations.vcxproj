@@ -107,6 +107,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="TManConvert.cpp" />
+    <ClCompile Include="Utils.cpp" />
     <ClCompile Include="Weather.cpp" />
     <ClCompile Include="World.cpp" />
     <ClCompile Include="WorldCreator.cpp" />

@@ -117,6 +117,9 @@
     <ClCompile Include="EBlueprint.cpp">
       <Filter>src\World\Entities</Filter>
     </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">

@@ -6,8 +6,8 @@
 #define SATURATE(x, a, b) (x < a ? a : x > b ? b : x)
 #define DIST(x, y) (((x) * (x)) + ((y) * (y)))
 #define SQR(x) ((x) * (x))
-#define RAND0(range) ((rand() & (range)) == 0)
-#define RAND(range, minValue) ((rand() % (range)) + minValue)
+#define RAND0(range) ((xorshf96() & (range)) == 0)
+#define RAND(range, minValue) ((xorshf96() % (range)) + minValue)
 
 #define AGE(x) (WorldUpdater::currentTurn - (x).creationTime)
 
@@ -22,5 +22,8 @@
 #define OBJAT(x, y) OBJ(TILE(x, y)->objectCell)
 #define SURFATP(i) SURF(TILEP(i)->surfaceCell)
 #define OBJATP(i) OBJ(TILEP(i)->objectCell)
+
+// Rand:
+unsigned long xorshf96();
 
 #endif // UTILS_H

@@ -232,29 +232,6 @@ void WorldCreator::GenerateWorld(World &pWorld, int pSizeX, int pSizeY)
 
 	delete[] tiles;
 	delete[] heights;
-
-	// Randomly seed some trees
-	/*int treeCount = 0;
-	int attempts = 0;
-	while ((treeCount < (w * h / 100)) && (attempts < (w * h / 300 * 20)))
-	{
-		++attempts;
-
-		int x = rand() % w;
-		int y = rand() % h;
-
-		if (!EManager::IsFitForTrees(*SURF(pWorld.tiles[x + y * w].surfaceCell)))
-			continue;
-		if (pWorld.tiles[x + y * w].objectCell != -1)
-			continue;
-
-		int age = (rand() % 30) + 5;
-
-		if (EManager::IsEntityType(*SURF(pWorld.tiles[x + y * w].surfaceCell), surf_grass))
-			EManager::CreateTree(obj_tree, x, y, age);
-		
-		++treeCount;
-	}*/
 }
 
 void WorldCreator::DisposeWorld(World &pWorld)
