@@ -3,25 +3,21 @@
 
 #include "Game.h"
 
-int Weather::w3 = 0;
-int Weather::h3 = 0;
-float *Weather::tmp = nullptr;
-float *Weather::afforestation = nullptr;
+float *Weather::tmpf = nullptr;
+short *Weather::tmps = nullptr;
 
 
 void Weather::Load()
 {
-	tmp = new float[WWIDTH * WHEIGHT];
+	tmpf = new float[WWIDTH * WHEIGHT];
+	tmps = new short[WWIDTH * WHEIGHT];
 
-	w3 = (WWIDTH + (AFFORESTATIONSTEP - (WWIDTH % AFFORESTATIONSTEP))) / AFFORESTATIONSTEP;
-	h3 = (WHEIGHT + (AFFORESTATIONSTEP - (WHEIGHT % AFFORESTATIONSTEP))) / AFFORESTATIONSTEP;
-
-	afforestation = new float[w3 * h3];
-	ZeroMemory(afforestation, w3 * h3 * sizeof(float));
+	ZeroMemory(tmpf, WWIDTH * WHEIGHT * sizeof(float));
+	ZeroMemory(tmps, WWIDTH * WHEIGHT * sizeof(short));
 }
 
 void Weather::UnLoad()
 {
-	delete[] tmp;
-	delete[] afforestation;
+	delete[] tmpf;
+	delete[] tmps;
 }

@@ -12,6 +12,7 @@ class Forester
 public:
 
 	static void UpdateTrees();
+	static bool TryToPlant(EntityType pType, int pX, int pY);
 	static void ReproduceTree(Entity &pTree);
 };
 

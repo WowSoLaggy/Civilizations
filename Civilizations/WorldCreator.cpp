@@ -122,7 +122,7 @@ void WorldCreator::GenerateWorld(World &pWorld, int pSizeX, int pSizeY)
 						tiles[x + y * w] = surf_grass;
 
 					// And place some reef in the water by the way
-					if ((heights[x + y * w] >= -DEEPWATER_DEPTH) && (RAND(100, 0) == 0))
+					if ((heights[x + y * w] >= -DEEPWATER_DEPTH) && (RAND0EQ0(100)))
 						tiles[x + y * w] = surf_mountain_reef;
 				}
 				else
@@ -227,6 +227,7 @@ void WorldCreator::GenerateWorld(World &pWorld, int pSizeX, int pSizeY)
 			pWorld.tiles[x + y * w].temperature = 23;
 			pWorld.tiles[x + y * w].height = heights[x + y * w];
 			pWorld.tiles[x + y * w].productivity = 0;
+			pWorld.tiles[x + y * w].aff = 0;
 		}
 	}
 

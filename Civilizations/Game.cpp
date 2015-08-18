@@ -9,7 +9,7 @@ int Game::selectedTileY;
 
 void Game::Initialize()
 {
-	srand((unsigned int)time(0));
+	initRand();
 	selectedTileX = -1;
 	selectedTileY = -1;
 
@@ -19,7 +19,7 @@ void Game::Initialize()
 int Game::Start()
 {
 	world = new World();
-	int size = 512;
+	int size = 1024;
 	WorldCreator::GenerateWorld(*world, size, size);
 	return 0;
 }

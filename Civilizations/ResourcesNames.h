@@ -70,6 +70,14 @@ const std::string resourcesNames[] = {
 	"Data\\Gui_bottom_2048.png",	/* 48 */
 
 	"Data\\Raspberry.png",			/* 49 */
+	"Data\\Camelthorn.png",			/* 50 */
+	"Data\\Dwarfbirch.png",			/* 51 */
+	"Data\\Aloe.png",				/* 52 */
+	"Data\\Fern.png",				/* 53 */
+
+	"Data\\Acacia_young.png",		/* 54 */
+	"Data\\Acacia_adult.png",		/* 55 */
+	"Data\\Acacia_dead.png",		/* 56 */
 };
 
 

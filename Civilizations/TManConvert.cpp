@@ -75,12 +75,14 @@ void TManager::ConvertSurfaceToType(Tile &pTile, EntityType pType)
 
 	if (EManager::IsMountain(*surf))
 	{
-		EntityType mntType = EBlueprint::GetBlueprint(pType).nativeMnts[0];
+		EntityType mntType = RANDVECT(EBlueprint::GetBlueprint(pType).nativeMnts);
+		if (mntType == type_unknown)
+			return;
 
 		if (EManager::IsEntityType(*surf, mntType))
 			return;
 
-		if (RAND(3, 0) != 0)
+		if (RAND0NEQ0(3))
 			return;
 
 		surf->type = mntType;
@@ -91,7 +93,7 @@ void TManager::ConvertSurfaceToType(Tile &pTile, EntityType pType)
 		if (EManager::IsEntityType(*surf, pType))
 			return;
 
-		if (RAND(3, 0) != 0)
+		if (RAND0NEQ0(3))
 			return;
 
 		surf->type = pType;

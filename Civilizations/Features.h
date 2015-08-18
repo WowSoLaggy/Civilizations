@@ -13,6 +13,7 @@
 #define FEAT_MOUNTAIN		0x00000020	/* Mountain (1) */
 #define FEAT_FRESHWATER		0x00000040	/* River (1) */
 #define FEAT_LAKE			0x00000080	/* Lake (1) */
+#define FEAT_FLORA			0x00000100	/* Flora (1) */
 
 
 #endif // FEATURES_H

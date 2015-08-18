@@ -19,6 +19,7 @@ public:
 	float temperature;
 	float height;
 	float productivity;
+	short aff;
 };
 
 

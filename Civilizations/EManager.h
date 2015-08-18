@@ -21,8 +21,8 @@ public:
 
 	// Entities
 
-	static Entity &CreateSurface(EntityType pType, int pX, int pY);
-	static Entity &CreateObject(EntityType pType, int pX, int pY);
+	static Entity *CreateSurface(EntityType pType, int pX, int pY);
+	static Entity *CreateObject(EntityType pType, int pX, int pY);
 
 	// Features
 
@@ -42,7 +42,7 @@ public:
 	static bool IsFreshWaterTile(Entity &pSurface);
 	static bool IsLakeTile(Entity &pSurface);
 
-	static bool IsSaplingTree(Entity &pEntity);
+	static bool IsYoungTree(Entity &pEntity);
 	static bool IsAdultTree(Entity &pEntity);
 	static bool IsDeadTree(Entity &pEntity);
 

@@ -3,35 +3,26 @@
 
 void Weather::UpdateAfforestation()
 {
-	ZeroMemory(afforestation, w3 * h3 * sizeof(float));
-
-	for (int y = 0; y < WHEIGHT; ++y)
+	/*for (int i = 0; i < WWIDTH * WHEIGHT; ++i)
 	{
-		for (int x = 0; x < WWIDTH; ++x)
-		{
-			Entity *ent = OBJAT(x, y);
-			if (ent == nullptr)
-				continue;
+		Entity *ent = OBJATP(i);
+		if (ent == nullptr)
+			TILEP(i)->aff = 0;
+		else
+			TILEP(i)->aff = ent->blueprint->affBase;
+	}*/
 
-			if (EManager::IsBush(*ent))
-				afforestation[(x / 3) + (y / 3) * w3] += AFFORESTCOST_BUSH;
-			else if (EManager::IsTree(*ent))
-				afforestation[(x / 3) + (y / 3) * w3] += AFFORESTCOST_TREE;
+	for (int y = 1; y < WHEIGHT - 1; ++y)
+	{
+		for (int x = 1; x < WWIDTH - 1; ++x)
+		{
+			tmps[x + y * WWIDTH] = (
+				TILE(x - 1, y - 1)->aff + TILE(x + 0, y - 1)->aff + TILE(x + 1, y - 1)->aff +
+				TILE(x - 1, y + 0)->aff + TILE(x + 0, y + 0)->aff + TILE(x + 1, y + 0)->aff +
+				TILE(x - 1, y + 1)->aff + TILE(x + 0, y + 1)->aff + TILE(x + 1, y + 1)->aff) / 9;
 		}
 	}
 
-	int count = 0;
-	for (int y = 1; y < h3 - 1; ++y)
-	{
-		for (int x = 1; x < w3 - 1; ++x)
-		{
-			tmp[count] = (
-				afforestation[(x - 1) + (y - 1) * w3] + afforestation[(x + 0) + (y - 1) * w3] + afforestation[(x + 1) + (y - 1) * w3] +
-				afforestation[(x - 1) + (y + 0) * w3] + afforestation[(x + 0) + (y + 0) * w3] + afforestation[(x + 1) + (y + 0) * w3] +
-				afforestation[(x - 1) + (y + 1) * w3] + afforestation[(x + 0) + (y + 1) * w3] + afforestation[(x + 1) + (y + 1) * w3]) / 9;
-			++count;
-		}
-	}
-
-	memcpy(afforestation, tmp, w3 * h3 * sizeof(float));
+	for (int i = 0; i < WWIDTH * WHEIGHT; ++i)
+		TILEP(i)->aff = (OBJATP(i) == nullptr) ? tmps[i] : OBJATP(i)->blueprint->affBase;
 }

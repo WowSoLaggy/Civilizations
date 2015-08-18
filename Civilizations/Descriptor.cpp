@@ -16,14 +16,13 @@ void Descriptor::GetTileDescription(Tile &pTile, std::string &pDesc, int pX, int
 	else
 		pDesc.append(surf->blueprint->description);
 
-	int afforest = (int)(Weather::afforestation[pX / 3 + pY / 3 * Weather::w3]);
 
 	pDesc.append("(").
 		append(std::to_string((int)pTile.humidity)).append("% h, ").
 		append(std::to_string((int)pTile.temperature)).append("°C, ").
 		append(std::to_string((int)pTile.height)).append("m, ").
 		append(std::to_string((int)pTile.productivity)).append(" prod, ").
-		append(std::to_string(afforest)).append(" affor)\n");
+		append(std::to_string((int)pTile.aff)).append(" affor)\n");
 
 
 	pDesc.append("Object: ");
@@ -31,13 +30,15 @@ void Descriptor::GetTileDescription(Tile &pTile, std::string &pDesc, int pX, int
 		pDesc.append("None\n");
 	else
 	{
-		int age = AGE(*obj);
-		if (age < TREE_ADULTAGE)
-			pDesc.append("Sapling ");
-		else if (age >= TREE_DIEAGE)
-			pDesc.append("Dead ");
+		if (EManager::IsFlora(*obj))
+		{
+			if (obj->state == state_young)
+				pDesc.append("Young ");
+			else if (obj->state == state_dead)
+				pDesc.append("Dead ");
+		}
 
 		pDesc.append(obj->blueprint->description);
-		pDesc.append("(").append(std::to_string(age)).append(" y.o.)\n");
+		pDesc.append("(").append(std::to_string(AGE(*obj) / WEEKSINYEAR)).append(" y.o.)\n");
 	}
 }

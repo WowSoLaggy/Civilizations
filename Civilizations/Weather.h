@@ -10,10 +10,6 @@ class Weather
 {
 public:
 
-	static int w3;
-	static int h3;
-	static float *afforestation;
-
 	static void Load();
 	static void UnLoad();
 
@@ -24,7 +20,8 @@ public:
 
 private:
 
-	static float *tmp;
+	static float *tmpf;
+	static short *tmps;
 };
 
 #endif // WEATHER_H

@@ -53,7 +53,7 @@ bool EManager::IsBush(EntityType &pEntType)
 
 bool EManager::IsFlora(Entity &pEntity)
 {
-	return ((IsTree(pEntity)) || (IsBush(pEntity)));
+	return ((pEntity.blueprint->feats & FEAT_FLORA) != 0);
 }
 
 bool EManager::IsFitForTrees(Entity &pSurface)
@@ -79,19 +79,19 @@ bool EManager::IsLakeTile(Entity &pSurface)
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 
-bool EManager::IsSaplingTree(Entity &pEntity)
+bool EManager::IsYoungTree(Entity &pEntity)
 {
-	return ((IsTree(pEntity)) && (AGE(pEntity) < TREE_ADULTAGE));
+	return (pEntity.state == state_young);
 }
 
 bool EManager::IsAdultTree(Entity &pEntity)
 {
-	return ((IsTree(pEntity)) && (AGE(pEntity) >= TREE_ADULTAGE) && (AGE(pEntity) < TREE_DIEAGE));
+	return (pEntity.state == state_adult);
 }
 
 bool EManager::IsDeadTree(Entity &pEntity)
 {
-	return ((IsTree(pEntity)) && (AGE(pEntity) >= TREE_DIEAGE));
+	return (pEntity.state == state_dead);
 }
 
 

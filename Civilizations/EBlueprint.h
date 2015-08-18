@@ -5,6 +5,7 @@
 
 #include "EntityTypes.h"
 #include "Features.h"
+#include "Utils.h"
 
 
 class EBlueprint
@@ -28,6 +29,13 @@ public:
 	std::vector<EntityType> nativeBushes;
 
 	float baseProdPen;
+
+	short affBase;
+	short affMin;
+	short ageAdulthood;
+	short ageOldness;
+	short ageDecay;
+	int chanceToGrow;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 

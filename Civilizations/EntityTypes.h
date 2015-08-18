@@ -48,7 +48,13 @@ enum EntityType : unsigned char
 	obj_palm				= 104,
 	obj_juniper				= 105,
 	obj_baobab				= 106,
-	obj_raspberry			= 107,
+	obj_acacia				= 107,
+
+	obj_raspberry			= 108,
+	obj_camelthorn			= 109,
+	obj_dwarfbirch			= 110,
+	obj_aloe				= 111,
+	obj_fern				= 112,
 
 	type_end
 };

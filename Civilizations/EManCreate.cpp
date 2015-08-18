@@ -33,7 +33,7 @@ void EManager::DeleteObjectAt(int pX, int pY)
 // Entities
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-Entity &EManager::CreateSurface(EntityType pType, int pX, int pY)
+Entity *EManager::CreateSurface(EntityType pType, int pX, int pY)
 {
 	if (TILE(pX, pY)->surfaceCell != -1)
 		Game::world->DeleteSurface(TILE(pX, pY)->surfaceCell);
@@ -49,10 +49,10 @@ Entity &EManager::CreateSurface(EntityType pType, int pX, int pY)
 	ent->type = pType;
 	ent->UpdateBlueprint();
 
-	return *ent;
+	return ent;
 }
 
-Entity &EManager::CreateObject(EntityType pType, int pX, int pY)
+Entity *EManager::CreateObject(EntityType pType, int pX, int pY)
 {
 	if (TILE(pX, pY)->objectCell != -1)
 		Game::world->DeleteObject(TILE(pX, pY)->objectCell);
@@ -68,5 +68,5 @@ Entity &EManager::CreateObject(EntityType pType, int pX, int pY)
 	ent->type = pType;
 	ent->UpdateBlueprint();
 
-	return *ent;
+	return ent;
 }
