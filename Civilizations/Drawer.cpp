@@ -23,8 +23,8 @@ D3DXVECTOR2 *Drawer::m_vertices;
 
 int Drawer::m_cursorTIndex = 7;
 int Drawer::m_gridTIndex = 8;
-int Drawer::m_guiTopTIndex = 9;
-int Drawer::m_guiBottomTIndex = 10;
+int Drawer::m_guiTopTIndex = 47;
+int Drawer::m_guiBottomTIndex = 48;
 int Drawer::m_guiMinimapTIndex = 11;
 int Drawer::m_guiMinimapFrameTIndex = 12;
 
