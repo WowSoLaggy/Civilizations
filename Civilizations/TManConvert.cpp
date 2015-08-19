@@ -3,65 +3,65 @@
 
 void TManager::CheckTilesClimate()
 {
-	for (int i = 0; i < WWIDTH * WHEIGHT; ++i)
+	for (Tile &tile : TILES)
 	{
-		Entity *surf = SURFATP(i);
+		Entity *surf = SURF(tile.surfaceCell);
 
 		if (EManager::IsWaterTile(*surf))
 		{
 			// Water
-
-			if (TILEP(i)->temperature < TEMPERATURE_BORDER_FREEZE)
+			
+			if (tile.temperature < TEMPERATURE_BORDER_FREEZE)
 			{
 				if (EManager::IsFreshWaterTile(*surf))
-					ConvertSurfaceToType(*TILEP(i), surf_waterfreshfrozen);
+					ConvertSurfaceToType(tile, surf_waterfreshfrozen);
 				else if (EManager::IsLakeTile(*surf))
-					ConvertSurfaceToType(*TILEP(i), surf_lakefrozen);
+					ConvertSurfaceToType(tile, surf_lakefrozen);
 				else
-					ConvertSurfaceToType(*TILEP(i), surf_ice);
+					ConvertSurfaceToType(tile, surf_ice);
 			}
 			else if (EManager::IsFreshWaterTile(*surf))
-				ConvertSurfaceToType(*TILEP(i), surf_waterfresh);
+				ConvertSurfaceToType(tile, surf_waterfresh);
 			else if (EManager::IsLakeTile(*surf))
-				ConvertSurfaceToType(*TILEP(i), surf_lake);
-			else if (TILEP(i)->height >= -DEEPWATER_DEPTH)
-				ConvertSurfaceToType(*TILEP(i), surf_water);
+				ConvertSurfaceToType(tile, surf_lake);
+			else if (tile.height >= -DEEPWATER_DEPTH)
+				ConvertSurfaceToType(tile, surf_water);
 			else
-				ConvertSurfaceToType(*TILEP(i), surf_deepwater);
+				ConvertSurfaceToType(tile, surf_deepwater);
 		}
-		else if (TILEP(i)->humidity > HUMIDITY_BORDER)
+		else if (tile.humidity > HUMIDITY_BORDER)
 		{
 			// Near water
 
-			if (TILEP(i)->temperature < TEMPERATURE_BORDER_FREEZE)
-				ConvertSurfaceToType(*TILEP(i), surf_snow);
-			else if (TILEP(i)->temperature < TEMPERATURE_BORDER_TUNDRA)
-				ConvertSurfaceToType(*TILEP(i), surf_tundra);
-			else if (TILEP(i)->temperature < TEMPERATURE_BORDER_SAVANNA)
-				ConvertSurfaceToType(*TILEP(i), surf_coast);
-			else if (TILEP(i)->temperature < TEMPERATURE_BORDER_TROPICS)
-				ConvertSurfaceToType(*TILEP(i), surf_coast);
-			else if (TILEP(i)->temperature < TEMPERATURE_BORDER_DESERT)
-				ConvertSurfaceToType(*TILEP(i), surf_tropics);
+			if (tile.temperature < TEMPERATURE_BORDER_FREEZE)
+				ConvertSurfaceToType(tile, surf_snow);
+			else if (tile.temperature < TEMPERATURE_BORDER_TUNDRA)
+				ConvertSurfaceToType(tile, surf_tundra);
+			else if (tile.temperature < TEMPERATURE_BORDER_SAVANNA)
+				ConvertSurfaceToType(tile, surf_coast);
+			else if (tile.temperature < TEMPERATURE_BORDER_TROPICS)
+				ConvertSurfaceToType(tile, surf_coast);
+			else if (tile.temperature < TEMPERATURE_BORDER_DESERT)
+				ConvertSurfaceToType(tile, surf_tropics);
 			else
-				ConvertSurfaceToType(*TILEP(i), surf_oasis);
+				ConvertSurfaceToType(tile, surf_oasis);
 		}
 		else
 		{
 			// Dry
 
-			if (TILEP(i)->temperature < TEMPERATURE_BORDER_FREEZE)
-				ConvertSurfaceToType(*TILEP(i), surf_snow);
-			else if (TILEP(i)->temperature < TEMPERATURE_BORDER_TUNDRA)
-				ConvertSurfaceToType(*TILEP(i), surf_tundra);
-			else if (TILEP(i)->temperature < TEMPERATURE_BORDER_SAVANNA)
-				ConvertSurfaceToType(*TILEP(i), surf_grass);
-			else if (TILEP(i)->temperature < TEMPERATURE_BORDER_TROPICS)
-				ConvertSurfaceToType(*TILEP(i), surf_savanna);
-			else if (TILEP(i)->temperature < TEMPERATURE_BORDER_DESERT)
-				ConvertSurfaceToType(*TILEP(i), surf_tropics);
+			if (tile.temperature < TEMPERATURE_BORDER_FREEZE)
+				ConvertSurfaceToType(tile, surf_snow);
+			else if (tile.temperature < TEMPERATURE_BORDER_TUNDRA)
+				ConvertSurfaceToType(tile, surf_tundra);
+			else if (tile.temperature < TEMPERATURE_BORDER_SAVANNA)
+				ConvertSurfaceToType(tile, surf_grass);
+			else if (tile.temperature < TEMPERATURE_BORDER_TROPICS)
+				ConvertSurfaceToType(tile, surf_savanna);
+			else if (tile.temperature < TEMPERATURE_BORDER_DESERT)
+				ConvertSurfaceToType(tile, surf_tropics);
 			else
-				ConvertSurfaceToType(*TILEP(i), surf_desert);
+				ConvertSurfaceToType(tile, surf_desert);
 		}
 	}
 }

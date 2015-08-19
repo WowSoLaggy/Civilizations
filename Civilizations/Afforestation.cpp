@@ -3,15 +3,6 @@
 
 void Weather::UpdateAfforestation()
 {
-	/*for (int i = 0; i < WWIDTH * WHEIGHT; ++i)
-	{
-		Entity *ent = OBJATP(i);
-		if (ent == nullptr)
-			TILEP(i)->aff = 0;
-		else
-			TILEP(i)->aff = ent->blueprint->affBase;
-	}*/
-
 	for (int y = 1; y < WHEIGHT - 1; ++y)
 	{
 		for (int x = 1; x < WWIDTH - 1; ++x)

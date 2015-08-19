@@ -14,7 +14,7 @@ public:
 	int width;
 	int height;
 
-	Tile *tiles;
+	std::vector<Tile> tiles;
 
 	Entity *lsurfaces;
 	Entity *lobjects;

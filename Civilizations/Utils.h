@@ -20,13 +20,20 @@
 #define WEEKSFROMMONTHS(x) ((x) * WEEKSINMONTH)
 #define WEEKSFROMYEARS(x) ((x) * WEEKSINYEAR)
 
-#define WWIDTH (Game::world->width)
-#define WHEIGHT (Game::world->height)
 
-#define TILE(x, y) (&Game::world->tiles[(x) + (y) * WWIDTH])
-#define TILEP(i) (&Game::world->tiles[i])
-#define SURF(pCell) (((pCell) < 0) ? nullptr : &Game::world->lsurfaces[pCell])
-#define OBJ(pCell) (((pCell) < 0) ? nullptr : &Game::world->lobjects[pCell])
+#define WORLD (Game::world)
+
+#define WWIDTH (WORLD->width)
+#define WHEIGHT (WORLD->height)
+
+#define TILES (WORLD->tiles)
+#define TILE(x, y) (&TILES[(x) + (y) * WWIDTH])
+#define TILEP(i) (&TILES[i])
+
+#define SURFS (WORLD->lsurfaces)
+#define OBJS (WORLD->lobjects)
+#define SURF(pCell) (((pCell) < 0) ? nullptr : &SURFS[pCell])
+#define OBJ(pCell) (((pCell) < 0) ? nullptr : &OBJS[pCell])
 #define SURFAT(x, y) SURF(TILE(x, y)->surfaceCell)
 #define OBJAT(x, y) OBJ(TILE(x, y)->objectCell)
 #define SURFATP(i) SURF(TILEP(i)->surfaceCell)

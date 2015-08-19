@@ -14,8 +14,6 @@
 #include <math.h>
 #include <limits>
 #include <map>
-#include <thread>
-
 
 #define DIRECTINPUT_VERSION 0x0800
 #include <d3d9.h>

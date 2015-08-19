@@ -48,5 +48,5 @@ Tile * Game::GetSelectedTile()
 {
 	if ((world == nullptr) || (selectedTileX == -1))
 		return nullptr;
-	return &world->tiles[selectedTileX + selectedTileY * world->width];
+	return &TILES[selectedTileX + selectedTileY * world->width];
 }

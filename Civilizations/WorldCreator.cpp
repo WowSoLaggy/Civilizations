@@ -217,7 +217,8 @@ void WorldCreator::GenerateWorld(World &pWorld, int pSizeX, int pSizeY)
 	delete[] tilesTmp;
 
 	// World tiles
-	pWorld.tiles = new Tile[w * h];
+	pWorld.tiles.clear();
+	pWorld.tiles.resize(w * h);
 	for (int y = 0; y < h; ++y)
 	{
 		for (int x = 0; x < w; ++x)
@@ -239,11 +240,10 @@ void WorldCreator::DisposeWorld(World &pWorld)
 {
 	delete[] pWorld.lsurfaces;
 	delete[] pWorld.lobjects;
-	delete[] pWorld.tiles;
+	pWorld.tiles.clear();
 
 	pWorld.lsurfaces = nullptr;
 	pWorld.lobjects = nullptr;
-	pWorld.tiles = nullptr;
 }
 
 void WorldCreator::CheckRiverTile(int pX, int pY, EntityType *pTiles, float *pHeights, int pW)
