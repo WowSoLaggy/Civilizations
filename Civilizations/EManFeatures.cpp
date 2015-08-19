@@ -93,21 +93,3 @@ bool EManager::IsDeadTree(Entity &pEntity)
 {
 	return (pEntity.state == state_dead);
 }
-
-
-// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-
-
-bool EManager::IsNativeSurface(Entity &pEntity, Entity &pSurface)
-{
-	return (
-			((pSurface.type == surf_grass) && (pEntity.type == obj_oak)) ||
-			((pSurface.type == surf_snow) && (pEntity.type == obj_fir)) ||
-			((pSurface.type == surf_desert) && (pEntity.type == obj_cactus)) ||
-			((pSurface.type == surf_coast) && (pEntity.type == obj_palm)) ||
-			((pSurface.type == surf_oasis) && (pEntity.type == obj_palm)) ||
-			((pSurface.type == surf_tundra) && (pEntity.type == obj_juniper)) ||
-			((pSurface.type == surf_savanna) && (pEntity.type == obj_baobab)) ||
-			((pSurface.type == surf_tropics) && (pEntity.type == obj_palm))
-			);
-}

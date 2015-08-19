@@ -46,8 +46,6 @@ public:
 	static bool IsAdultTree(Entity &pEntity);
 	static bool IsDeadTree(Entity &pEntity);
 
-	static bool IsNativeSurface(Entity &pEntity, Entity &pSurface);
-
 private:
 
 	static int m_nextId;

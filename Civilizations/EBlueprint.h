@@ -17,6 +17,8 @@ public:
 
 	EntityType type;
 
+	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
 	std::vector<unsigned char> tis;
 
 	int feats;

@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "EBlueprint.h"
 
-
 EBlueprint EBlueprint::blueprints[type_end];
 
 
@@ -13,6 +12,7 @@ EBlueprint::EBlueprint()
 void EBlueprint::Clear()
 {
 	type = type_unknown;
+
 	tis.clear();
 	feats = 0;
 	mmColor = 0x00000000;
@@ -24,6 +24,10 @@ void EBlueprint::Clear()
 	baseProdPen = 0;
 	affBase = 0;
 	affMin = 0;
+	ageAdulthood = 0;
+	ageOldness = 0;
+	ageDecay = 0;
+	chanceToGrow = 0;
 }
 
 
