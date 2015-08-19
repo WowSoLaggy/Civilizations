@@ -15,5 +15,5 @@ void Weather::UpdateGroundProductivity()
 	}
 
 	for (int i = 0; i < WWIDTH * WHEIGHT; ++i)
-		TILEP(i)->productivity = EManager::IsFreshWaterTile(*SURFATP(i)) ? 100 : tmpf[i] * SURFATP(i)->blueprint->baseProdPen;
+		TILEP(i)->productivity = EManager::IsFreshWaterTile(*SURFATP(i)) ? 100 : tmpf[i] * SURFATP(i)->eblueprint().baseProdPen;
 }

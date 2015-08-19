@@ -24,6 +24,7 @@ void WorldUpdater::MakeTurn(int pTurns)
 
 void WorldUpdater::UpdateWorld()
 {
+	// TODO: optimize
 	Weather::UpdateGroundHumidity();
 	Weather::UpdateAirTemperature();
 	Weather::UpdateGroundProductivity();

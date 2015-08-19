@@ -12,6 +12,7 @@ void EManager::InitializeEntity(Entity &pEntity)
 {
 	pEntity.id = m_nextId++;
 	pEntity.type = type_unknown;
+	pEntity.climtype = clim_unknown;
 	pEntity.state = state_unknown;
 
 	pEntity.creationTime = WorldUpdater::currentTurn;
@@ -40,14 +41,10 @@ Entity *EManager::CreateSurface(EntityType pType, int pX, int pY)
 
 	int cell;
 	Entity *ent = Game::world->GetFreeSurfaceCell(cell);
+	TILE(pX, pY)->surfaceCell = cell;
 
 	InitializeEntity(*ent);
-	TILE(pX, pY)->surfaceCell = cell;
-	ent->posX = pX;
-	ent->posY = pY;
-
 	ent->type = pType;
-	ent->UpdateBlueprint();
 
 	return ent;
 }
@@ -59,14 +56,10 @@ Entity *EManager::CreateObject(EntityType pType, int pX, int pY)
 
 	int cell;
 	Entity *ent = Game::world->GetFreeObjectCell(cell);
+	TILE(pX, pY)->objectCell = cell;
 
 	InitializeEntity(*ent);
-	TILE(pX, pY)->objectCell = cell;
-	ent->posX = pX;
-	ent->posY = pY;
-
 	ent->type = pType;
-	ent->UpdateBlueprint();
 
 	return ent;
 }

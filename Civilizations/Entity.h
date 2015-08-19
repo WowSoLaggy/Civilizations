@@ -4,22 +4,22 @@
 #define ENTITY_H
 
 #include "EBlueprint.h"
+#include "CBlueprint.h"
 
 
 struct Entity
 {
-	EBlueprint *blueprint;
-
 	int id;
+
 	EntityType type;
+	ClimateType climtype;
+
+	inline EBlueprint &eblueprint() const { return EBlueprint::GetBlueprint(type); }
+	inline CBlueprint &cblueprint() const { return CBlueprint::GetBlueprint(climtype); }
+
 	EntityState state;
 
-	int posX;
-	int posY;
-
 	int creationTime;
-
-	inline void UpdateBlueprint() { blueprint = &EBlueprint::GetBlueprint(type); }
 
 	inline bool operator == (const Entity &pEnt) { return (id == pEnt.id); }
 	inline bool operator != (const Entity &pEnt) { return (id != pEnt.id); }

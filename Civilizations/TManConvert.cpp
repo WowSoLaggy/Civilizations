@@ -5,19 +5,28 @@ void TManager::CheckTilesClimate()
 {
 	//for (Tile &tile : TILES)
 	concurrency::parallel_for(0, (const int)(WHEIGHT), [] (const int &y)
+	//for (int y = 0; y < WHEIGHT; ++y)
 	{
-		for (int x = 0; x < (const int)(WWIDTH); ++x)
+		for (int x = 0; x < WWIDTH; ++x)
 		{
-			Tile tile = *(TILE(x, y));
-
+			Tile &tile = *(TILE(x, y));
 			Entity *surf = SURF(tile.surfaceCell);
+
+			// Update surface climate
+			if (tile.temperature < surf->cblueprint().minTemperatureInc)
+				surf->climtype = surf->cblueprint().colderClimate;
+			else if (tile.temperature >= surf->cblueprint().maxTemperatureExc)
+				surf->climtype = surf->cblueprint().warmerClimate;
 
 			if (EManager::IsWaterTile(*surf))
 			{
 				// Water
 
-				if (tile.temperature < TEMPERATURE_BORDER_FREEZE)
+				// TODO: generalize
+				if (surf->climtype == clim_permafrost)
 				{
+					// t < 0
+
 					if (EManager::IsFreshWaterTile(*surf))
 						ConvertSurfaceToType(tile, surf_waterfreshfrozen);
 					else if (EManager::IsLakeTile(*surf))
@@ -25,48 +34,29 @@ void TManager::CheckTilesClimate()
 					else
 						ConvertSurfaceToType(tile, surf_ice);
 				}
-				else if (EManager::IsFreshWaterTile(*surf))
-					ConvertSurfaceToType(tile, surf_waterfresh);
-				else if (EManager::IsLakeTile(*surf))
-					ConvertSurfaceToType(tile, surf_lake);
-				else if (tile.height >= -DEEPWATER_DEPTH)
-					ConvertSurfaceToType(tile, surf_water);
 				else
-					ConvertSurfaceToType(tile, surf_deepwater);
+				{
+					// t >= 0
+
+					if (EManager::IsFreshWaterTile(*surf))
+						ConvertSurfaceToType(tile, surf_waterfresh);
+					else if (EManager::IsLakeTile(*surf))
+						ConvertSurfaceToType(tile, surf_lake);
+					else if (tile.height >= -DEEPWATER_DEPTH)
+						ConvertSurfaceToType(tile, surf_water);
+					else
+						ConvertSurfaceToType(tile, surf_deepwater);
+				}
 			}
 			else if (tile.humidity > HUMIDITY_BORDER)
 			{
 				// Near water
-
-				if (tile.temperature < TEMPERATURE_BORDER_FREEZE)
-					ConvertSurfaceToType(tile, surf_snow);
-				else if (tile.temperature < TEMPERATURE_BORDER_TUNDRA)
-					ConvertSurfaceToType(tile, surf_tundra);
-				else if (tile.temperature < TEMPERATURE_BORDER_SAVANNA)
-					ConvertSurfaceToType(tile, surf_coast);
-				else if (tile.temperature < TEMPERATURE_BORDER_TROPICS)
-					ConvertSurfaceToType(tile, surf_coast);
-				else if (tile.temperature < TEMPERATURE_BORDER_DESERT)
-					ConvertSurfaceToType(tile, surf_tropics);
-				else
-					ConvertSurfaceToType(tile, surf_oasis);
+				ConvertSurfaceToType(tile, surf->cblueprint().surfNearWater);
 			}
 			else
 			{
 				// Dry
-
-				if (tile.temperature < TEMPERATURE_BORDER_FREEZE)
-					ConvertSurfaceToType(tile, surf_snow);
-				else if (tile.temperature < TEMPERATURE_BORDER_TUNDRA)
-					ConvertSurfaceToType(tile, surf_tundra);
-				else if (tile.temperature < TEMPERATURE_BORDER_SAVANNA)
-					ConvertSurfaceToType(tile, surf_grass);
-				else if (tile.temperature < TEMPERATURE_BORDER_TROPICS)
-					ConvertSurfaceToType(tile, surf_savanna);
-				else if (tile.temperature < TEMPERATURE_BORDER_DESERT)
-					ConvertSurfaceToType(tile, surf_tropics);
-				else
-					ConvertSurfaceToType(tile, surf_desert);
+				ConvertSurfaceToType(tile, surf->cblueprint().surfFarFromWater);
 			}
 		}
 	});
@@ -89,7 +79,6 @@ void TManager::ConvertSurfaceToType(Tile &pTile, EntityType pType)
 			return;
 
 		surf->type = mntType;
-		surf->UpdateBlueprint();
 	}
 	else
 	{
@@ -100,6 +89,5 @@ void TManager::ConvertSurfaceToType(Tile &pTile, EntityType pType)
 			return;
 
 		surf->type = pType;
-		surf->UpdateBlueprint();
 	}
 }

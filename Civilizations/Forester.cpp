@@ -19,12 +19,12 @@ void Forester::UpdateTrees()
 
 				if (EManager::IsYoungTree(*ent))
 				{
-					if (age >= ent->blueprint->ageAdulthood)
+					if (age >= ent->eblueprint().ageAdulthood)
 						ent->state = state_adult;
 				}
 				else if (EManager::IsAdultTree(*ent))
 				{
-					if (age >= ent->blueprint->ageOldness)
+					if (age >= ent->eblueprint().ageOldness)
 						ent->state = state_dead;
 					else
 					{
@@ -33,7 +33,7 @@ void Forester::UpdateTrees()
 				}
 				else
 				{
-					if (age >= ent->blueprint->ageDecay)
+					if (age >= ent->eblueprint().ageDecay)
 					{
 						if (RAND0EQ0(TREE_DIE_CHANCE))
 							EManager::DeleteObjectAt(x, y);
@@ -51,7 +51,7 @@ void Forester::UpdateTrees()
 			// Check if something wants to grow here
 
 			// Check trees
-			EntityType entType = RANDVECT(SURFAT(x, y)->blueprint->nativeTrees);
+			EntityType entType = RANDVECT(SURFAT(x, y)->eblueprint().nativeTrees);
 			if (entType != type_unknown)
 			{
 				if (TryToPlant(entType, x, y))
@@ -59,7 +59,7 @@ void Forester::UpdateTrees()
 			}
 
 			// Check bushes
-			entType = RANDVECT(SURFAT(x, y)->blueprint->nativeBushes);
+			entType = RANDVECT(SURFAT(x, y)->eblueprint().nativeBushes);
 			if (entType != type_unknown)
 			{
 				if (TryToPlant(entType, x, y))
@@ -80,7 +80,7 @@ bool Forester::TryToPlant(EntityType pType, int pX, int pY)
 			// Planting here
 			Entity *ent = EManager::CreateObject(pType, pX, pY);
 			ent->state = state_young;
-			TILE(pX, pY)->aff = ent->blueprint->affBase;
+			TILE(pX, pY)->aff = ent->eblueprint().affBase;
 
 			return true;
 		}

@@ -1,5 +1,3 @@
-Multithreading
-
 Hills
 
 Blueprints for GUI

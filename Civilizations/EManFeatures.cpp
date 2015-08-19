@@ -13,17 +13,17 @@ bool EManager::IsEntityType(Entity &pEntity, EntityType pType)
 
 bool EManager::IsSurface(Entity &pEntity)
 {
-	return ((pEntity.blueprint->feats & FEAT_OBJECT) != 0);
+	return ((pEntity.eblueprint().feats & FEAT_OBJECT) != 0);
 }
 
 bool EManager::IsObject(Entity &pEntity)
 {
-	return ((pEntity.blueprint->feats & FEAT_OBJECT) != 0);
+	return ((pEntity.eblueprint().feats & FEAT_OBJECT) != 0);
 }
 
 bool EManager::IsWaterTile(Entity &pEntity)
 {
-	return ((pEntity.blueprint->feats & FEAT_WATERTILE) != 0);
+	return ((pEntity.eblueprint().feats & FEAT_WATERTILE) != 0);
 }
 
 bool EManager::IsWaterTile(EntityType &pEntType)
@@ -33,7 +33,7 @@ bool EManager::IsWaterTile(EntityType &pEntType)
 
 bool EManager::IsTree(Entity &pEntity)
 {
-	return ((pEntity.blueprint->feats & FEAT_TREE) != 0);
+	return ((pEntity.eblueprint().feats & FEAT_TREE) != 0);
 }
 
 bool EManager::IsTree(EntityType &pEntType)
@@ -43,7 +43,7 @@ bool EManager::IsTree(EntityType &pEntType)
 
 bool EManager::IsBush(Entity &pEntity)
 {
-	return ((pEntity.blueprint->feats & FEAT_BUSH) != 0);
+	return ((pEntity.eblueprint().feats & FEAT_BUSH) != 0);
 }
 
 bool EManager::IsBush(EntityType &pEntType)
@@ -53,27 +53,27 @@ bool EManager::IsBush(EntityType &pEntType)
 
 bool EManager::IsFlora(Entity &pEntity)
 {
-	return ((pEntity.blueprint->feats & FEAT_FLORA) != 0);
+	return ((pEntity.eblueprint().feats & FEAT_FLORA) != 0);
 }
 
 bool EManager::IsFitForTrees(Entity &pSurface)
 {
-	return ((pSurface.blueprint->feats & FEAT_FITFORTREES) != 0);
+	return ((pSurface.eblueprint().feats & FEAT_FITFORTREES) != 0);
 }
 
 bool EManager::IsMountain(Entity &pSurface)
 {
-	return ((pSurface.blueprint->feats & FEAT_MOUNTAIN) != 0);
+	return ((pSurface.eblueprint().feats & FEAT_MOUNTAIN) != 0);
 }
 
 bool EManager::IsFreshWaterTile(Entity &pSurface)
 {
-	return ((pSurface.blueprint->feats & FEAT_FRESHWATER) != 0);
+	return ((pSurface.eblueprint().feats & FEAT_FRESHWATER) != 0);
 }
 
 bool EManager::IsLakeTile(Entity &pSurface)
 {
-	return ((pSurface.blueprint->feats & FEAT_LAKE) != 0);
+	return ((pSurface.eblueprint().feats & FEAT_LAKE) != 0);
 }
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-

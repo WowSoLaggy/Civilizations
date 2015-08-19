@@ -54,9 +54,9 @@ void Drawer::DrawWorld()
 					continue;
 
 				if (TILE(x, y)->surfaceCell != -1)
-					m_sprite->Draw(RManager::textures[SURFAT(x, y)->blueprint->tis[SURFAT(x, y)->state]], 0, 0, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
+					m_sprite->Draw(RManager::textures[SURFAT(x, y)->eblueprint().tis[SURFAT(x, y)->state]], 0, 0, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 				if (TILE(x, y)->objectCell != -1)
-					m_sprite->Draw(RManager::textures[OBJAT(x, y)->blueprint->tis[OBJAT(x, y)->state]], 0, 0, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
+					m_sprite->Draw(RManager::textures[OBJAT(x, y)->eblueprint().tis[OBJAT(x, y)->state]], 0, 0, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 			}
 		}
 
@@ -258,7 +258,7 @@ void Drawer::UpdateMiniMap()
 			int x = i * WWIDTH / MINIMAPTEXTURESIZE;
 			int y = j * WHEIGHT / MINIMAPTEXTURESIZE;
 
-			mmScan0[i] = SURFAT(x, y)->blueprint->mmColor;
+			mmScan0[i] = SURFAT(x, y)->eblueprint().mmColor;
 		}
 
 		mmScan0 += rect.Pitch / sizeof(int);

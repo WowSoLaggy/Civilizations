@@ -14,6 +14,7 @@ void Game::Initialize()
 	selectedTileY = -1;
 
 	EBlueprint::InitBlueprints();
+	CBlueprint::InitBlueprints();
 }
 
 int Game::Start()

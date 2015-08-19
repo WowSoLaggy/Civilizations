@@ -15,5 +15,5 @@ void Weather::UpdateAfforestation()
 	}
 
 	for (int i = 0; i < WWIDTH * WHEIGHT; ++i)
-		TILEP(i)->aff = (OBJATP(i) == nullptr) ? tmps[i] : OBJATP(i)->blueprint->affBase;
+		TILEP(i)->aff = (OBJATP(i) == nullptr) ? tmps[i] : OBJATP(i)->eblueprint().affBase;
 }

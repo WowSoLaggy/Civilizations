@@ -86,6 +86,7 @@
   <ItemGroup>
     <ClCompile Include="Afforestation.cpp" />
     <ClCompile Include="AirTemperature.cpp" />
+    <ClCompile Include="CBlueprint.cpp" />
     <ClCompile Include="Descriptor.cpp" />
     <ClCompile Include="Drawer.cpp" />
     <ClCompile Include="EManCreate.cpp" />
@@ -114,6 +115,8 @@
     <ClCompile Include="WorldUpdater.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CBlueprint.h" />
+    <ClInclude Include="ClimateTypes.h" />
     <ClInclude Include="Constants.h" />
     <ClInclude Include="Descriptor.h" />
     <ClInclude Include="Drawer.h" />

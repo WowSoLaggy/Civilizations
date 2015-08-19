@@ -40,6 +40,9 @@
     <Filter Include="src\GUI">
       <UniqueIdentifier>{aac5389c-6c52-4568-9fb1-ba44538fe45e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\World\Climates">
+      <UniqueIdentifier>{17e3330e-3606-43dd-aa3c-5f26cd7913c8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="StartUp.cpp">
@@ -120,6 +123,9 @@
     <ClCompile Include="Utils.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="CBlueprint.cpp">
+      <Filter>src\World\Climates</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -193,6 +199,12 @@
     </ClInclude>
     <ClInclude Include="ResourcesNames.h">
       <Filter>src\RManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ClimateTypes.h">
+      <Filter>src\World\Climates</Filter>
+    </ClInclude>
+    <ClInclude Include="CBlueprint.h">
+      <Filter>src\World\Climates</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

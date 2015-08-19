@@ -223,12 +223,14 @@ void WorldCreator::GenerateWorld(World &pWorld, int pSizeX, int pSizeY)
 	{
 		for (int x = 0; x < w; ++x)
 		{
-			EManager::CreateSurface(tiles[x + y * w], x, y);
+			Entity *surf = EManager::CreateSurface(tiles[x + y * w], x, y);
 			pWorld.tiles[x + y * w].humidity = 0;
 			pWorld.tiles[x + y * w].temperature = 23;
 			pWorld.tiles[x + y * w].height = heights[x + y * w];
 			pWorld.tiles[x + y * w].productivity = 0;
 			pWorld.tiles[x + y * w].aff = 0;
+
+			surf->climtype = clim_temperate;
 		}
 	}
 

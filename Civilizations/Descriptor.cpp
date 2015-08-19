@@ -14,7 +14,7 @@ void Descriptor::GetTileDescription(Tile &pTile, std::string &pDesc, int pX, int
 	if (surf == nullptr)
 		pDesc.append("None ");
 	else
-		pDesc.append(surf->blueprint->description);
+		pDesc.append(surf->eblueprint().description);
 
 
 	pDesc.append("(").
@@ -38,7 +38,7 @@ void Descriptor::GetTileDescription(Tile &pTile, std::string &pDesc, int pX, int
 				pDesc.append("Dead ");
 		}
 
-		pDesc.append(obj->blueprint->description);
+		pDesc.append(obj->eblueprint().description);
 		pDesc.append("(").append(std::to_string(AGE(*obj) / WEEKSINYEAR)).append(" y.o.)\n");
 	}
 }
