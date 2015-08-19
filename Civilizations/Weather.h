@@ -22,6 +22,8 @@ private:
 
 	static float *tmpf;
 	static short *tmps;
+
+	static float *heats;
 };
 
 #endif // WEATHER_H

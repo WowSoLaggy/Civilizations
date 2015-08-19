@@ -5,8 +5,6 @@ void Weather::UpdateAirTemperature()
 {
 	for (int y = 1; y < WHEIGHT - 1; ++y)
 	{
-		float heat = sinf((float)y / WHEIGHT * (float)M_PI) * TEMPERATURE_RANGE * (1 - TEMPERATURE_PENALTY);
-
 		for (int x = 1; x < WWIDTH - 1; ++x)
 		{
 			tmpf[x + y * WWIDTH] = (
@@ -15,7 +13,7 @@ void Weather::UpdateAirTemperature()
 				TILE(x - 1, y + 1)->temperature + TILE(x + 0, y + 1)->temperature + TILE(x + 1, y + 1)->temperature) / 9;
 
 			tmpf[x + y * WWIDTH] = (tmpf[x + y * WWIDTH] - TEMPERATURE_MIN) * TEMPERATURE_PENALTY + TEMPERATURE_MIN;
-			tmpf[x + y * WWIDTH] += heat;
+			tmpf[x + y * WWIDTH] += heats[y];
 		}
 
 		tmpf[y * WWIDTH] = tmpf[1 + y * WWIDTH];
