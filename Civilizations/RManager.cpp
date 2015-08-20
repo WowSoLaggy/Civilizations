@@ -27,3 +27,9 @@ void RManager::UnloadResources()
 
 	textures.clear();
 }
+
+void RManager::ReloadResources()
+{
+	UnloadResources();
+	LoadResources();
+}

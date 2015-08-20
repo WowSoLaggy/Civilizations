@@ -66,6 +66,11 @@ bool EManager::IsMountain(Entity &pSurface)
 	return ((pSurface.eblueprint().feats & FEAT_MOUNTAIN) != 0);
 }
 
+bool EManager::IsHill(Entity &pSurface)
+{
+	return ((pSurface.eblueprint().feats & FEAT_HILL) != 0);
+}
+
 bool EManager::IsFreshWaterTile(Entity &pSurface)
 {
 	return ((pSurface.eblueprint().feats & FEAT_FRESHWATER) != 0);

@@ -33,6 +33,7 @@ public:
 	static bool IsWaterTile(EntityType &pEntType);
 	static bool IsFitForTrees(Entity &pSurface);
 	static bool IsMountain(Entity &pSurface);
+	static bool IsHill(Entity &pSurface);
 	static bool IsFreshWaterTile(Entity &pSurface);
 	static bool IsLakeTile(Entity &pSurface);
 

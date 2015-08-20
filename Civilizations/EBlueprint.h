@@ -27,6 +27,7 @@ public:
 
 	std::vector<EntityType> nativeSurfs;
 	std::vector<EntityType> nativeMnts;
+	std::vector<EntityType> nativeHills;
 	std::vector<EntityType> nativeTrees;
 	std::vector<EntityType> nativeBushes;
 

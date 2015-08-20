@@ -15,6 +15,7 @@ public:
 
 	static void LoadResources();
 	static void UnloadResources();
+	static void ReloadResources();
 };
 
 

@@ -19,6 +19,7 @@ void EBlueprint::Clear()
 	description = "";
 	nativeSurfs.clear();
 	nativeMnts.clear();
+	nativeHills.clear();
 	nativeTrees.clear();
 	nativeBushes.clear();
 	baseProdPen = 0;
@@ -47,6 +48,7 @@ void EBlueprint::InitBlueprints()
 	bp.description = "Water";
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_reef };
+	bp.nativeHills = {};
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
@@ -68,6 +70,7 @@ void EBlueprint::InitBlueprints()
 	bp.description = "Grass";
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_grass };
+	bp.nativeHills = { surf_hill_grass };
 	bp.nativeTrees = { obj_oak };
 	bp.nativeBushes = { obj_raspberry };
 	bp.baseProdPen = 0.99f;
@@ -89,6 +92,7 @@ void EBlueprint::InitBlueprints()
 	bp.description = "Desert";
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_desert };
+	bp.nativeHills = { surf_hill_desert };
 	bp.nativeTrees = { obj_cactus };
 	bp.nativeBushes = { obj_camelthorn };
 	bp.baseProdPen = 0.90f;
@@ -110,6 +114,7 @@ void EBlueprint::InitBlueprints()
 	bp.description = "Snow";
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_snow };
+	bp.nativeHills = { surf_hill_snow };
 	bp.nativeTrees = { obj_fir };
 	bp.nativeBushes = { };
 	bp.baseProdPen = 0.80f;
@@ -131,6 +136,7 @@ void EBlueprint::InitBlueprints()
 	bp.description = "Ice";
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_reefice };
+	bp.nativeHills = {};
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
@@ -149,9 +155,10 @@ void EBlueprint::InitBlueprints()
 	bp.tis = { 21, 0, 0, 0 };
 	bp.feats = FEAT_MOUNTAIN;
 	bp.mmColor = 0xFF000000;
-	bp.description = "Mountain";
+	bp.description = "Grass Mountain";
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_grass };
+	bp.nativeHills = { surf_hill_grass };
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0.95f;
@@ -170,9 +177,10 @@ void EBlueprint::InitBlueprints()
 	bp.tis = { 22, 0, 0, 0 };
 	bp.feats = FEAT_MOUNTAIN;
 	bp.mmColor = 0xFF000000;
-	bp.description = "Mountain";
+	bp.description = "Snow Mountain";
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_snow };
+	bp.nativeHills = { surf_hill_snow };
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0.80f;
@@ -191,9 +199,10 @@ void EBlueprint::InitBlueprints()
 	bp.tis = { 23, 0, 0, 0 };
 	bp.feats = FEAT_MOUNTAIN;
 	bp.mmColor = 0xFF000000;
-	bp.description = "Mountain";
+	bp.description = "Desert Mountain";
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_desert };
+	bp.nativeHills = { surf_hill_desert };
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0.90f;
@@ -212,9 +221,10 @@ void EBlueprint::InitBlueprints()
 	bp.tis = { 29, 0, 0, 0 };
 	bp.feats = FEAT_MOUNTAIN;
 	bp.mmColor = 0xFF000000;
-	bp.description = "Mountain";
+	bp.description = "Cliff";
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_coast };
+	bp.nativeHills = { surf_hill_coast };
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0.99f;
@@ -233,9 +243,10 @@ void EBlueprint::InitBlueprints()
 	bp.tis = { 30, 0, 0, 0 };
 	bp.feats = FEAT_MOUNTAIN;
 	bp.mmColor = 0xFF000000;
-	bp.description = "Mountain";
+	bp.description = "Oasis Mountain";
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_oasis };
+	bp.nativeHills = { surf_hill_oasis };
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0.99f;
@@ -254,9 +265,10 @@ void EBlueprint::InitBlueprints()
 	bp.tis = { 34, 0, 0, 0 };
 	bp.feats = FEAT_MOUNTAIN;
 	bp.mmColor = 0xFF000000;
-	bp.description = "Mountain";
+	bp.description = "Tundra Mountain";
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_tundra };
+	bp.nativeHills = { surf_hill_tundra };
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0.80f;
@@ -275,9 +287,10 @@ void EBlueprint::InitBlueprints()
 	bp.tis = { 35, 0, 0, 0 };
 	bp.feats = FEAT_MOUNTAIN;
 	bp.mmColor = 0xFF000000;
-	bp.description = "Mountain";
+	bp.description = "Savanna Mountain";
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_savanna };
+	bp.nativeHills = { surf_hill_savanna };
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0.95f;
@@ -296,9 +309,10 @@ void EBlueprint::InitBlueprints()
 	bp.tis = { 36, 0, 0, 0 };
 	bp.feats = FEAT_MOUNTAIN;
 	bp.mmColor = 0xFF000000;
-	bp.description = "Mountain";
+	bp.description = "Tropics Mountain";
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_tropics };
+	bp.nativeHills = { surf_hill_tropics };
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0.97f;
@@ -320,6 +334,7 @@ void EBlueprint::InitBlueprints()
 	bp.description = "Coast";
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_coast };
+	bp.nativeHills = { surf_hill_coast };
 	bp.nativeTrees = { obj_oak };
 	bp.nativeBushes = { obj_raspberry };
 	bp.baseProdPen = 0.99f;
@@ -341,6 +356,7 @@ void EBlueprint::InitBlueprints()
 	bp.description = "Oasis";
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_oasis };
+	bp.nativeHills = { surf_hill_oasis };
 	bp.nativeTrees = { obj_palm };
 	bp.nativeBushes = { obj_fern };
 	bp.baseProdPen = 0.99f;
@@ -362,6 +378,7 @@ void EBlueprint::InitBlueprints()
 	bp.description = "Tropics";
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_tropics };
+	bp.nativeHills = { surf_hill_tropics };
 	bp.nativeTrees = { obj_palm };
 	bp.nativeBushes = { obj_fern };
 	bp.baseProdPen = 0.97f;
@@ -383,6 +400,7 @@ void EBlueprint::InitBlueprints()
 	bp.description = "Savanna";
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_savanna };
+	bp.nativeHills = { surf_hill_savanna };
 	bp.nativeTrees = { obj_baobab, obj_acacia };
 	bp.nativeBushes = { obj_aloe };
 	bp.baseProdPen = 0.95f;
@@ -404,6 +422,7 @@ void EBlueprint::InitBlueprints()
 	bp.description = "Tundra";
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_tundra };
+	bp.nativeHills = { surf_hill_tundra };
 	bp.nativeTrees = { obj_juniper };
 	bp.nativeBushes = { obj_dwarfbirch };
 	bp.baseProdPen = 0.80f;
@@ -425,6 +444,7 @@ void EBlueprint::InitBlueprints()
 	bp.description = "Reef";
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_reef };
+	bp.nativeHills = {};
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
@@ -446,6 +466,7 @@ void EBlueprint::InitBlueprints()
 	bp.description = "Ice Reef";
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_reefice };
+	bp.nativeHills = {};
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
@@ -467,6 +488,7 @@ void EBlueprint::InitBlueprints()
 	bp.description = "Deep Water";
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_reef };
+	bp.nativeHills = {};
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
@@ -488,6 +510,7 @@ void EBlueprint::InitBlueprints()
 	bp.description = "Fresh Water";
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_reef };
+	bp.nativeHills = {};
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
@@ -509,6 +532,7 @@ void EBlueprint::InitBlueprints()
 	bp.description = "Frozen Fresh Water";
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_reefice };
+	bp.nativeHills = {};
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
@@ -530,6 +554,7 @@ void EBlueprint::InitBlueprints()
 	bp.description = "Lake";
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_reef };
+	bp.nativeHills = {};
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
@@ -551,9 +576,186 @@ void EBlueprint::InitBlueprints()
 	bp.description = "Frozen Lake";
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_reefice };
+	bp.nativeHills = {};
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
+	bp.affBase = 0;
+	bp.affMin = 0;
+	bp.ageAdulthood = 0;
+	bp.ageOldness = 0;
+	bp.ageDecay = 0;
+	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
+	blueprints[bp.type] = bp;
+
+	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+	bp.type = surf_hill_grass;
+	bp.tis = { 59, 0, 0, 0 };
+	bp.feats = FEAT_HILL | FEAT_FITFORTREES;
+	bp.mmColor = 0xFF3DCE00;
+	bp.description = "Grass Hill";
+	bp.nativeSurfs = {};
+	bp.nativeMnts = { surf_mountain_grass };
+	bp.nativeHills = { surf_hill_grass };
+	bp.nativeTrees = { obj_oak };
+	bp.nativeBushes = { obj_raspberry };
+	bp.baseProdPen = 0.99f;
+	bp.affBase = 0;
+	bp.affMin = 0;
+	bp.ageAdulthood = 0;
+	bp.ageOldness = 0;
+	bp.ageDecay = 0;
+	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
+	blueprints[bp.type] = bp;
+
+	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+	bp.type = surf_hill_snow;
+	bp.tis = { 62, 0, 0, 0 };
+	bp.feats = FEAT_HILL | FEAT_FITFORTREES;
+	bp.mmColor = 0xFFEEEEEE;
+	bp.description = "Snow Hill";
+	bp.nativeSurfs = {};
+	bp.nativeMnts = { surf_mountain_reefice };
+	bp.nativeHills = { surf_hill_snow };
+	bp.nativeTrees = { obj_fir };
+	bp.nativeBushes = { };
+	bp.baseProdPen = 0.80f;
+	bp.affBase = 0;
+	bp.affMin = 0;
+	bp.ageAdulthood = 0;
+	bp.ageOldness = 0;
+	bp.ageDecay = 0;
+	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
+	blueprints[bp.type] = bp;
+
+	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+	bp.type = surf_hill_desert;
+	bp.tis = { 58, 0, 0, 0 };
+	bp.feats = FEAT_HILL | FEAT_FITFORTREES;
+	bp.mmColor = 0xFFE68D1F;
+	bp.description = "Barkhan";
+	bp.nativeSurfs = {};
+	bp.nativeMnts = { surf_mountain_reefice };
+	bp.nativeHills = { surf_hill_desert };
+	bp.nativeTrees = { obj_cactus };
+	bp.nativeBushes = { obj_camelthorn };
+	bp.baseProdPen = 0.90f;
+	bp.affBase = 0;
+	bp.affMin = 0;
+	bp.ageAdulthood = 0;
+	bp.ageOldness = 0;
+	bp.ageDecay = 0;
+	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
+	blueprints[bp.type] = bp;
+
+	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+	bp.type = surf_hill_coast;
+	bp.tis = { 57, 0, 0, 0 };
+	bp.feats = FEAT_HILL | FEAT_FITFORTREES;
+	bp.mmColor = 0xFFFF9523;
+	bp.description = "Coast Hill";
+	bp.nativeSurfs = {};
+	bp.nativeMnts = { surf_mountain_reefice };
+	bp.nativeHills = { surf_hill_coast };
+	bp.nativeTrees = { obj_oak };
+	bp.nativeBushes = { obj_raspberry };
+	bp.baseProdPen = 0.99f;
+	bp.affBase = 0;
+	bp.affMin = 0;
+	bp.ageAdulthood = 0;
+	bp.ageOldness = 0;
+	bp.ageDecay = 0;
+	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
+	blueprints[bp.type] = bp;
+
+	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+	bp.type = surf_hill_oasis;
+	bp.tis = { 60, 0, 0, 0 };
+	bp.feats = FEAT_HILL | FEAT_FITFORTREES;
+	bp.mmColor = 0xFF007F0E;
+	bp.description = "Oasis Hill";
+	bp.nativeSurfs = {};
+	bp.nativeMnts = { surf_mountain_reefice };
+	bp.nativeHills = { surf_hill_oasis };
+	bp.nativeTrees = { obj_palm };
+	bp.nativeBushes = { obj_fern };
+	bp.baseProdPen = 0.99f;
+	bp.affBase = 0;
+	bp.affMin = 0;
+	bp.ageAdulthood = 0;
+	bp.ageOldness = 0;
+	bp.ageDecay = 0;
+	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
+	blueprints[bp.type] = bp;
+
+	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+	bp.type = surf_hill_tundra;
+	bp.tis = { 64, 0, 0, 0 };
+	bp.feats = FEAT_HILL | FEAT_FITFORTREES;
+	bp.mmColor = 0xFF636061;
+	bp.description = "Tundra Hill";
+	bp.nativeSurfs = {};
+	bp.nativeMnts = { surf_mountain_reefice };
+	bp.nativeHills = { surf_hill_tundra };
+	bp.nativeTrees = { obj_juniper };
+	bp.nativeBushes = { obj_dwarfbirch };
+	bp.baseProdPen = 0.80f;
+	bp.affBase = 0;
+	bp.affMin = 0;
+	bp.ageAdulthood = 0;
+	bp.ageOldness = 0;
+	bp.ageDecay = 0;
+	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
+	blueprints[bp.type] = bp;
+
+	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+	bp.type = surf_hill_savanna;
+	bp.tis = { 61, 0, 0, 0 };
+	bp.feats = FEAT_HILL | FEAT_FITFORTREES;
+	bp.mmColor = 0xFFFF9523;
+	bp.description = "Savanna Hill";
+	bp.nativeSurfs = {};
+	bp.nativeMnts = { surf_mountain_reefice };
+	bp.nativeHills = { surf_hill_savanna };
+	bp.nativeTrees = { obj_baobab, obj_acacia };
+	bp.nativeBushes = { obj_aloe };
+	bp.baseProdPen = 0.95f;
+	bp.affBase = 0;
+	bp.affMin = 0;
+	bp.ageAdulthood = 0;
+	bp.ageOldness = 0;
+	bp.ageDecay = 0;
+	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
+	blueprints[bp.type] = bp;
+
+	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+	bp.type = surf_hill_tropics;
+	bp.tis = { 63, 0, 0, 0 };
+	bp.feats = FEAT_HILL | FEAT_FITFORTREES;
+	bp.mmColor = 0xFF007F0E;
+	bp.description = "Tropics Hill";
+	bp.nativeSurfs = {};
+	bp.nativeMnts = { surf_mountain_reefice };
+	bp.nativeHills = { surf_hill_tropics };
+	bp.nativeTrees = { obj_palm };
+	bp.nativeBushes = { obj_fern };
+	bp.baseProdPen = 0.97f;
 	bp.affBase = 0;
 	bp.affMin = 0;
 	bp.ageAdulthood = 0;
@@ -572,8 +774,9 @@ void EBlueprint::InitBlueprints()
 	bp.feats = FEAT_TREE | FEAT_FLORA;
 	bp.mmColor = 0x00000000;
 	bp.description = "Oak";
-	bp.nativeSurfs = { surf_grass };
+	bp.nativeSurfs = { surf_grass, surf_hill_grass };
 	bp.nativeMnts = {};
+	bp.nativeHills = {};
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
@@ -593,8 +796,9 @@ void EBlueprint::InitBlueprints()
 	bp.feats = FEAT_TREE | FEAT_FLORA;
 	bp.mmColor = 0x00000000;
 	bp.description = "Fir";
-	bp.nativeSurfs = { surf_snow };
+	bp.nativeSurfs = { surf_snow, surf_hill_snow };
 	bp.nativeMnts = {};
+	bp.nativeHills = {};
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
@@ -614,8 +818,9 @@ void EBlueprint::InitBlueprints()
 	bp.feats = FEAT_TREE | FEAT_FLORA;
 	bp.mmColor = 0x00000000;
 	bp.description = "Cactus";
-	bp.nativeSurfs = { surf_desert };
+	bp.nativeSurfs = { surf_desert, surf_hill_desert };
 	bp.nativeMnts = {};
+	bp.nativeHills = {};
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
@@ -635,8 +840,9 @@ void EBlueprint::InitBlueprints()
 	bp.feats = FEAT_TREE | FEAT_FLORA;
 	bp.mmColor = 0x00000000;
 	bp.description = "Palm";
-	bp.nativeSurfs = { surf_tropics, surf_oasis };
+	bp.nativeSurfs = { surf_tropics, surf_oasis, surf_hill_tropics, surf_hill_oasis };
 	bp.nativeMnts = {};
+	bp.nativeHills = {};
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
@@ -656,8 +862,9 @@ void EBlueprint::InitBlueprints()
 	bp.feats = FEAT_TREE | FEAT_FLORA;
 	bp.mmColor = 0x00000000;
 	bp.description = "Juniper";
-	bp.nativeSurfs = { surf_tundra };
+	bp.nativeSurfs = { surf_tundra, surf_hill_tundra };
 	bp.nativeMnts = {};
+	bp.nativeHills = {};
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
@@ -677,8 +884,9 @@ void EBlueprint::InitBlueprints()
 	bp.feats = FEAT_TREE | FEAT_FLORA;
 	bp.mmColor = 0x00000000;
 	bp.description = "Baobab";
-	bp.nativeSurfs = { surf_savanna };
+	bp.nativeSurfs = { surf_savanna, surf_hill_savanna };
 	bp.nativeMnts = {};
+	bp.nativeHills = {};
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
@@ -698,8 +906,9 @@ void EBlueprint::InitBlueprints()
 	bp.feats = FEAT_TREE | FEAT_FLORA;
 	bp.mmColor = 0x00000000;
 	bp.description = "Acacia";
-	bp.nativeSurfs = { surf_savanna };
+	bp.nativeSurfs = { surf_savanna, surf_hill_savanna };
 	bp.nativeMnts = {};
+	bp.nativeHills = {};
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
@@ -721,8 +930,9 @@ void EBlueprint::InitBlueprints()
 	bp.feats = FEAT_BUSH | FEAT_FLORA;
 	bp.mmColor = 0x00000000;
 	bp.description = "Raspberry";
-	bp.nativeSurfs = { surf_grass, surf_coast };
+	bp.nativeSurfs = { surf_grass, surf_coast, surf_hill_grass, surf_hill_coast };
 	bp.nativeMnts = {};
+	bp.nativeHills = {};
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
@@ -742,8 +952,9 @@ void EBlueprint::InitBlueprints()
 	bp.feats = FEAT_BUSH | FEAT_FLORA;
 	bp.mmColor = 0x00000000;
 	bp.description = "Camelthorn";
-	bp.nativeSurfs = { surf_desert };
+	bp.nativeSurfs = { surf_desert, surf_hill_desert };
 	bp.nativeMnts = {};
+	bp.nativeHills = {};
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
@@ -763,8 +974,9 @@ void EBlueprint::InitBlueprints()
 	bp.feats = FEAT_BUSH | FEAT_FLORA;
 	bp.mmColor = 0x00000000;
 	bp.description = "Dwarf birch";
-	bp.nativeSurfs = { surf_tundra };
+	bp.nativeSurfs = { surf_tundra, surf_hill_tundra };
 	bp.nativeMnts = {};
+	bp.nativeHills = {};
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
@@ -784,8 +996,9 @@ void EBlueprint::InitBlueprints()
 	bp.feats = FEAT_BUSH | FEAT_FLORA;
 	bp.mmColor = 0x00000000;
 	bp.description = "Aloe";
-	bp.nativeSurfs = { surf_savanna };
+	bp.nativeSurfs = { surf_savanna, surf_hill_savanna };
 	bp.nativeMnts = {};
+	bp.nativeHills = {};
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
@@ -805,8 +1018,9 @@ void EBlueprint::InitBlueprints()
 	bp.feats = FEAT_BUSH | FEAT_FLORA;
 	bp.mmColor = 0x00000000;
 	bp.description = "Fern";
-	bp.nativeSurfs = { surf_tropics };
+	bp.nativeSurfs = { surf_tropics, surf_hill_tropics };
 	bp.nativeMnts = {};
+	bp.nativeHills = {};
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0;

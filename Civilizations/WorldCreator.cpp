@@ -96,8 +96,10 @@ void WorldCreator::GenerateWorld(World &pWorld, int pSizeX, int pSizeY)
 	{
 		for (int x = 0; x < w; ++x)
 		{
-			if (heights[x + y * w] >= pWorld.heightMax * 0.5)
+			if (heights[x + y * w] >= pWorld.heightMax * MOUNTAIN_KOEF)
 				tiles[x + y * w] = surf_mountain_grass;
+			else if (heights[x + y * w] >= pWorld.heightMax * MOUNTAIN_HILL)
+				tiles[x + y * w] = surf_hill_grass;
 			else if (heights[x + y * w] >= 0)
 				tiles[x + y * w] = surf_grass;
 			else if (heights[x + y * w] >= -DEEPWATER_DEPTH)

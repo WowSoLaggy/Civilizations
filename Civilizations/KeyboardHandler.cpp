@@ -35,6 +35,11 @@ void Game::HandleKeyboard()
 		Drawer::SetCamPosTopLeft(Drawer::camPosX(), (int)(Drawer::camPosY() - SENS_KB_SCROLL_Y));
 	if (InputDeviceManager::KeyPressed(DIK_S))
 		Drawer::SetCamPosTopLeft(Drawer::camPosX(), (int)(Drawer::camPosY() + SENS_KB_SCROLL_Y));
+	if (InputDeviceManager::KeyDown(DIK_R))
+	{
+		RManager::ReloadResources();
+		Drawer::UpdateMiniMap();
+	}
 
 	if (InputDeviceManager::KeyDown(DIK_LEFT))
 	{

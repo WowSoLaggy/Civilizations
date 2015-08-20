@@ -39,6 +39,14 @@ enum EntityType : unsigned char
 	surf_waterfreshfrozen	= 23,
 	surf_lake				= 24,
 	surf_lakefrozen			= 25,
+	surf_hill_grass			= 26,
+	surf_hill_snow			= 27,
+	surf_hill_desert		= 28,
+	surf_hill_coast			= 29,
+	surf_hill_oasis			= 30,
+	surf_hill_tundra		= 31,
+	surf_hill_savanna		= 32,
+	surf_hill_tropics		= 33,
 
 	// Objects
 

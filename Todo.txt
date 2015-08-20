@@ -1,3 +1,9 @@
+Mountains disappear when converting tile
+
+Water has no afforestation
+
+Move native trees to the climate blueprint
+
 Hills
 
 Blueprints for GUI
