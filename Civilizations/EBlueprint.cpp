@@ -556,7 +556,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageAdulthood = WEEKSFROMYEARS(3);
 	bp.ageOldness = WEEKSFROMYEARS(30);
 	bp.ageDecay = WEEKSFROMYEARS(35);
-	bp.chanceToGrow = 20000;
+	bp.chanceToGrow = 100000;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -576,7 +576,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageAdulthood = WEEKSFROMYEARS(3);
 	bp.ageOldness = WEEKSFROMYEARS(40);
 	bp.ageDecay = WEEKSFROMYEARS(45);
-	bp.chanceToGrow = 80000;
+	bp.chanceToGrow = 400000;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -596,7 +596,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageAdulthood = WEEKSFROMYEARS(1);
 	bp.ageOldness = WEEKSFROMYEARS(5);
 	bp.ageDecay = WEEKSFROMYEARS(6);
-	bp.chanceToGrow = 40000;
+	bp.chanceToGrow = 200000;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -616,7 +616,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageAdulthood = WEEKSFROMYEARS(3);
 	bp.ageOldness = WEEKSFROMYEARS(30);
 	bp.ageDecay = WEEKSFROMYEARS(35);
-	bp.chanceToGrow = 10000;
+	bp.chanceToGrow = 50000;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -636,7 +636,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageAdulthood = WEEKSFROMYEARS(3);
 	bp.ageOldness = WEEKSFROMYEARS(30);
 	bp.ageDecay = WEEKSFROMYEARS(35);
-	bp.chanceToGrow = 60000;
+	bp.chanceToGrow = 300000;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -656,7 +656,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageAdulthood = WEEKSFROMYEARS(5);
 	bp.ageOldness = WEEKSFROMYEARS(100);
 	bp.ageDecay = WEEKSFROMYEARS(110);
-	bp.chanceToGrow = 200000;
+	bp.chanceToGrow = 1000000;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -676,7 +676,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageAdulthood = WEEKSFROMYEARS(3);
 	bp.ageOldness = WEEKSFROMYEARS(50);
 	bp.ageDecay = WEEKSFROMYEARS(60);
-	bp.chanceToGrow = 60000;
+	bp.chanceToGrow = 300000;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -698,7 +698,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageAdulthood = WEEKSFROMMONTHS(1);
 	bp.ageOldness = WEEKSFROMMONTHS(12);
 	bp.ageDecay = WEEKSFROMMONTHS(13);
-	bp.chanceToGrow = 5000;
+	bp.chanceToGrow = 25000;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -718,7 +718,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageAdulthood = WEEKSFROMMONTHS(1);
 	bp.ageOldness = WEEKSFROMMONTHS(36);
 	bp.ageDecay = WEEKSFROMMONTHS(39);
-	bp.chanceToGrow = 10000;
+	bp.chanceToGrow = 50000;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -738,7 +738,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageAdulthood = WEEKSFROMMONTHS(1);
 	bp.ageOldness = WEEKSFROMMONTHS(24);
 	bp.ageDecay = WEEKSFROMMONTHS(26);
-	bp.chanceToGrow = 10000;
+	bp.chanceToGrow = 50000;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -758,7 +758,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageAdulthood = WEEKSFROMMONTHS(1);
 	bp.ageOldness = WEEKSFROMMONTHS(24);
 	bp.ageDecay = WEEKSFROMMONTHS(26);
-	bp.chanceToGrow = 7500;
+	bp.chanceToGrow = 37500;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -778,6 +778,6 @@ void EBlueprint::InitBlueprints()
 	bp.ageAdulthood = WEEKSFROMMONTHS(1);
 	bp.ageOldness = WEEKSFROMMONTHS(24);
 	bp.ageDecay = WEEKSFROMMONTHS(26);
-	bp.chanceToGrow = 2500;
+	bp.chanceToGrow = 12500;
 	blueprints[bp.type] = bp;
 }
