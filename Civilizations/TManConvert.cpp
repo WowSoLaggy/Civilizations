@@ -21,32 +21,14 @@ void TManager::CheckTilesClimate()
 			if (EManager::IsWaterTile(*surf))
 			{
 				// Water
-
-				// TODO: generalize
-				if (surf->climtype == clim_permafrost)
-				{
-					// t < 0
-
-					if (EManager::IsFreshWaterTile(*surf))
-						ConvertSurfaceToType(tile, surf_waterfreshfrozen);
-					else if (EManager::IsLakeTile(*surf))
-						ConvertSurfaceToType(tile, surf_lakefrozen);
-					else
-						ConvertSurfaceToType(tile, surf_ice);
-				}
+				if (EManager::IsLakeTile(*surf))
+					ConvertSurfaceToType(tile, surf->cblueprint().waterLakeType);
+				else if (EManager::IsFreshWaterTile(*surf))
+					ConvertSurfaceToType(tile, surf->cblueprint().waterFreshType);
+				else if (tile.height >= -DEEPWATER_DEPTH)
+					ConvertSurfaceToType(tile, surf->cblueprint().waterType);
 				else
-				{
-					// t >= 0
-
-					if (EManager::IsFreshWaterTile(*surf))
-						ConvertSurfaceToType(tile, surf_waterfresh);
-					else if (EManager::IsLakeTile(*surf))
-						ConvertSurfaceToType(tile, surf_lake);
-					else if (tile.height >= -DEEPWATER_DEPTH)
-						ConvertSurfaceToType(tile, surf_water);
-					else
-						ConvertSurfaceToType(tile, surf_deepwater);
-				}
+					ConvertSurfaceToType(tile, surf->cblueprint().waterDeepType);
 			}
 			else if (tile.humidity > HUMIDITY_BORDER)
 			{

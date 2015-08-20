@@ -5,6 +5,7 @@
 
 
 #define TREE_DIE_CHANCE				10
+#define TREE_REPRODUCT_RAD			5
 
 #define HUMIDITY_PENALTY			0.99f
 #define HUMIDITY_BORDER				50

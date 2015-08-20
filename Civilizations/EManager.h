@@ -29,18 +29,20 @@ public:
 	static bool IsEntityType(Entity &pEntity, EntityType pType);
 
 	static bool IsSurface(Entity &pEntity);
-	static bool IsObject(Entity &pEntity);
 	static bool IsWaterTile(Entity &pEntity);
 	static bool IsWaterTile(EntityType &pEntType);
+	static bool IsFitForTrees(Entity &pSurface);
+	static bool IsMountain(Entity &pSurface);
+	static bool IsFreshWaterTile(Entity &pSurface);
+	static bool IsLakeTile(Entity &pSurface);
+
+	static bool IsObject(Entity &pEntity);
 	static bool IsTree(Entity &pEntity);
 	static bool IsTree(EntityType &pEntType);
 	static bool IsBush(Entity &pEntity);
 	static bool IsBush(EntityType &pEntType);
 	static bool IsFlora(Entity &pEntity);
-	static bool IsFitForTrees(Entity &pSurface);
-	static bool IsMountain(Entity &pSurface);
-	static bool IsFreshWaterTile(Entity &pSurface);
-	static bool IsLakeTile(Entity &pSurface);
+	static bool IsNativeSurfForObj(EntityType pObjType, EntityType pSurfType);
 
 	static bool IsYoungTree(Entity &pEntity);
 	static bool IsAdultTree(Entity &pEntity);

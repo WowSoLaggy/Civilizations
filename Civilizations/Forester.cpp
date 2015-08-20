@@ -27,9 +27,7 @@ void Forester::UpdateTrees()
 					if (age >= ent->eblueprint().ageOldness)
 						ent->state = state_dead;
 					else
-					{
-						// TODO: tree reproduction
-					}
+						TryToReproduce(*ent, x, y);
 				}
 				else
 				{
@@ -89,7 +87,24 @@ bool Forester::TryToPlant(EntityType pType, int pX, int pY)
 	return false;
 }
 
-void Forester::ReproduceTree(Entity &pEnt)
+void Forester::TryToReproduce(Entity &pEnt, int pX, int pY)
 {
-	// TODO:
+	if (RAND0NEQ0(pEnt.eblueprint().chanceToReproduce))
+		return;
+
+	int newX = RAND(TREE_REPRODUCT_RAD * 2 + 1, pX - TREE_REPRODUCT_RAD);
+	int newY = RAND(TREE_REPRODUCT_RAD * 2 + 1, pY - TREE_REPRODUCT_RAD);
+
+	if (OBJAT(newX, newY) != nullptr)										// tile is occupied
+		return;
+	if (!EManager::IsFitForTrees(*SURFAT(newX, newY)))						// trees can't grow here
+		return;
+	if (!EManager::IsNativeSurfForObj(pEnt.type, SURFAT(newX, newY)->type))	// not native surface
+		return;
+
+	// Reproduce!
+
+	Entity *ent = EManager::CreateObject(pEnt.type, newX, newY);
+	ent->state = state_young;
+	TILE(pX, pY)->aff = ent->eblueprint().affBase;
 }

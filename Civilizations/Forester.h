@@ -13,7 +13,7 @@ public:
 
 	static void UpdateTrees();
 	static bool TryToPlant(EntityType pType, int pX, int pY);
-	static void ReproduceTree(Entity &pTree);
+	static void TryToReproduce(Entity &pTree, int pX, int pY);
 };
 
 

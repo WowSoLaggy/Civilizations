@@ -27,6 +27,11 @@ public:
 	EntityType surfNearWater;
 	EntityType surfFarFromWater;
 
+	EntityType waterDeepType;
+	EntityType waterType;
+	EntityType waterFreshType;
+	EntityType waterLakeType;
+
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	static void InitBlueprints();

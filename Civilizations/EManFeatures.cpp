@@ -76,6 +76,11 @@ bool EManager::IsLakeTile(Entity &pSurface)
 	return ((pSurface.eblueprint().feats & FEAT_LAKE) != 0);
 }
 
+bool EManager::IsNativeSurfForObj(EntityType pObjType, EntityType pSurfType)
+{
+	return (std::find(EBlueprint::GetBlueprint(pObjType).nativeSurfs.begin(), EBlueprint::GetBlueprint(pObjType).nativeSurfs.end(), pSurfType) != EBlueprint::GetBlueprint(pObjType).nativeSurfs.end());
+}
+
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 

@@ -19,6 +19,10 @@ void CBlueprint::Clear()
 	warmerClimate = clim_unknown;
 	surfNearWater = surf_unknown;
 	surfFarFromWater = surf_unknown;
+	waterDeepType = surf_unknown;
+	waterType = surf_unknown;
+	waterFreshType = surf_unknown;
+	waterLakeType = surf_unknown;
 }
 
 void CBlueprint::InitBlueprints()
@@ -34,6 +38,10 @@ void CBlueprint::InitBlueprints()
 	bp.warmerClimate = clim_tundra;
 	bp.surfNearWater = surf_snow;
 	bp.surfFarFromWater = surf_snow;
+	bp.waterDeepType = surf_deepwater;
+	bp.waterType = surf_ice;
+	bp.waterFreshType = surf_waterfreshfrozen;
+	bp.waterLakeType = surf_lakefrozen;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -45,6 +53,10 @@ void CBlueprint::InitBlueprints()
 	bp.warmerClimate = clim_temperate;
 	bp.surfNearWater = surf_tundra;
 	bp.surfFarFromWater = surf_tundra;
+	bp.waterDeepType = surf_deepwater;
+	bp.waterType = surf_water;
+	bp.waterFreshType = surf_waterfresh;
+	bp.waterLakeType = surf_lake;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -56,6 +68,10 @@ void CBlueprint::InitBlueprints()
 	bp.warmerClimate = clim_savanna;
 	bp.surfNearWater = surf_coast;
 	bp.surfFarFromWater = surf_grass;
+	bp.waterDeepType = surf_deepwater;
+	bp.waterType = surf_water;
+	bp.waterFreshType = surf_waterfresh;
+	bp.waterLakeType = surf_lake;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -67,6 +83,10 @@ void CBlueprint::InitBlueprints()
 	bp.warmerClimate = clim_tropics;
 	bp.surfNearWater = surf_coast;
 	bp.surfFarFromWater = surf_savanna;
+	bp.waterDeepType = surf_deepwater;
+	bp.waterType = surf_water;
+	bp.waterFreshType = surf_waterfresh;
+	bp.waterLakeType = surf_lake;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -78,6 +98,10 @@ void CBlueprint::InitBlueprints()
 	bp.warmerClimate = clim_desert;
 	bp.surfNearWater = surf_tropics;
 	bp.surfFarFromWater = surf_tropics;
+	bp.waterDeepType = surf_deepwater;
+	bp.waterType = surf_water;
+	bp.waterFreshType = surf_waterfresh;
+	bp.waterLakeType = surf_lake;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -89,5 +113,9 @@ void CBlueprint::InitBlueprints()
 	bp.warmerClimate = clim_unknown;
 	bp.surfNearWater = surf_oasis;
 	bp.surfFarFromWater = surf_desert;
+	bp.waterDeepType = surf_deepwater;
+	bp.waterType = surf_water;
+	bp.waterFreshType = surf_waterfresh;
+	bp.waterLakeType = surf_lake;
 	blueprints[bp.type] = bp;
 }

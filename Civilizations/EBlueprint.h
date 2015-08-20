@@ -38,6 +38,7 @@ public:
 	short ageOldness;
 	short ageDecay;
 	int chanceToGrow;
+	int chanceToReproduce;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 

@@ -28,6 +28,7 @@ void EBlueprint::Clear()
 	ageOldness = 0;
 	ageDecay = 0;
 	chanceToGrow = 0;
+	chanceToReproduce = 0;
 }
 
 
@@ -55,6 +56,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
 	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -75,6 +77,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
 	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -95,6 +98,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
 	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -115,6 +119,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
 	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -135,6 +140,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
 	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -155,6 +161,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
 	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -175,6 +182,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
 	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -195,6 +203,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
 	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -215,6 +224,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
 	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -235,6 +245,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
 	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -255,6 +266,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
 	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -275,6 +287,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
 	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -295,6 +308,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
 	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -315,6 +329,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
 	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -335,6 +350,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
 	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -355,6 +371,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
 	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -375,6 +392,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
 	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -395,6 +413,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
 	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -415,6 +434,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
 	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -435,6 +455,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
 	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -455,6 +476,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
 	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -475,6 +497,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
 	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -495,6 +518,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
 	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -515,6 +539,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
 	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -535,6 +560,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
 	bp.chanceToGrow = 0;
+	bp.chanceToReproduce = 0;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -557,6 +583,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = WEEKSFROMYEARS(30);
 	bp.ageDecay = WEEKSFROMYEARS(35);
 	bp.chanceToGrow = 100000;
+	bp.chanceToReproduce = 300;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -577,6 +604,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = WEEKSFROMYEARS(40);
 	bp.ageDecay = WEEKSFROMYEARS(45);
 	bp.chanceToGrow = 400000;
+	bp.chanceToReproduce = 1250;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -597,6 +625,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = WEEKSFROMYEARS(5);
 	bp.ageDecay = WEEKSFROMYEARS(6);
 	bp.chanceToGrow = 200000;
+	bp.chanceToReproduce = 600;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -617,6 +646,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = WEEKSFROMYEARS(30);
 	bp.ageDecay = WEEKSFROMYEARS(35);
 	bp.chanceToGrow = 50000;
+	bp.chanceToReproduce = 150;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -637,6 +667,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = WEEKSFROMYEARS(30);
 	bp.ageDecay = WEEKSFROMYEARS(35);
 	bp.chanceToGrow = 300000;
+	bp.chanceToReproduce = 900;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -657,6 +688,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = WEEKSFROMYEARS(100);
 	bp.ageDecay = WEEKSFROMYEARS(110);
 	bp.chanceToGrow = 1000000;
+	bp.chanceToReproduce = 3000;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -677,6 +709,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = WEEKSFROMYEARS(50);
 	bp.ageDecay = WEEKSFROMYEARS(60);
 	bp.chanceToGrow = 300000;
+	bp.chanceToReproduce = 900;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -688,17 +721,18 @@ void EBlueprint::InitBlueprints()
 	bp.feats = FEAT_BUSH | FEAT_FLORA;
 	bp.mmColor = 0x00000000;
 	bp.description = "Raspberry";
-	bp.nativeSurfs = { surf_grass };
+	bp.nativeSurfs = { surf_grass, surf_coast };
 	bp.nativeMnts = {};
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
 	bp.affBase = 500;
 	bp.affMin = 0;
-	bp.ageAdulthood = WEEKSFROMMONTHS(1);
-	bp.ageOldness = WEEKSFROMMONTHS(12);
-	bp.ageDecay = WEEKSFROMMONTHS(13);
+	bp.ageAdulthood = WEEKSFROMMONTHS(3);
+	bp.ageOldness = WEEKSFROMMONTHS(24);
+	bp.ageDecay = WEEKSFROMMONTHS(26);
 	bp.chanceToGrow = 25000;
+	bp.chanceToReproduce = 100;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -715,10 +749,11 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 500;
 	bp.affMin = 0;
-	bp.ageAdulthood = WEEKSFROMMONTHS(1);
+	bp.ageAdulthood = WEEKSFROMMONTHS(3);
 	bp.ageOldness = WEEKSFROMMONTHS(36);
 	bp.ageDecay = WEEKSFROMMONTHS(39);
 	bp.chanceToGrow = 50000;
+	bp.chanceToReproduce = 150;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -735,10 +770,11 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 500;
 	bp.affMin = 0;
-	bp.ageAdulthood = WEEKSFROMMONTHS(1);
-	bp.ageOldness = WEEKSFROMMONTHS(24);
-	bp.ageDecay = WEEKSFROMMONTHS(26);
+	bp.ageAdulthood = WEEKSFROMMONTHS(3);
+	bp.ageOldness = WEEKSFROMMONTHS(36);
+	bp.ageDecay = WEEKSFROMMONTHS(38);
 	bp.chanceToGrow = 50000;
+	bp.chanceToReproduce = 150;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -755,10 +791,11 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 500;
 	bp.affMin = 0;
-	bp.ageAdulthood = WEEKSFROMMONTHS(1);
-	bp.ageOldness = WEEKSFROMMONTHS(24);
-	bp.ageDecay = WEEKSFROMMONTHS(26);
+	bp.ageAdulthood = WEEKSFROMMONTHS(3);
+	bp.ageOldness = WEEKSFROMMONTHS(36);
+	bp.ageDecay = WEEKSFROMMONTHS(38);
 	bp.chanceToGrow = 37500;
+	bp.chanceToReproduce = 125;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -775,9 +812,10 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 500;
 	bp.affMin = 0;
-	bp.ageAdulthood = WEEKSFROMMONTHS(1);
+	bp.ageAdulthood = WEEKSFROMMONTHS(3);
 	bp.ageOldness = WEEKSFROMMONTHS(24);
 	bp.ageDecay = WEEKSFROMMONTHS(26);
 	bp.chanceToGrow = 12500;
+	bp.chanceToReproduce = 100;
 	blueprints[bp.type] = bp;
 }
