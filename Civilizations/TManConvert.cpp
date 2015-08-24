@@ -62,7 +62,7 @@ void TManager::ConvertSurfaceToType(Tile &pTile, EntityType pType)
 
 		surf->type = mntType;
 	}
-	if (EManager::IsHill(*surf))
+	else if (EManager::IsHill(*surf))
 	{
 		EntityType hillType = RANDVECT(EBlueprint::GetBlueprint(pType).nativeHills);
 		if (hillType == type_unknown)
