@@ -1,5 +1,3 @@
-Water has no afforestation
-
 Move native trees to the climate blueprint
 
 Blueprints for GUI

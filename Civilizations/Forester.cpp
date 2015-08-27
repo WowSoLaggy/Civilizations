@@ -49,7 +49,7 @@ void Forester::UpdateTrees()
 			// Check if something wants to grow here
 
 			// Check trees
-			EntityType entType = RANDVECT(SURFAT(x, y)->eblueprint().nativeTrees);
+			EntityType entType = RANDVECT(SURFAT(x, y)->cblueprint().nativeTrees);
 			if (entType != type_unknown)
 			{
 				if (TryToPlant(entType, x, y))
@@ -57,7 +57,7 @@ void Forester::UpdateTrees()
 			}
 
 			// Check bushes
-			entType = RANDVECT(SURFAT(x, y)->eblueprint().nativeBushes);
+			entType = RANDVECT(SURFAT(x, y)->cblueprint().nativeBushes);
 			if (entType != type_unknown)
 			{
 				if (TryToPlant(entType, x, y))
@@ -69,42 +69,41 @@ void Forester::UpdateTrees()
 
 bool Forester::TryToPlant(EntityType pType, int pX, int pY)
 {
-	if (TILE(pX, pY)->aff >= EBlueprint::GetBlueprint(pType).affMin)
-	{
-		// Tree can be planted here. Let's dice
+	if (TILE(pX, pY)->aff < EBlueprint::GetBlueprint(pType).affMin)			// not enough afforestation
+		return false;
+	if (!EManager::IsNativeSurfForObj(pType, SURFAT(pX, pY)->type))			// not native surface
+		return false;
+	if (RAND0NEQ0(EBlueprint::GetBlueprint(pType).chanceToGrow))			// sorry but no
+		return false;
 
-		if (RAND0EQ0(EBlueprint::GetBlueprint(pType).chanceToGrow))
-		{
-			// Planting here
-			Entity *ent = EManager::CreateObject(pType, pX, pY);
-			ent->state = state_young;
-			TILE(pX, pY)->aff = ent->eblueprint().affBase;
+	// Planting here
+	Entity *ent = EManager::CreateObject(pType, pX, pY);
+	ent->state = state_young;
+	TILE(pX, pY)->aff = ent->eblueprint().affBase;
 
-			return true;
-		}
-	}
-
-	return false;
+	return true;
 }
 
-void Forester::TryToReproduce(Entity &pEnt, int pX, int pY)
+bool Forester::TryToReproduce(Entity &pEnt, int pX, int pY)
 {
-	if (RAND0NEQ0(pEnt.eblueprint().chanceToReproduce))
-		return;
+	if (RAND0NEQ0(pEnt.eblueprint().chanceToReproduce))						// it is not your day
+		return false;
 
 	int newX = RAND(TREE_REPRODUCT_RAD * 2 + 1, pX - TREE_REPRODUCT_RAD);
 	int newY = RAND(TREE_REPRODUCT_RAD * 2 + 1, pY - TREE_REPRODUCT_RAD);
 
 	if (OBJAT(newX, newY) != nullptr)										// tile is occupied
-		return;
+		return false;
 	if (!EManager::IsFitForTrees(*SURFAT(newX, newY)))						// trees can't grow here
-		return;
+		return false;
 	if (!EManager::IsNativeSurfForObj(pEnt.type, SURFAT(newX, newY)->type))	// not native surface
-		return;
+		return false;
 
 	// Reproduce!
 
 	Entity *ent = EManager::CreateObject(pEnt.type, newX, newY);
 	ent->state = state_young;
 	TILE(pX, pY)->aff = ent->eblueprint().affBase;
+
+	return true;
 }

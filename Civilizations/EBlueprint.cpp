@@ -20,8 +20,6 @@ void EBlueprint::Clear()
 	nativeSurfs.clear();
 	nativeMnts.clear();
 	nativeHills.clear();
-	nativeTrees.clear();
-	nativeBushes.clear();
 	baseProdPen = 0;
 	affBase = 0;
 	affMin = 0;
@@ -49,8 +47,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_reef };
 	bp.nativeHills = {};
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -71,8 +67,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_grass };
 	bp.nativeHills = { surf_hill_grass };
-	bp.nativeTrees = { obj_oak };
-	bp.nativeBushes = { obj_raspberry };
 	bp.baseProdPen = 0.99f;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -93,8 +87,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_desert };
 	bp.nativeHills = { surf_hill_desert };
-	bp.nativeTrees = { obj_cactus };
-	bp.nativeBushes = { obj_camelthorn };
 	bp.baseProdPen = 0.90f;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -115,8 +107,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_snow };
 	bp.nativeHills = { surf_hill_snow };
-	bp.nativeTrees = { obj_fir };
-	bp.nativeBushes = { };
 	bp.baseProdPen = 0.80f;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -137,8 +127,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_reefice };
 	bp.nativeHills = {};
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -159,8 +147,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_grass };
 	bp.nativeHills = { surf_hill_grass };
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0.95f;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -181,8 +167,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_snow };
 	bp.nativeHills = { surf_hill_snow };
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0.80f;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -203,8 +187,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_desert };
 	bp.nativeHills = { surf_hill_desert };
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0.90f;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -225,8 +207,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_coast };
 	bp.nativeHills = { surf_hill_coast };
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0.99f;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -247,8 +227,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_oasis };
 	bp.nativeHills = { surf_hill_oasis };
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0.99f;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -269,8 +247,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_tundra };
 	bp.nativeHills = { surf_hill_tundra };
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0.80f;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -291,8 +267,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_savanna };
 	bp.nativeHills = { surf_hill_savanna };
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0.95f;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -313,8 +287,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_tropics };
 	bp.nativeHills = { surf_hill_tropics };
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0.97f;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -335,8 +307,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_coast };
 	bp.nativeHills = { surf_hill_coast };
-	bp.nativeTrees = { obj_oak };
-	bp.nativeBushes = { obj_raspberry };
 	bp.baseProdPen = 0.99f;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -357,8 +327,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_oasis };
 	bp.nativeHills = { surf_hill_oasis };
-	bp.nativeTrees = { obj_palm };
-	bp.nativeBushes = { obj_fern };
 	bp.baseProdPen = 0.99f;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -379,8 +347,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_tropics };
 	bp.nativeHills = { surf_hill_tropics };
-	bp.nativeTrees = { obj_palm };
-	bp.nativeBushes = { obj_fern };
 	bp.baseProdPen = 0.97f;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -401,8 +367,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_savanna };
 	bp.nativeHills = { surf_hill_savanna };
-	bp.nativeTrees = { obj_baobab, obj_acacia };
-	bp.nativeBushes = { obj_aloe };
 	bp.baseProdPen = 0.95f;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -423,8 +387,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_tundra };
 	bp.nativeHills = { surf_hill_tundra };
-	bp.nativeTrees = { obj_juniper };
-	bp.nativeBushes = { obj_dwarfbirch };
 	bp.baseProdPen = 0.80f;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -445,8 +407,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_reef };
 	bp.nativeHills = {};
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -467,8 +427,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_reefice };
 	bp.nativeHills = {};
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -489,8 +447,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_reef };
 	bp.nativeHills = {};
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -511,8 +467,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_reef };
 	bp.nativeHills = {};
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -533,8 +487,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_reefice };
 	bp.nativeHills = {};
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -555,8 +507,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_reef };
 	bp.nativeHills = {};
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -577,8 +527,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_reefice };
 	bp.nativeHills = {};
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -599,8 +547,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_grass };
 	bp.nativeHills = { surf_hill_grass };
-	bp.nativeTrees = { obj_oak };
-	bp.nativeBushes = { obj_raspberry };
 	bp.baseProdPen = 0.99f;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -621,8 +567,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_reefice };
 	bp.nativeHills = { surf_hill_snow };
-	bp.nativeTrees = { obj_fir };
-	bp.nativeBushes = { };
 	bp.baseProdPen = 0.80f;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -643,8 +587,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_reefice };
 	bp.nativeHills = { surf_hill_desert };
-	bp.nativeTrees = { obj_cactus };
-	bp.nativeBushes = { obj_camelthorn };
 	bp.baseProdPen = 0.90f;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -665,8 +607,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_reefice };
 	bp.nativeHills = { surf_hill_coast };
-	bp.nativeTrees = { obj_oak };
-	bp.nativeBushes = { obj_raspberry };
 	bp.baseProdPen = 0.99f;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -687,8 +627,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_reefice };
 	bp.nativeHills = { surf_hill_oasis };
-	bp.nativeTrees = { obj_palm };
-	bp.nativeBushes = { obj_fern };
 	bp.baseProdPen = 0.99f;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -709,8 +647,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_reefice };
 	bp.nativeHills = { surf_hill_tundra };
-	bp.nativeTrees = { obj_juniper };
-	bp.nativeBushes = { obj_dwarfbirch };
 	bp.baseProdPen = 0.80f;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -731,8 +667,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_reefice };
 	bp.nativeHills = { surf_hill_savanna };
-	bp.nativeTrees = { obj_baobab, obj_acacia };
-	bp.nativeBushes = { obj_aloe };
 	bp.baseProdPen = 0.95f;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -753,8 +687,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = {};
 	bp.nativeMnts = { surf_mountain_reefice };
 	bp.nativeHills = { surf_hill_tropics };
-	bp.nativeTrees = { obj_palm };
-	bp.nativeBushes = { obj_fern };
 	bp.baseProdPen = 0.97f;
 	bp.affBase = 0;
 	bp.affMin = 0;
@@ -777,8 +709,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = { surf_grass, surf_hill_grass, surf_coast };
 	bp.nativeMnts = {};
 	bp.nativeHills = {};
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
 	bp.affBase = 1000;
 	bp.affMin = 300;
@@ -799,8 +729,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = { surf_snow, surf_hill_snow };
 	bp.nativeMnts = {};
 	bp.nativeHills = {};
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
 	bp.affBase = 1000;
 	bp.affMin = 0;
@@ -821,8 +749,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = { surf_desert, surf_hill_desert };
 	bp.nativeMnts = {};
 	bp.nativeHills = {};
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
 	bp.affBase = 1000;
 	bp.affMin = 300;
@@ -843,8 +769,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = { surf_tropics, surf_oasis, surf_hill_tropics, surf_hill_oasis };
 	bp.nativeMnts = {};
 	bp.nativeHills = {};
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
 	bp.affBase = 1000;
 	bp.affMin = 300;
@@ -865,8 +789,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = { surf_tundra, surf_hill_tundra };
 	bp.nativeMnts = {};
 	bp.nativeHills = {};
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
 	bp.affBase = 1000;
 	bp.affMin = 300;
@@ -887,8 +809,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = { surf_savanna, surf_hill_savanna };
 	bp.nativeMnts = {};
 	bp.nativeHills = {};
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
 	bp.affBase = 1000;
 	bp.affMin = 300;
@@ -909,8 +829,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = { surf_savanna, surf_hill_savanna };
 	bp.nativeMnts = {};
 	bp.nativeHills = {};
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
 	bp.affBase = 1000;
 	bp.affMin = 300;
@@ -933,8 +851,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = { surf_grass, surf_coast, surf_hill_grass, surf_hill_coast };
 	bp.nativeMnts = {};
 	bp.nativeHills = {};
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
 	bp.affBase = 500;
 	bp.affMin = 0;
@@ -955,8 +871,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = { surf_desert, surf_hill_desert };
 	bp.nativeMnts = {};
 	bp.nativeHills = {};
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
 	bp.affBase = 500;
 	bp.affMin = 0;
@@ -977,8 +891,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = { surf_tundra, surf_hill_tundra };
 	bp.nativeMnts = {};
 	bp.nativeHills = {};
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
 	bp.affBase = 500;
 	bp.affMin = 0;
@@ -999,8 +911,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = { surf_savanna, surf_hill_savanna };
 	bp.nativeMnts = {};
 	bp.nativeHills = {};
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
 	bp.affBase = 500;
 	bp.affMin = 0;
@@ -1021,8 +931,6 @@ void EBlueprint::InitBlueprints()
 	bp.nativeSurfs = { surf_tropics, surf_hill_tropics };
 	bp.nativeMnts = {};
 	bp.nativeHills = {};
-	bp.nativeTrees = {};
-	bp.nativeBushes = {};
 	bp.baseProdPen = 0;
 	bp.affBase = 500;
 	bp.affMin = 0;
