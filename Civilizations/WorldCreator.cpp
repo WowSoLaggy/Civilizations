@@ -25,14 +25,15 @@ void WorldCreator::GenerateWorld(World &pWorld, int pSizeX, int pSizeY)
 		{
 			heights[x + y * w] = -10;
 
+			// Make map edges deep
 			if (x < 32)
-				heights[x + y * w] -= (32 - x) * 100;
+				heights[x + y * w] -= (32 - x) * RAND(25, 1);
 			if (y < 32)
-				heights[x + y * w] -= (32 - y) * 100;
+				heights[x + y * w] -= (32 - y) * RAND(25, 1);
 			if (x > pWorld.width - 32)
-				heights[x + y * w] -= (x - (pWorld.width - 32)) * 100;
+				heights[x + y * w] -= (x - (pWorld.width - 32)) * RAND(25, 1);
 			if (y > pWorld.height - 32)
-				heights[x + y * w] -= (y - (pWorld.height - 32)) * 100;
+				heights[x + y * w] -= (y - (pWorld.height - 32)) * RAND(25, 1);
 		}
 	}
 
@@ -96,9 +97,9 @@ void WorldCreator::GenerateWorld(World &pWorld, int pSizeX, int pSizeY)
 	{
 		for (int x = 0; x < w; ++x)
 		{
-			if (heights[x + y * w] >= pWorld.heightMax * MOUNTAIN_KOEF)
+			if (heights[x + y * w] >= pWorld.heightMax * MOUNTAIN_HEIGHT_KOEF)
 				tiles[x + y * w] = surf_mountain_grass;
-			else if (heights[x + y * w] >= pWorld.heightMax * MOUNTAIN_HILL)
+			else if (heights[x + y * w] >= pWorld.heightMax * HILL_HEIGHT_KOEF)
 				tiles[x + y * w] = surf_hill_grass;
 			else if (heights[x + y * w] >= 0)
 				tiles[x + y * w] = surf_grass;

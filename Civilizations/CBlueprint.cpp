@@ -31,10 +31,25 @@ void CBlueprint::InitBlueprints()
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-	bp.type = clim_permafrost;
+	bp.type = clim_glacier;
 	bp.minTemperatureInc = -std::numeric_limits<int>::max();
-	bp.maxTemperatureExc = 0;
+	bp.maxTemperatureExc = -20;
 	bp.colderClimate = clim_unknown;
+	bp.warmerClimate = clim_permafrost;
+	bp.surfNearWater = surf_snow;
+	bp.surfFarFromWater = surf_snow;
+	bp.waterDeepType = surf_ice;
+	bp.waterType = surf_ice;
+	bp.waterFreshType = surf_waterfreshfrozen;
+	bp.waterLakeType = surf_lakefrozen;
+	blueprints[bp.type] = bp;
+
+	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+	bp.type = clim_permafrost;
+	bp.minTemperatureInc = -20;
+	bp.maxTemperatureExc = 0;
+	bp.colderClimate = clim_glacier;
 	bp.warmerClimate = clim_tundra;
 	bp.surfNearWater = surf_snow;
 	bp.surfFarFromWater = surf_snow;

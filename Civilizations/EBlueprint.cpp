@@ -774,7 +774,7 @@ void EBlueprint::InitBlueprints()
 	bp.feats = FEAT_TREE | FEAT_FLORA;
 	bp.mmColor = 0x00000000;
 	bp.description = "Oak";
-	bp.nativeSurfs = { surf_grass, surf_hill_grass };
+	bp.nativeSurfs = { surf_grass, surf_hill_grass, surf_coast };
 	bp.nativeMnts = {};
 	bp.nativeHills = {};
 	bp.nativeTrees = {};
@@ -786,7 +786,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = WEEKSFROMYEARS(30);
 	bp.ageDecay = WEEKSFROMYEARS(35);
 	bp.chanceToGrow = 100000;
-	bp.chanceToReproduce = 300;
+	bp.chanceToReproduce = 450;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -852,7 +852,7 @@ void EBlueprint::InitBlueprints()
 	bp.ageOldness = WEEKSFROMYEARS(30);
 	bp.ageDecay = WEEKSFROMYEARS(35);
 	bp.chanceToGrow = 50000;
-	bp.chanceToReproduce = 150;
+	bp.chanceToReproduce = 200;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -917,8 +917,8 @@ void EBlueprint::InitBlueprints()
 	bp.ageAdulthood = WEEKSFROMYEARS(3);
 	bp.ageOldness = WEEKSFROMYEARS(50);
 	bp.ageDecay = WEEKSFROMYEARS(60);
-	bp.chanceToGrow = 300000;
-	bp.chanceToReproduce = 900;
+	bp.chanceToGrow = 250000;
+	bp.chanceToReproduce = 800;
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-

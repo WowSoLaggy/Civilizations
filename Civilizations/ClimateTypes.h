@@ -8,12 +8,13 @@ enum ClimateType : unsigned char
 {
 	clim_unknown	= 0,
 
-	clim_permafrost	= 1,
-	clim_tundra		= 2,
-	clim_temperate	= 3,
-	clim_savanna	= 4,
-	clim_tropics	= 5,
-	clim_desert		= 6,
+	clim_glacier	= 1,
+	clim_permafrost	= 2,
+	clim_tundra		= 3,
+	clim_temperate	= 4,
+	clim_savanna	= 5,
+	clim_tropics	= 6,
+	clim_desert		= 7,
 
 	clim_end
 };
