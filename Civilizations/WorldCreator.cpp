@@ -1,8 +1,9 @@
 #include "stdafx.h"
 #include "WorldCreator.h"
 
-void WorldCreator::GenerateWorld(World &pWorld, int pSizeX, int pSizeY)
+void WorldCreator::GenerateWorld(World &pWorld, std::string &pName, int pSizeX, int pSizeY)
 {
+	pWorld.name = pName;
 	pWorld.width = pSizeX;
 	pWorld.height = pSizeY;
 
@@ -82,14 +83,14 @@ void WorldCreator::GenerateWorld(World &pWorld, int pSizeX, int pSizeY)
 	delete[] tmp;
 
 	// Find min and max values
-	pWorld.heightMin = 10e5;
-	pWorld.heightMax = -10e5;
+	float heightMin = 10e5;
+	float heightMax = -10e5;
 	for (int i = 0; i < w * h; ++i)
 	{
-		if (heights[i] > pWorld.heightMax)
-			pWorld.heightMax = heights[i];
-		if (heights[i] < pWorld.heightMin)
-			pWorld.heightMin = heights[i];
+		if (heights[i] > heightMax)
+			heightMax = heights[i];
+		if (heights[i] < heightMin)
+			heightMin = heights[i];
 	}
 
 	// Place water-grass-mountains
@@ -97,9 +98,9 @@ void WorldCreator::GenerateWorld(World &pWorld, int pSizeX, int pSizeY)
 	{
 		for (int x = 0; x < w; ++x)
 		{
-			if (heights[x + y * w] >= pWorld.heightMax * MOUNTAIN_HEIGHT_KOEF)
+			if (heights[x + y * w] >= heightMax * MOUNTAIN_HEIGHT_KOEF)
 				tiles[x + y * w] = surf_mountain_grass;
-			else if (heights[x + y * w] >= pWorld.heightMax * HILL_HEIGHT_KOEF)
+			else if (heights[x + y * w] >= heightMax * HILL_HEIGHT_KOEF)
 				tiles[x + y * w] = surf_hill_grass;
 			else if (heights[x + y * w] >= 0)
 				tiles[x + y * w] = surf_grass;

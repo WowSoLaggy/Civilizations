@@ -6,6 +6,10 @@ World::World()
 	lsurfaces = nullptr;
 	lobjects = nullptr;
 
+	name = "New World";
+	width = -1;
+	height = -1;
+
 	CountFreeCells();
 }
 

@@ -3,19 +3,19 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
-#define TILESIZE				32
 
-#define MINIMAPTEXTURESIZE		114
-#define MINIMAP_COLOR_FRAME		0xFFFFFFFF
+static int TILESIZE					= 32;
 
-#define SENS_KB_SCROLL_X		40.0
-#define SENS_KB_SCROLL_Y		40.0
-#define SENS_MOUSE_SCROLL_X		40.0
-#define SENS_MOUSE_SCROLL_Y		40.0
+static int MINIMAPTEXTURESIZE		= 114;
+static int MINIMAP_COLOR_FRAME		= 0xFFFFFFFF;
 
-#define SENS_MOUSE_X			1.25
-#define SENS_MOUSE_Y			1.25
+static float SENS_KB_SCROLL_X		= 40.0;
+static float SENS_KB_SCROLL_Y		= 40.0;
+static float SENS_MOUSE_SCROLL_X	= 40.0;
+static float SENS_MOUSE_SCROLL_Y	= 40.0;
 
-#define AFFORESTATIONSTEP		3
+static float SENS_MOUSE_X			= 1.25;
+static float SENS_MOUSE_Y			= 1.25;
+
 
 #endif //CONSTANTS_H

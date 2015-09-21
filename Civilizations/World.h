@@ -3,7 +3,9 @@
 #ifndef WORLD_H
 #define WORLD_H
 
+
 #include "Tile.h"
+
 
 class World
 {
@@ -11,10 +13,18 @@ public:
 
 	World();
 
+	std::string name;
+
 	int width;
 	int height;
 
 	std::vector<Tile> tiles;
+
+	std::vector<int> freeSurfaceCells;
+	std::vector<int> freeObjectCells;
+
+	std::vector<int> occupiedSurfaceCells;
+	std::vector<int> occupiedObjectCells;
 
 	Entity *lsurfaces;
 	Entity *lobjects;
@@ -31,15 +41,6 @@ public:
 	void DeleteSurface(int pCell);
 	void DeleteObject(int pCell);
 
-	std::vector<int> freeSurfaceCells;
-	std::vector<int> freeObjectCells;
-
-	std::vector<int> occupiedSurfaceCells;
-	std::vector<int> occupiedObjectCells;
-
-	float heightMax;
-	float heightMin;
-
 private:
 
 	int m_curSurfacesSize;
@@ -49,5 +50,6 @@ private:
 	void CountFreeSurfaceCells();
 	void CountFreeObjectCells();
 };
+
 
 #endif // WORLD_H

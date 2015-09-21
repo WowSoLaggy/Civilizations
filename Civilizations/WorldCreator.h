@@ -11,7 +11,7 @@ class WorldCreator
 {
 public:
 
-	static void GenerateWorld(World &pWorld, int pSizeX, int pSizeY);
+	static void GenerateWorld(World &pWorld, std::string &pName, int pSizeX, int pSizeY);
 	static void DisposeWorld(World &pWorld);
 
 private:

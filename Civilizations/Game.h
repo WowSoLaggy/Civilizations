@@ -9,6 +9,7 @@
 #include "InputDeviceManager.h"
 #include "WorldCreator.h"
 #include "WorldUpdater.h"
+#include "WorldSerializator.h"
 #include "World.h"
 #include "Drawer.h"
 #include "GManager.h"
@@ -23,6 +24,8 @@ public:
 
 	static int selectedTileX;
 	static int selectedTileY;
+
+	static CRITICAL_SECTION worldLocker;
 
 	static Tile * GetSelectedTile();
 

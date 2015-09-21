@@ -61,4 +61,25 @@ void Game::HandleKeyboard()
 		if ((selectedTileX != -1) && (selectedTileY < WHEIGHT - 1))
 			++selectedTileY;
 	}
+
+	if (InputDeviceManager::KeyDown(DIK_NUMPADPLUS))
+	{
+		EnterCriticalSection(&worldLocker);
+		if (WORLD != nullptr)
+			WorldSerializator::SaveWorld(*WORLD);
+		LeaveCriticalSection(&worldLocker);
+	}
+	if (InputDeviceManager::KeyDown(DIK_NUMPADMINUS))
+	{
+		EnterCriticalSection(&worldLocker);
+		if (WORLD != nullptr)
+		{
+			WorldCreator::DisposeWorld(*WORLD);
+			WORLD = nullptr;
+		}
+
+		WORLD = new World();
+		WorldSerializator::LoadWorld(*WORLD, "New World");
+		LeaveCriticalSection(&worldLocker);
+	}
 }

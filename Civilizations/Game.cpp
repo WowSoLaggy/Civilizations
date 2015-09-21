@@ -5,7 +5,7 @@
 World *Game::world;
 int Game::selectedTileX;
 int Game::selectedTileY;
-
+CRITICAL_SECTION Game::worldLocker;
 
 void Game::Initialize()
 {
@@ -19,16 +19,27 @@ void Game::Initialize()
 
 int Game::Start()
 {
+	InitializeCriticalSection(&worldLocker);
+
+	EnterCriticalSection(&worldLocker);
 	world = new World();
 	int size = 1024;
-	WorldCreator::GenerateWorld(*world, size, size);
+	std::string worldName = "New World";
+	WorldCreator::GenerateWorld(*world, worldName, size, size);
+	LeaveCriticalSection(&worldLocker);
+
 	return 0;
 }
 
 void Game::Dispose()
 {
+	EnterCriticalSection(&worldLocker);
 	WorldCreator::DisposeWorld(*world);
 	delete world;
+	world = nullptr;
+	LeaveCriticalSection(&worldLocker);
+
+	DeleteCriticalSection(&worldLocker);
 }
 
 bool Game::OnNullRenderDevice()

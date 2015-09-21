@@ -126,6 +126,9 @@
     <ClCompile Include="CBlueprint.cpp">
       <Filter>src\World\Climates</Filter>
     </ClCompile>
+    <ClCompile Include="WorldSerializator.cpp">
+      <Filter>src\GameLogic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -205,6 +208,9 @@
     </ClInclude>
     <ClInclude Include="CBlueprint.h">
       <Filter>src\World\Climates</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldSerializator.h">
+      <Filter>src\GameLogic</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

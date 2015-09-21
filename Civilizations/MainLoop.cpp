@@ -53,16 +53,18 @@ int Game::MainLoop()
 		HandleMouse();
 
 		// Start scene drawing
+		EnterCriticalSection(&worldLocker);
 		RenderDeviceManager::RenderDevice->SetRenderTarget(0, RenderDeviceManager::DefaultRenderTarget);
 		hRes = RenderDeviceManager::RenderDevice->Clear(0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, D3DCOLOR_ARGB(255, 0, 0, 0), 1.0f, 0);
 		hRes = RenderDeviceManager::RenderDevice->BeginScene();
 
-		Drawer::DrawWorld();
-		Sleep(1);
+		if (WORLD != nullptr)
+			Drawer::DrawWorld();
 
 		// End scene drawing
 		hRes = RenderDeviceManager::RenderDevice->EndScene();
 		hRes = RenderDeviceManager::RenderDevice->Present(NULL, NULL, NULL, NULL);
+		LeaveCriticalSection(&worldLocker);
 
 		QueryPerformanceCounter(&accTimePrecEnd);
 		dt = (double)(accTimePrecEnd.QuadPart - accTimePrecStart.QuadPart);
