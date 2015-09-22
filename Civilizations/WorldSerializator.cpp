@@ -5,88 +5,86 @@
 
 bool WorldSerializator::SaveWorld(World &pWorld)
 {
-	// Generate file name
+	// Generate the file name and open the file
 
 	std::string fileName = "Data\\Worlds\\" + pWorld.name + ".wrld";
 
-	FILE *pFile;
-	errno_t err = fopen_s(&pFile, fileName.c_str(), "wb");
-	if (err != 0)
+	std::ofstream fout(fileName, std::ios::trunc | std::ios::binary);
+	if (!fout.is_open())
 		return false;
 
 	// Serialization start
 
 	// Name
 	unsigned int nameLength = pWorld.name.size();
-	fwrite(&nameLength, sizeof(unsigned int), 1, pFile);
-	fwrite(pWorld.name.c_str(), sizeof(char), pWorld.name.size(), pFile);
+	fout.write((char *)&nameLength, sizeof(unsigned int));
+	fout.write(pWorld.name.c_str(), nameLength);
 
 	// Turn
-	fwrite(&WorldUpdater::currentTurn, sizeof(int), 1, pFile);
+	fout.write((char *)&WorldUpdater::currentTurn, sizeof(int));
 
 	// Cam pos
 	int camPosX = Drawer::camPosX();
 	int camPosY = Drawer::camPosY();
-	fwrite(&camPosX, sizeof(int), 1, pFile);
-	fwrite(&camPosY, sizeof(int), 1, pFile);
+	fout.write((char *)&camPosX, sizeof(int));
+	fout.write((char *)&camPosY, sizeof(int));
 
 	// Size
-	fwrite(&pWorld.width, sizeof(int), 1, pFile);
-	fwrite(&pWorld.height, sizeof(int), 1, pFile);
+	fout.write((char *)&pWorld.width, sizeof(int));
+	fout.write((char *)&pWorld.height, sizeof(int));
 
 	// Tiles
 	for (int y = 0; y < pWorld.height; ++y)
 	{
 		for (int x = 0; x < pWorld.width; ++x)
 		{
-			fwrite(TILE(x, y), sizeof(Tile), 1, pFile);
+			fout.write((char *)TILE(x, y), sizeof(Tile));
 			if (TILE(x, y)->surfaceCell != -1)
-				fwrite(SURFAT(x, y), sizeof(Entity), 1, pFile);
+				fout.write((char *)SURFAT(x, y), sizeof(Entity));
 			if (TILE(x, y)->objectCell != -1)
-				fwrite(OBJAT(x, y), sizeof(Entity), 1, pFile);
+				fout.write((char *)OBJAT(x, y), sizeof(Entity));
 		}
 	}
 
 	// Serialization end
 
-	fclose(pFile);
+	fout.close();
 	return true;
 }
 
 bool WorldSerializator::LoadWorld(World &pWorld, std::string pWorldName)
 {
-	// Generate file name
+	// Generate the file name and open the file
 
 	std::string fileName = "Data\\Worlds\\" + pWorldName + ".wrld";
 
-	FILE *pFile;
-	errno_t err = fopen_s(&pFile, fileName.c_str(), "rb");
-	if (err != 0)
+	std::ifstream fin(fileName, std::ios::binary);
+	if (!fin.is_open())
 		return false;
 
 	// Deserialization start
 
 	// Name
 	unsigned int nameLength = 0;
-	fread(&nameLength, sizeof(unsigned int), 1, pFile);
+	fin.read((char *)&nameLength, sizeof(unsigned int));
 	char *buf = new char[nameLength];
-	fread(buf, sizeof(char), nameLength, pFile);
+	fin.read(buf, nameLength);
 	pWorld.name = std::string(buf, nameLength);
 	delete[] buf;
 
 	// Turn
-	fread(&WorldUpdater::currentTurn, sizeof(int), 1, pFile);
+	fin.read((char *)&WorldUpdater::currentTurn, sizeof(int));
 
 	// Cam pos
 	int camPosX = 0;
 	int camPosY = 0;
-	fread(&camPosX, sizeof(int), 1, pFile);
-	fread(&camPosY, sizeof(int), 1, pFile);
+	fin.read((char *)&camPosX, sizeof(int));
+	fin.read((char *)&camPosY, sizeof(int));
 	Drawer::SetCamPosTopLeft(camPosX, camPosY);
 
 	// Size
-	fread(&pWorld.width, sizeof(int), 1, pFile);
-	fread(&pWorld.height, sizeof(int), 1, pFile);
+	fin.read((char *)&pWorld.width, sizeof(int));
+	fin.read((char *)&pWorld.height, sizeof(int));
 
 	// Tiles
 	pWorld.tiles.clear();
@@ -99,7 +97,7 @@ bool WorldSerializator::LoadWorld(World &pWorld, std::string pWorldName)
 	{
 		for (int x = 0; x < pWorld.width; ++x)
 		{
-			fread(&tileTmp, sizeof(Tile), 1, pFile);
+			fin.read((char *)&tileTmp, sizeof(Tile));
 			pWorld.tiles[x + y * pWorld.width].aff = tileTmp.aff;
 			pWorld.tiles[x + y * pWorld.width].height = tileTmp.height;
 			pWorld.tiles[x + y * pWorld.width].humidity = tileTmp.humidity;
@@ -110,14 +108,14 @@ bool WorldSerializator::LoadWorld(World &pWorld, std::string pWorldName)
 
 			if (tileTmp.surfaceCell != -1)
 			{
-				fread(&entTmp, sizeof(Entity), 1, pFile);
+				fin.read((char *)&entTmp, sizeof(Entity));
 				EManager::CreateSurface(entTmp.type, x, y);
 				*SURFAT(x, y) = entTmp;
 			}
 
 			if (tileTmp.objectCell != -1)
 			{
-				fread(&entTmp, sizeof(Entity), 1, pFile);
+				fin.read((char *)&entTmp, sizeof(Entity));
 				EManager::CreateObject(entTmp.type, x, y);
 				*OBJAT(x, y) = entTmp;
 			}
@@ -126,7 +124,7 @@ bool WorldSerializator::LoadWorld(World &pWorld, std::string pWorldName)
 
 	// Deserialization end
 
-	fclose(pFile);
+	fin.close();
 
 	Drawer::UpdateMiniMap();
 
