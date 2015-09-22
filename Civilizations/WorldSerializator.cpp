@@ -24,6 +24,12 @@ bool WorldSerializator::SaveWorld(World &pWorld)
 	// Turn
 	fwrite(&WorldUpdater::currentTurn, sizeof(int), 1, pFile);
 
+	// Cam pos
+	int camPosX = Drawer::camPosX();
+	int camPosY = Drawer::camPosY();
+	fwrite(&camPosX, sizeof(int), 1, pFile);
+	fwrite(&camPosY, sizeof(int), 1, pFile);
+
 	// Size
 	fwrite(&pWorld.width, sizeof(int), 1, pFile);
 	fwrite(&pWorld.height, sizeof(int), 1, pFile);
@@ -70,6 +76,13 @@ bool WorldSerializator::LoadWorld(World &pWorld, std::string pWorldName)
 
 	// Turn
 	fread(&WorldUpdater::currentTurn, sizeof(int), 1, pFile);
+
+	// Cam pos
+	int camPosX = 0;
+	int camPosY = 0;
+	fread(&camPosX, sizeof(int), 1, pFile);
+	fread(&camPosY, sizeof(int), 1, pFile);
+	Drawer::SetCamPosTopLeft(camPosX, camPosY);
 
 	// Size
 	fread(&pWorld.width, sizeof(int), 1, pFile);
