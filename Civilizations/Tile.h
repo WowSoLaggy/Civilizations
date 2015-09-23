@@ -10,10 +10,10 @@ class Tile
 {
 public:
 
-	Tile() { surfaceCell = -1; objectCell = -1; }
+	Tile() { surfaceCell = -1; floraCell = -1; }
 
 	int surfaceCell;
-	int objectCell;
+	int floraCell;
 
 	float humidity;
 	float temperature;

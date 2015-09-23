@@ -3,8 +3,8 @@
 
 World::World()
 {
-	lsurfaces = nullptr;
-	lobjects = nullptr;
+	lSurfaces = nullptr;
+	lFloras = nullptr;
 
 	name = "New World";
 	width = -1;
@@ -15,11 +15,11 @@ World::World()
 
 void World::ResizeSurfaces(int pCount)
 {
-	if (lsurfaces == nullptr)
+	if (lSurfaces == nullptr)
 	{
-		lsurfaces = new Entity[pCount];
+		lSurfaces = new Entity[pCount];
 		m_curSurfacesSize = pCount;
-		ZeroMemory(lsurfaces, pCount * sizeof(Entity));
+		ZeroMemory(lSurfaces, pCount * sizeof(Entity));
 
 		CountFreeSurfaceCells();
 		return;
@@ -28,39 +28,39 @@ void World::ResizeSurfaces(int pCount)
 	if (pCount <= m_curSurfacesSize)
 		return;
 
-	Entity *tmp = lsurfaces;
-	lsurfaces = new Entity[pCount];
-	ZeroMemory(lsurfaces, pCount * sizeof(Entity));
-	memcpy(lsurfaces, tmp, m_curSurfacesSize * sizeof(Entity));
+	Entity *tmp = lSurfaces;
+	lSurfaces = new Entity[pCount];
+	ZeroMemory(lSurfaces, pCount * sizeof(Entity));
+	memcpy(lSurfaces, tmp, m_curSurfacesSize * sizeof(Entity));
 	m_curSurfacesSize = pCount;
 	delete[] tmp;
 
 	CountFreeSurfaceCells();
 }
 
-void World::ResizeObjects(int pCount)
+void World::ResizeFloras(int pCount)
 {
-	if (lobjects == nullptr)
+	if (lFloras == nullptr)
 	{
-		lobjects = new Entity[pCount];
-		m_curObjectsSize = pCount;
-		ZeroMemory(lobjects, pCount * sizeof(Entity));
+		lFloras = new Entity[pCount];
+		m_curFloraSize = pCount;
+		ZeroMemory(lFloras, pCount * sizeof(Entity));
 
-		CountFreeObjectCells();
+		CountFreeFloraCells();
 		return;
 	}
 
-	if (pCount <= m_curObjectsSize)
+	if (pCount <= m_curFloraSize)
 		return;
 
-	Entity *tmp = lobjects;
-	lobjects = new Entity[pCount];
-	ZeroMemory(lobjects, pCount * sizeof(Entity));
-	memcpy(lobjects, tmp, m_curObjectsSize * sizeof(Entity));
-	m_curObjectsSize = pCount;
+	Entity *tmp = lFloras;
+	lFloras = new Entity[pCount];
+	ZeroMemory(lFloras, pCount * sizeof(Entity));
+	memcpy(lFloras, tmp, m_curFloraSize * sizeof(Entity));
+	m_curFloraSize = pCount;
 	delete[] tmp;
 
-	CountFreeObjectCells();
+	CountFreeFloraCells();
 }
 
 Entity *World::GetFreeSurfaceCell()
@@ -72,7 +72,7 @@ Entity *World::GetFreeSurfaceCell()
 	freeSurfaceCells.pop_back();
 	occupiedSurfaceCells.push_back(cell);
 
-	return &lsurfaces[cell];
+	return &lSurfaces[cell];
 }
 
 Entity *World::GetFreeSurfaceCell(int &pId)
@@ -84,37 +84,37 @@ Entity *World::GetFreeSurfaceCell(int &pId)
 	freeSurfaceCells.pop_back();
 	occupiedSurfaceCells.push_back(pId);
 
-	return &lsurfaces[pId];
+	return &lSurfaces[pId];
 }
 
-Entity *World::GetFreeObjectCell()
+Entity *World::GetFreeFloraCell()
 {
-	if (freeObjectCells.size() == 0)
-		ResizeObjects(m_curObjectsSize * 2);
+	if (freeFloraCells.size() == 0)
+		ResizeFloras(m_curFloraSize * 2);
 
-	int cell = freeObjectCells[freeObjectCells.size() - 1];
-	freeObjectCells.pop_back();
-	occupiedObjectCells.push_back(cell);
+	int cell = freeFloraCells[freeFloraCells.size() - 1];
+	freeFloraCells.pop_back();
+	occupiedFloraCells.push_back(cell);
 
-	return &lobjects[cell];
+	return &lFloras[cell];
 }
 
-Entity *World::GetFreeObjectCell(int &pId)
+Entity *World::GetFreeFloraCell(int &pId)
 {
-	if (freeObjectCells.size() == 0)
-		ResizeObjects(m_curObjectsSize * 2);
+	if (freeFloraCells.size() == 0)
+		ResizeFloras(m_curFloraSize * 2);
 
-	pId = freeObjectCells[freeObjectCells.size() - 1];
-	freeObjectCells.pop_back();
-	occupiedObjectCells.push_back(pId);
+	pId = freeFloraCells[freeFloraCells.size() - 1];
+	freeFloraCells.pop_back();
+	occupiedFloraCells.push_back(pId);
 
-	return &lobjects[pId];
+	return &lFloras[pId];
 }
 
 void World::CountFreeCells()
 {
 	CountFreeSurfaceCells();
-	CountFreeObjectCells();
+	CountFreeFloraCells();
 }
 
 void World::CountFreeSurfaceCells()
@@ -124,24 +124,24 @@ void World::CountFreeSurfaceCells()
 
 	for (int i = 0; i < m_curSurfacesSize; ++i)
 	{
-		if (lsurfaces[i].id == 0)
+		if (lSurfaces[i].id == 0)
 			freeSurfaceCells.push_back(i);
 		else
 			occupiedSurfaceCells.push_back(i);
 	}
 }
 
-void World::CountFreeObjectCells()
+void World::CountFreeFloraCells()
 {
-	freeObjectCells.clear();
-	occupiedObjectCells.clear();
+	freeFloraCells.clear();
+	occupiedFloraCells.clear();
 
-	for (int i = 0; i < m_curObjectsSize; ++i)
+	for (int i = 0; i < m_curFloraSize; ++i)
 	{
-		if (lobjects[i].id == 0)
-			freeObjectCells.push_back(i);
+		if (lFloras[i].id == 0)
+			freeFloraCells.push_back(i);
 		else
-			occupiedObjectCells.push_back(i);
+			occupiedFloraCells.push_back(i);
 	}
 }
 
@@ -150,7 +150,7 @@ void World::DeleteSurface(int pCell)
 	if (pCell < 0)
 		return;
 
-	lsurfaces[pCell].id = 0;
+	lSurfaces[pCell].id = 0;
 	freeSurfaceCells.push_back(pCell);
 
 	std::vector<int>::iterator it = std::find(occupiedSurfaceCells.begin(), occupiedSurfaceCells.end(), pCell);
@@ -158,15 +158,15 @@ void World::DeleteSurface(int pCell)
 		occupiedSurfaceCells.erase(it);
 }
 
-void World::DeleteObject(int pCell)
+void World::DeleteFlora(int pCell)
 {
 	if (pCell < 0)
 		return;
 
-	lobjects[pCell].id = 0;
-	freeObjectCells.push_back(pCell);
+	lFloras[pCell].id = 0;
+	freeFloraCells.push_back(pCell);
 
-	std::vector<int>::iterator it = std::find(occupiedObjectCells.begin(), occupiedObjectCells.end(), pCell);
-	if (it != occupiedObjectCells.end())
-		occupiedObjectCells.erase(it);
+	std::vector<int>::iterator it = std::find(occupiedFloraCells.begin(), occupiedFloraCells.end(), pCell);
+	if (it != occupiedFloraCells.end())
+		occupiedFloraCells.erase(it);
 }

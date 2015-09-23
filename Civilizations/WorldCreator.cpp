@@ -13,7 +13,7 @@ void WorldCreator::GenerateWorld(World &pWorld, std::string &pName, int pSizeX, 
 	int h2 = pWorld.height / 2;
 
 	pWorld.ResizeSurfaces(w * h);
-	pWorld.ResizeObjects(w * h / 100);
+	pWorld.ResizeFloras(w * h / 100);
 
 	int count = 0;
 	EntityType *tiles = new EntityType[w * h];
@@ -244,12 +244,12 @@ void WorldCreator::GenerateWorld(World &pWorld, std::string &pName, int pSizeX, 
 
 void WorldCreator::DisposeWorld(World &pWorld)
 {
-	delete[] pWorld.lsurfaces;
-	delete[] pWorld.lobjects;
+	delete[] pWorld.lSurfaces;
+	delete[] pWorld.lFloras;
 	pWorld.tiles.clear();
 
-	pWorld.lsurfaces = nullptr;
-	pWorld.lobjects = nullptr;
+	pWorld.lSurfaces = nullptr;
+	pWorld.lFloras = nullptr;
 }
 
 void WorldCreator::CheckRiverTile(int pX, int pY, EntityType *pTiles, float *pHeights, int pW)

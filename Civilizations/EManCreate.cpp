@@ -26,8 +26,8 @@ void EManager::DeleteSurfaceAt(int pX, int pY)
 
 void EManager::DeleteObjectAt(int pX, int pY)
 {
-	Game::world->DeleteObject(TILE(pX, pY)->objectCell);
-	TILE(pX, pY)->objectCell = -1;
+	Game::world->DeleteFlora(TILE(pX, pY)->floraCell);
+	TILE(pX, pY)->floraCell = -1;
 }
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -51,12 +51,12 @@ Entity *EManager::CreateSurface(EntityType pType, int pX, int pY)
 
 Entity *EManager::CreateObject(EntityType pType, int pX, int pY)
 {
-	if (TILE(pX, pY)->objectCell != -1)
-		Game::world->DeleteObject(TILE(pX, pY)->objectCell);
+	if (TILE(pX, pY)->floraCell != -1)
+		Game::world->DeleteFlora(TILE(pX, pY)->floraCell);
 
 	int cell;
-	Entity *ent = Game::world->GetFreeObjectCell(cell);
-	TILE(pX, pY)->objectCell = cell;
+	Entity *ent = Game::world->GetFreeFloraCell(cell);
+	TILE(pX, pY)->floraCell = cell;
 
 	InitializeEntity(*ent);
 	ent->type = pType;

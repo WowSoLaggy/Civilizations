@@ -41,7 +41,7 @@ bool WorldSerializator::SaveWorld(World &pWorld)
 			fout.write((char *)TILE(x, y), sizeof(Tile));
 			if (TILE(x, y)->surfaceCell != -1)
 				fout.write((char *)SURFAT(x, y), sizeof(Entity));
-			if (TILE(x, y)->objectCell != -1)
+			if (TILE(x, y)->floraCell != -1)
 				fout.write((char *)OBJAT(x, y), sizeof(Entity));
 		}
 	}
@@ -90,7 +90,7 @@ bool WorldSerializator::LoadWorld(World &pWorld, std::string pWorldName)
 	pWorld.tiles.clear();
 	pWorld.tiles.resize(pWorld.width * pWorld.height);
 	pWorld.ResizeSurfaces(pWorld.width * pWorld.height);
-	pWorld.ResizeObjects(pWorld.width * pWorld.height / 100);
+	pWorld.ResizeFloras(pWorld.width * pWorld.height / 100);
 	Tile tileTmp;
 	Entity entTmp;
 	for (int y = 0; y < pWorld.height; ++y)
@@ -98,13 +98,9 @@ bool WorldSerializator::LoadWorld(World &pWorld, std::string pWorldName)
 		for (int x = 0; x < pWorld.width; ++x)
 		{
 			fin.read((char *)&tileTmp, sizeof(Tile));
-			pWorld.tiles[x + y * pWorld.width].aff = tileTmp.aff;
-			pWorld.tiles[x + y * pWorld.width].height = tileTmp.height;
-			pWorld.tiles[x + y * pWorld.width].humidity = tileTmp.humidity;
-			pWorld.tiles[x + y * pWorld.width].productivity = tileTmp.productivity;
-			pWorld.tiles[x + y * pWorld.width].temperature = tileTmp.temperature;
+			pWorld.tiles[x + y * pWorld.width] = tileTmp;
 			pWorld.tiles[x + y * pWorld.width].surfaceCell = -1;
-			pWorld.tiles[x + y * pWorld.width].objectCell = -1;
+			pWorld.tiles[x + y * pWorld.width].floraCell = -1;
 
 			if (tileTmp.surfaceCell != -1)
 			{
@@ -113,7 +109,7 @@ bool WorldSerializator::LoadWorld(World &pWorld, std::string pWorldName)
 				*SURFAT(x, y) = entTmp;
 			}
 
-			if (tileTmp.objectCell != -1)
+			if (tileTmp.floraCell != -1)
 			{
 				fin.read((char *)&entTmp, sizeof(Entity));
 				EManager::CreateObject(entTmp.type, x, y);

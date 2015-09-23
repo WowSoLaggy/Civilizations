@@ -55,7 +55,7 @@ void Drawer::DrawWorld()
 
 				if (TILE(x, y)->surfaceCell != -1)
 					m_sprite->Draw(RManager::textures[SURFAT(x, y)->eblueprint().tis[SURFAT(x, y)->state]], 0, 0, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
-				if (TILE(x, y)->objectCell != -1)
+				if (TILE(x, y)->floraCell != -1)
 					m_sprite->Draw(RManager::textures[OBJAT(x, y)->eblueprint().tis[OBJAT(x, y)->state]], 0, 0, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 			}
 		}
