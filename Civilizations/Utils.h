@@ -30,14 +30,14 @@
 #define TILE(x, y) (&TILES[(x) + (y) * WWIDTH])
 #define TILEP(i) (&TILES[i])
 
-#define SURFS (WORLD->lSurfaces)
-#define OBJS (WORLD->lFloras)
+#define SURFS (WORLD->entities[lay_surf])
+#define FLORAS (WORLD->entities[lay_flora])
 #define SURF(pCell) (((pCell) < 0) ? nullptr : &SURFS[pCell])
-#define OBJ(pCell) (((pCell) < 0) ? nullptr : &OBJS[pCell])
+#define FLORA(pCell) (((pCell) < 0) ? nullptr : &FLORAS[pCell])
 #define SURFAT(x, y) SURF(TILE(x, y)->surfaceCell)
-#define OBJAT(x, y) OBJ(TILE(x, y)->floraCell)
+#define FLORAAT(x, y) FLORA(TILE(x, y)->floraCell)
 #define SURFATP(i) SURF(TILEP(i)->surfaceCell)
-#define OBJATP(i) OBJ(TILEP(i)->floraCell)
+#define FLORAATP(i) FLORA(TILEP(i)->floraCell)
 
 #define RANDVECT(v) (((v).size() == 0) ? type_unknown : ((v).size() == 1) ? (v)[0] : (v)[RAND0((v).size())])
 

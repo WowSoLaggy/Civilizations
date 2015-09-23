@@ -7,7 +7,7 @@ void Forester::UpdateTrees()
 	{
 		for (int x = 0; x < WHEIGHT; ++x)
 		{
-			Entity *ent = OBJAT(x, y);
+			Entity *ent = FLORAAT(x, y);
 			if (ent != nullptr)
 			{
 				// Process an existing object
@@ -92,7 +92,7 @@ bool Forester::TryToReproduce(Entity &pEnt, int pX, int pY)
 	int newX = RAND(TREE_REPRODUCT_RAD * 2 + 1, pX - TREE_REPRODUCT_RAD);
 	int newY = RAND(TREE_REPRODUCT_RAD * 2 + 1, pY - TREE_REPRODUCT_RAD);
 
-	if (OBJAT(newX, newY) != nullptr)										// tile is occupied
+	if (FLORAAT(newX, newY) != nullptr)										// tile is occupied
 		return false;
 	if (!EManager::IsFitForTrees(*SURFAT(newX, newY)))						// trees can't grow here
 		return false;

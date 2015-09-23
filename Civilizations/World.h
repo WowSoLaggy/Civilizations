@@ -5,6 +5,11 @@
 
 
 #include "Tile.h"
+#include "EntityLayers.h"
+#include "EntityVector.h"
+
+
+typedef std::map<EntityLayer, EntityVector> EntityMap;
 
 
 class World
@@ -20,35 +25,11 @@ public:
 
 	std::vector<Tile> tiles;
 
-	std::vector<int> freeSurfaceCells;
-	std::vector<int> freeFloraCells;
-
-	std::vector<int> occupiedSurfaceCells;
-	std::vector<int> occupiedFloraCells;
-
-	Entity *lSurfaces;
-	Entity *lFloras;
-
-	Entity *GetFreeSurfaceCell();
-	Entity *GetFreeSurfaceCell(int &pId);
-
-	Entity *GetFreeFloraCell();
-	Entity *GetFreeFloraCell(int &pId);
-
-	void ResizeSurfaces(int pCount);
-	void ResizeFloras(int pCount);
-
-	void DeleteSurface(int pCell);
-	void DeleteFlora(int pCell);
+	EntityMap entities;
 
 private:
 
-	int m_curSurfacesSize;
-	int m_curFloraSize;
-
 	void CountFreeCells();
-	void CountFreeSurfaceCells();
-	void CountFreeFloraCells();
 };
 
 

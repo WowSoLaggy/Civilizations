@@ -92,6 +92,7 @@
     <ClCompile Include="EManCreate.cpp" />
     <ClCompile Include="EManFeatures.cpp" />
     <ClCompile Include="EBlueprint.cpp" />
+    <ClCompile Include="EntityVector.cpp" />
     <ClCompile Include="Forester.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GManager.cpp" />
@@ -123,8 +124,10 @@
     <ClInclude Include="Drawer.h" />
     <ClInclude Include="EManager.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="EntityLayers.h" />
     <ClInclude Include="EntityTypes.h" />
     <ClInclude Include="EBlueprint.h" />
+    <ClInclude Include="EntityVector.h" />
     <ClInclude Include="Features.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GManager.h" />

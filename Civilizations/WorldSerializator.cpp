@@ -42,7 +42,7 @@ bool WorldSerializator::SaveWorld(World &pWorld)
 			if (TILE(x, y)->surfaceCell != -1)
 				fout.write((char *)SURFAT(x, y), sizeof(Entity));
 			if (TILE(x, y)->floraCell != -1)
-				fout.write((char *)OBJAT(x, y), sizeof(Entity));
+				fout.write((char *)FLORAAT(x, y), sizeof(Entity));
 		}
 	}
 
@@ -89,8 +89,8 @@ bool WorldSerializator::LoadWorld(World &pWorld, std::string pWorldName)
 	// Tiles
 	pWorld.tiles.clear();
 	pWorld.tiles.resize(pWorld.width * pWorld.height);
-	pWorld.ResizeSurfaces(pWorld.width * pWorld.height);
-	pWorld.ResizeFloras(pWorld.width * pWorld.height / 100);
+	SURFS.Resize(pWorld.width * pWorld.height);
+	FLORAS.Resize(pWorld.width * pWorld.height / 100);
 	Tile tileTmp;
 	Entity entTmp;
 	for (int y = 0; y < pWorld.height; ++y)
@@ -113,7 +113,7 @@ bool WorldSerializator::LoadWorld(World &pWorld, std::string pWorldName)
 			{
 				fin.read((char *)&entTmp, sizeof(Entity));
 				EManager::CreateObject(entTmp.type, x, y);
-				*OBJAT(x, y) = entTmp;
+				*FLORAAT(x, y) = entTmp;
 			}
 		}
 	}

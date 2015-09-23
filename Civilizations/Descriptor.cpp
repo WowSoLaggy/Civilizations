@@ -7,7 +7,7 @@
 void Descriptor::GetTileDescription(Tile &pTile, std::string &pDesc, int pX, int pY)
 {
 	Entity *surf = SURF(pTile.surfaceCell);
-	Entity *obj = OBJ(pTile.floraCell);
+	Entity *obj = FLORA(pTile.floraCell);
 
 
 	pDesc = "Surface: ";
