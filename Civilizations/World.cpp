@@ -7,10 +7,10 @@ World::World()
 	width = -1;
 	height = -1;
 
-	entities = EntityMap({
-		{ lay_surf, EntityVector() },
-		{ lay_flora, EntityVector() }
-	});
+	entities.clear();
+
+	for (int i = 0; i != (int)lay_end; ++i)
+		entities.insert({ (EntityLayer)i, EntityVector() });
 
 	CountFreeCells();
 }

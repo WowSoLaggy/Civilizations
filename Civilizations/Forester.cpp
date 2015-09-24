@@ -34,7 +34,7 @@ void Forester::UpdateTrees()
 					if (age >= ent->eblueprint().ageDecay)
 					{
 						if (RAND0EQ0(TREE_DIE_CHANCE))
-							EManager::DeleteObjectAt(x, y);
+							EManager::DeleteEntityAt(lay_flora, x, y);
 					}
 				}
 
@@ -77,7 +77,7 @@ bool Forester::TryToPlant(EntityType pType, int pX, int pY)
 		return false;
 
 	// Planting here
-	Entity *ent = EManager::CreateObject(pType, pX, pY);
+	Entity *ent = EManager::CreateEntity(lay_flora, pType, pX, pY);
 	ent->state = state_young;
 	TILE(pX, pY)->aff = ent->eblueprint().affBase;
 
@@ -101,7 +101,7 @@ bool Forester::TryToReproduce(Entity &pEnt, int pX, int pY)
 
 	// Reproduce!
 
-	Entity *ent = EManager::CreateObject(pEnt.type, newX, newY);
+	Entity *ent = EManager::CreateEntity(lay_flora, pEnt.type, newX, newY);
 	ent->state = state_young;
 	TILE(pX, pY)->aff = ent->eblueprint().affBase;
 

@@ -38,11 +38,15 @@ bool WorldSerializator::SaveWorld(World &pWorld)
 	{
 		for (int x = 0; x < pWorld.width; ++x)
 		{
+			// Tile itself
 			fout.write((char *)TILE(x, y), sizeof(Tile));
-			if (TILE(x, y)->surfaceCell != -1)
-				fout.write((char *)SURFAT(x, y), sizeof(Entity));
-			if (TILE(x, y)->floraCell != -1)
-				fout.write((char *)FLORAAT(x, y), sizeof(Entity));
+
+			// Now all the layers
+			for (CellMap::iterator it = TILE(x, y)->cells.begin(); it != TILE(x, y)->cells.end(); ++it)
+			{
+				if (it->second != -1)
+					fout.write((char *)&WORLD->entities[it->first][TILE(x, y)->cells[it->first]], sizeof(Entity));
+			}
 		}
 	}
 
@@ -99,21 +103,17 @@ bool WorldSerializator::LoadWorld(World &pWorld, std::string pWorldName)
 		{
 			fin.read((char *)&tileTmp, sizeof(Tile));
 			pWorld.tiles[x + y * pWorld.width] = tileTmp;
-			pWorld.tiles[x + y * pWorld.width].surfaceCell = -1;
-			pWorld.tiles[x + y * pWorld.width].floraCell = -1;
+			for (CellMap::iterator it = TILE(x, y)->cells.begin(); it != TILE(x, y)->cells.end(); ++it)
+				it->second = -1;
 
-			if (tileTmp.surfaceCell != -1)
+			for (CellMap::iterator it = tileTmp.cells.begin(); it != tileTmp.cells.end(); ++it)
 			{
-				fin.read((char *)&entTmp, sizeof(Entity));
-				EManager::CreateSurface(entTmp.type, x, y);
-				*SURFAT(x, y) = entTmp;
-			}
-
-			if (tileTmp.floraCell != -1)
-			{
-				fin.read((char *)&entTmp, sizeof(Entity));
-				EManager::CreateObject(entTmp.type, x, y);
-				*FLORAAT(x, y) = entTmp;
+				if (it->second != -1)
+				{
+					fin.read((char *)&entTmp, sizeof(Entity));
+					EManager::CreateEntity(it->first, entTmp.type, x, y);
+					WORLD->entities[it->first][TILE(x, y)->cells[it->first]] = entTmp;
+				}
 			}
 		}
 	}

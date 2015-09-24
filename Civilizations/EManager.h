@@ -14,15 +14,10 @@ class EManager
 {
 public:
 
-	// General
-	
-	static void DeleteSurfaceAt(int pX, int pY);
-	static void DeleteObjectAt(int pX, int pY);
-
 	// Entities
 
-	static Entity *CreateSurface(EntityType pType, int pX, int pY);
-	static Entity *CreateObject(EntityType pType, int pX, int pY);
+	static Entity *CreateEntity(EntityLayer pLayer, EntityType pType, int pX, int pY);
+	static void DeleteEntityAt(EntityLayer pLayer, int pX, int pY);
 
 	// Features
 

@@ -34,10 +34,10 @@
 #define FLORAS (WORLD->entities[lay_flora])
 #define SURF(pCell) (((pCell) < 0) ? nullptr : &SURFS[pCell])
 #define FLORA(pCell) (((pCell) < 0) ? nullptr : &FLORAS[pCell])
-#define SURFAT(x, y) SURF(TILE(x, y)->surfaceCell)
-#define FLORAAT(x, y) FLORA(TILE(x, y)->floraCell)
-#define SURFATP(i) SURF(TILEP(i)->surfaceCell)
-#define FLORAATP(i) FLORA(TILEP(i)->floraCell)
+#define SURFAT(x, y) SURF(TILE(x, y)->cells[lay_surf])
+#define FLORAAT(x, y) FLORA(TILE(x, y)->cells[lay_flora])
+#define SURFATP(i) SURF(TILEP(i)->cells[lay_surf])
+#define FLORAATP(i) FLORA(TILEP(i)->cells[lay_flora])
 
 #define RANDVECT(v) (((v).size() == 0) ? type_unknown : ((v).size() == 1) ? (v)[0] : (v)[RAND0((v).size())])
 

@@ -18,45 +18,24 @@ void EManager::InitializeEntity(Entity &pEntity)
 	pEntity.creationTime = WorldUpdater::currentTurn;
 }
 
-void EManager::DeleteSurfaceAt(int pX, int pY)
+void EManager::DeleteEntityAt(EntityLayer pLayer, int pX, int pY)
 {
-	SURFS.DeleteEntity(TILE(pX, pY)->surfaceCell);
-	TILE(pX, pY)->surfaceCell = -1;
-}
-
-void EManager::DeleteObjectAt(int pX, int pY)
-{
-	FLORAS.DeleteEntity(TILE(pX, pY)->floraCell);
-	TILE(pX, pY)->floraCell = -1;
+	WORLD->entities[pLayer].DeleteEntity(TILE(pX, pY)->cells[pLayer]);
+	TILE(pX, pY)->cells[pLayer] = -1;
 }
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 // Entities
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-Entity *EManager::CreateSurface(EntityType pType, int pX, int pY)
+Entity *EManager::CreateEntity(EntityLayer pLayer, EntityType pType, int pX, int pY)
 {
-	if (TILE(pX, pY)->surfaceCell != -1)
-		SURFS.DeleteEntity(TILE(pX, pY)->surfaceCell);
+	if (TILE(pX, pY)->cells[pLayer] != -1)
+		WORLD->entities[pLayer].DeleteEntity(TILE(pX, pY)->cells[pLayer]);
 
 	int cell;
-	Entity *ent = SURFS.GetFreeCell(cell);
-	TILE(pX, pY)->surfaceCell = cell;
-
-	InitializeEntity(*ent);
-	ent->type = pType;
-
-	return ent;
-}
-
-Entity *EManager::CreateObject(EntityType pType, int pX, int pY)
-{
-	if (TILE(pX, pY)->floraCell != -1)
-		FLORAS.DeleteEntity(TILE(pX, pY)->floraCell);
-
-	int cell;
-	Entity *ent = FLORAS.GetFreeCell(cell);
-	TILE(pX, pY)->floraCell = cell;
+	Entity *ent = WORLD->entities[pLayer].GetFreeCell(cell);
+	TILE(pX, pY)->cells[pLayer] = cell;
 
 	InitializeEntity(*ent);
 	ent->type = pType;

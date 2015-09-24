@@ -6,8 +6,8 @@
 
 void Descriptor::GetTileDescription(Tile &pTile, std::string &pDesc, int pX, int pY)
 {
-	Entity *surf = SURF(pTile.surfaceCell);
-	Entity *obj = FLORA(pTile.floraCell);
+	Entity *surf = SURF(pTile.cells[lay_surf]);
+	Entity *flora = FLORA(pTile.cells[lay_flora]);
 
 
 	pDesc = "Surface: ";
@@ -25,20 +25,17 @@ void Descriptor::GetTileDescription(Tile &pTile, std::string &pDesc, int pX, int
 		append(std::to_string((int)pTile.aff)).append(" affor)\n");
 
 
-	pDesc.append("Object: ");
-	if (obj == nullptr)
+	pDesc.append("Flora: ");
+	if (flora == nullptr)
 		pDesc.append("None\n");
 	else
 	{
-		if (EManager::IsFlora(*obj))
-		{
-			if (obj->state == state_young)
-				pDesc.append("Young ");
-			else if (obj->state == state_dead)
-				pDesc.append("Dead ");
-		}
+		if (flora->state == state_young)
+			pDesc.append("Young ");
+		else if (flora->state == state_dead)
+			pDesc.append("Dead ");
 
-		pDesc.append(obj->eblueprint().description);
-		pDesc.append("(").append(std::to_string(AGE(*obj) / WEEKSINYEAR)).append(" y.o.)\n");
+		pDesc.append(flora->eblueprint().description);
+		pDesc.append("(").append(std::to_string(AGE(*flora) / WEEKSINYEAR)).append(" y.o.)\n");
 	}
 }

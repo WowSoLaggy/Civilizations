@@ -4,16 +4,23 @@
 #define TILE_H
 
 #include "Entity.h"
+#include "EntityLayers.h"
+
+
+typedef std::map<EntityLayer, int> CellMap;
 
 
 class Tile
 {
 public:
 
-	Tile() { surfaceCell = -1; floraCell = -1; }
+	Tile()
+	{
+		for (int i = 0; i != (int)lay_end; ++i)
+			cells.insert( { (EntityLayer)i, -1 } );
+	}
 
-	int surfaceCell;
-	int floraCell;
+	CellMap cells;
 
 	float humidity;
 	float temperature;

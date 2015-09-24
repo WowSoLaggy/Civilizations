@@ -53,10 +53,12 @@ void Drawer::DrawWorld()
 				if ((x < 0) || (y < 0) || (x >= WWIDTH) || (y >= WHEIGHT))
 					continue;
 
-				if (TILE(x, y)->surfaceCell != -1)
-					m_sprite->Draw(RManager::textures[SURFAT(x, y)->eblueprint().tis[SURFAT(x, y)->state]], 0, 0, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
-				if (TILE(x, y)->floraCell != -1)
-					m_sprite->Draw(RManager::textures[FLORAAT(x, y)->eblueprint().tis[FLORAAT(x, y)->state]], 0, 0, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
+				for (CellMap::iterator it = TILE(x, y)->cells.begin(); it != TILE(x, y)->cells.end(); ++it)
+				{
+					if (it->second != -1)
+						m_sprite->Draw(RManager::textures[WORLD->entities[it->first][TILE(x, y)->cells[it->first]].eblueprint().tis[SURFAT(x, y)->state]], 
+						0, 0, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
+				}
 			}
 		}
 

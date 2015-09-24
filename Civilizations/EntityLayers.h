@@ -6,8 +6,9 @@
 
 enum EntityLayer : unsigned char
 {
-	lay_surf	= 0,
-	lay_flora	= 1,
+	lay_surf		= 0,
+	lay_flora		= 1,
+	lay_structure	= 2,
 
 	lay_end
 };

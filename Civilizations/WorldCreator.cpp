@@ -227,7 +227,7 @@ void WorldCreator::GenerateWorld(World &pWorld, std::string &pName, int pSizeX, 
 	{
 		for (int x = 0; x < w; ++x)
 		{
-			Entity *surf = EManager::CreateSurface(tiles[x + y * w], x, y);
+			Entity *surf = EManager::CreateEntity(lay_surf, tiles[x + y * w], x, y);
 			pWorld.tiles[x + y * w].humidity = 0;
 			pWorld.tiles[x + y * w].temperature = 23;
 			pWorld.tiles[x + y * w].height = heights[x + y * w];

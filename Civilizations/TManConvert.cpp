@@ -10,7 +10,7 @@ void TManager::CheckTilesClimate()
 		for (int x = 0; x < WWIDTH; ++x)
 		{
 			Tile &tile = *(TILE(x, y));
-			Entity *surf = SURF(tile.surfaceCell);
+			Entity *surf = SURF(tile.cells[lay_surf]);
 
 			// Update surface climate
 			if (tile.temperature < surf->cblueprint().minTemperatureInc)
@@ -46,7 +46,7 @@ void TManager::CheckTilesClimate()
 
 void TManager::ConvertSurfaceToType(Tile &pTile, EntityType pType)
 {
-	Entity *surf = SURF(pTile.surfaceCell);
+	Entity *surf = SURF(pTile.cells[lay_surf]);
 
 	if (EManager::IsMountain(*surf))
 	{
