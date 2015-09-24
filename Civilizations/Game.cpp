@@ -23,7 +23,7 @@ int Game::Start()
 
 	EnterCriticalSection(&worldLocker);
 	world = new World();
-	int size = 512;
+	int size = 1024;
 	std::string worldName = "New World";
 	WorldCreator::GenerateWorld(*world, worldName, size, size);
 	LeaveCriticalSection(&worldLocker);

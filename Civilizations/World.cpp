@@ -7,14 +7,11 @@ World::World()
 	width = -1;
 	height = -1;
 
-	entities.clear();
-	entities.resize(lay_end, EntityVector());
-
 	CountFreeCells();
 }
 
 void World::CountFreeCells()
 {
-	for (auto it = entities.begin(); it != entities.end(); ++it)
-		it->CountFreeCells();
+	for (auto entVector : entities)
+		entVector.CountFreeCells();
 }

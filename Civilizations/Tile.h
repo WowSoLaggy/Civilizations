@@ -13,10 +13,11 @@ public:
 
 	Tile()
 	{
-		cells.resize(lay_end, -1);
+		for (int i = 0; i < lay_end; ++i)
+			cells[i] = -1;
 	}
 
-	std::vector<int> cells;
+	int cells[lay_end];
 
 	float humidity;
 	float temperature;

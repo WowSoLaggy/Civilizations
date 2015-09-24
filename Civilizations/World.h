@@ -9,9 +9,6 @@
 #include "EntityVector.h"
 
 
-typedef std::map<EntityLayer, EntityVector> EntityMap;
-
-
 class World
 {
 public:
@@ -24,7 +21,7 @@ public:
 	int height;
 
 	std::vector<Tile> tiles;
-	std::vector<EntityVector> entities;
+	EntityVector entities[lay_end];
 
 private:
 
