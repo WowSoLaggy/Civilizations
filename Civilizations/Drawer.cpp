@@ -53,10 +53,10 @@ void Drawer::DrawWorld()
 				if ((x < 0) || (y < 0) || (x >= WWIDTH) || (y >= WHEIGHT))
 					continue;
 
-				for (CellMap::iterator it = TILE(x, y)->cells.begin(); it != TILE(x, y)->cells.end(); ++it)
+				for (int i = 0; i < lay_end; ++i)
 				{
-					if (it->second != -1)
-						m_sprite->Draw(RManager::textures[WORLD->entities[it->first][TILE(x, y)->cells[it->first]].eblueprint().tis[SURFAT(x, y)->state]], 
+					if (TILE(x, y)->cells[i] != -1)
+						m_sprite->Draw(RManager::textures[WORLD->entities[i][TILE(x, y)->cells[i]].eblueprint().tis[SURFAT(x, y)->state]],
 						0, 0, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 				}
 			}

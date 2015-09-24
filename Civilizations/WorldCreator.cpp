@@ -244,8 +244,8 @@ void WorldCreator::GenerateWorld(World &pWorld, std::string &pName, int pSizeX, 
 
 void WorldCreator::DisposeWorld(World &pWorld)
 {
-	for (EntityMap::iterator it = pWorld.entities.begin(); it != pWorld.entities.end(); ++it)
-		it->second.Dispose();
+	for (auto it = pWorld.entities.begin(); it != pWorld.entities.end(); ++it)
+		it->Dispose();
 
 	pWorld.tiles.clear();
 }

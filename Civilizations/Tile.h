@@ -7,20 +7,16 @@
 #include "EntityLayers.h"
 
 
-typedef std::map<EntityLayer, int> CellMap;
-
-
 class Tile
 {
 public:
 
 	Tile()
 	{
-		for (int i = 0; i != (int)lay_end; ++i)
-			cells.insert( { (EntityLayer)i, -1 } );
+		cells.resize(lay_end, -1);
 	}
 
-	CellMap cells;
+	std::vector<int> cells;
 
 	float humidity;
 	float temperature;

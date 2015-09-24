@@ -24,8 +24,7 @@ public:
 	int height;
 
 	std::vector<Tile> tiles;
-
-	EntityMap entities;
+	std::vector<EntityVector> entities;
 
 private:
 

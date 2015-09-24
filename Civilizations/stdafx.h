@@ -15,6 +15,7 @@
 #include <limits>
 #include <map>
 #include <ppl.h>
+#include <ppltasks.h>
 #include <fstream>
 
 #define DIRECTINPUT_VERSION 0x0800

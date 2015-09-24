@@ -8,15 +8,13 @@ World::World()
 	height = -1;
 
 	entities.clear();
-
-	for (int i = 0; i != (int)lay_end; ++i)
-		entities.insert({ (EntityLayer)i, EntityVector() });
+	entities.resize(lay_end, EntityVector());
 
 	CountFreeCells();
 }
 
 void World::CountFreeCells()
 {
-	for (EntityMap::iterator it = entities.begin(); it != entities.end(); ++it)
-		it->second.CountFreeCells();
+	for (auto it = entities.begin(); it != entities.end(); ++it)
+		it->CountFreeCells();
 }
