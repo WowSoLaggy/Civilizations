@@ -13,7 +13,6 @@ void WorldCreator::GenerateWorld(World &pWorld, std::string &pName, int pSizeX, 
 	int h2 = pWorld.height / 2;
 
 	SURFS.Resize(w * h);
-	FLORAS.Resize(w * h / 100);
 
 	int count = 0;
 	EntityType *tiles = new EntityType[w * h];
@@ -233,6 +232,8 @@ void WorldCreator::GenerateWorld(World &pWorld, std::string &pName, int pSizeX, 
 			pWorld.tiles[x + y * w].height = heights[x + y * w];
 			pWorld.tiles[x + y * w].productivity = 0;
 			pWorld.tiles[x + y * w].aff = 0;
+			pWorld.tiles[x + y * w].faunaLand = 0;
+			pWorld.tiles[x + y * w].faunaWater = 0;
 
 			surf->climtype = clim_temperate;
 		}

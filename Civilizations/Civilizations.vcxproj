@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -19,13 +19,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120_xp</PlatformToolset>
+    <PlatformToolset>v140_xp</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v120_xp</PlatformToolset>
+    <PlatformToolset>v140_xp</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -93,7 +93,9 @@
     <ClCompile Include="EManFeatures.cpp" />
     <ClCompile Include="EBlueprint.cpp" />
     <ClCompile Include="EntityVector.cpp" />
-    <ClCompile Include="Forester.cpp" />
+    <ClCompile Include="Fauna.cpp" />
+    <ClCompile Include="Faunation.cpp" />
+    <ClCompile Include="Flora.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GManager.cpp" />
     <ClCompile Include="GroundHumidity.cpp" />
@@ -110,7 +112,7 @@
     </ClCompile>
     <ClCompile Include="TManConvert.cpp" />
     <ClCompile Include="Utils.cpp" />
-    <ClCompile Include="Weather.cpp" />
+    <ClCompile Include="Nature.cpp" />
     <ClCompile Include="World.cpp" />
     <ClCompile Include="WorldCreator.cpp" />
     <ClCompile Include="WorldSerializator.cpp" />
@@ -128,6 +130,7 @@
     <ClInclude Include="EntityTypes.h" />
     <ClInclude Include="EBlueprint.h" />
     <ClInclude Include="EntityVector.h" />
+    <ClInclude Include="Fauna.h" />
     <ClInclude Include="Features.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GManager.h" />
@@ -138,9 +141,9 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="TManager.h" />
-    <ClInclude Include="Forester.h" />
+    <ClInclude Include="Flora.h" />
     <ClInclude Include="Utils.h" />
-    <ClInclude Include="Weather.h" />
+    <ClInclude Include="Nature.h" />
     <ClInclude Include="World.h" />
     <ClInclude Include="WorldConstants.h" />
     <ClInclude Include="WorldCreator.h" />

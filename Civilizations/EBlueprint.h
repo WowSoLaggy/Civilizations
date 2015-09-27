@@ -39,6 +39,10 @@ public:
 	int chanceToGrow;
 	int chanceToReproduce;
 
+	short faunationBase;
+	short faunationMin;
+	short faunationMax;
+
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	static void InitBlueprints();

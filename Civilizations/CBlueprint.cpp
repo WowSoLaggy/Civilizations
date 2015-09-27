@@ -25,6 +25,8 @@ void CBlueprint::Clear()
 	waterLakeType = surf_unknown;
 	nativeTrees.clear();
 	nativeBushes.clear();
+	nativeFaunaSmall.clear();
+	nativeFaunaLarge.clear();
 }
 
 void CBlueprint::InitBlueprints()
@@ -46,6 +48,8 @@ void CBlueprint::InitBlueprints()
 	bp.waterLakeType = surf_lakefrozen;
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
+	bp.nativeFaunaSmall = {};
+	bp.nativeFaunaLarge = {};
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -63,6 +67,8 @@ void CBlueprint::InitBlueprints()
 	bp.waterLakeType = surf_lakefrozen;
 	bp.nativeTrees = { obj_fir };
 	bp.nativeBushes = {};
+	bp.nativeFaunaSmall = {};
+	bp.nativeFaunaLarge = {};
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -80,6 +86,8 @@ void CBlueprint::InitBlueprints()
 	bp.waterLakeType = surf_lake;
 	bp.nativeTrees = { obj_juniper };
 	bp.nativeBushes = { obj_dwarfbirch };
+	bp.nativeFaunaSmall = { obj_hare };
+	bp.nativeFaunaLarge = {};
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -97,6 +105,8 @@ void CBlueprint::InitBlueprints()
 	bp.waterLakeType = surf_lake;
 	bp.nativeTrees = { obj_oak };
 	bp.nativeBushes = { obj_raspberry };
+	bp.nativeFaunaSmall = { obj_hare };
+	bp.nativeFaunaLarge = {};
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -114,6 +124,8 @@ void CBlueprint::InitBlueprints()
 	bp.waterLakeType = surf_lake;
 	bp.nativeTrees = { obj_baobab, obj_acacia, obj_oak };
 	bp.nativeBushes = { obj_aloe, obj_raspberry };
+	bp.nativeFaunaSmall = {};
+	bp.nativeFaunaLarge = {};
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -131,6 +143,8 @@ void CBlueprint::InitBlueprints()
 	bp.waterLakeType = surf_lake;
 	bp.nativeTrees = { obj_palm };
 	bp.nativeBushes = { obj_fern };
+	bp.nativeFaunaSmall = {};
+	bp.nativeFaunaLarge = {};
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -148,5 +162,7 @@ void CBlueprint::InitBlueprints()
 	bp.waterLakeType = surf_lake;
 	bp.nativeTrees = { obj_palm, obj_cactus };
 	bp.nativeBushes = { obj_fern, obj_camelthorn };
+	bp.nativeFaunaSmall = {};
+	bp.nativeFaunaLarge = {};
 	blueprints[bp.type] = bp;
 }

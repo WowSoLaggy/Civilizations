@@ -1,7 +1,7 @@
 #include "stdafx.h"
-#include "Weather.h"
+#include "Nature.h"
 
-void Weather::UpdateAirTemperature()
+void Nature::UpdateAirTemperature()
 {
 	for (int y = 1; y < WHEIGHT - 1; ++y)
 	{

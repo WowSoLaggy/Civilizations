@@ -24,23 +24,31 @@ void WorldUpdater::MakeTurn(int pTurns)
 
 void WorldUpdater::UpdateWorld()
 {
-	// TODO: optimize
-	Weather::UpdateGroundHumidity();
-	Weather::UpdateAirTemperature();
-	Weather::UpdateGroundProductivity();
-	Weather::UpdateAfforestation();
+	Nature::UpdateGroundHumidity();
+	Nature::UpdateAirTemperature();
+	Nature::UpdateGroundProductivity();
+	Nature::UpdateAfforestation();
+	Nature::UpdateFaunation();
 	TManager::CheckTilesClimate();
 
-	Forester::UpdateTrees();
+
+	for (int y = 0; y < WHEIGHT; ++y)
+	{
+		for (int x = 0; x < WWIDTH; ++x)
+		{
+			Flora::CheckTile(x, y);
+			Fauna::CheckTile(x, y);
+		}
+	}
 }
 
 
 void WorldUpdater::Load()
 {
-	Weather::Load();
+	Nature::Load();
 }
 
 void WorldUpdater::Unload()
 {
-	Weather::UnLoad();
+	Nature::UnLoad();
 }

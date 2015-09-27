@@ -87,6 +87,8 @@ const std::string resourcesNames[] = {
 	"Data\\Textures\\Hill_Snow.png",		/* 62 */
 	"Data\\Textures\\Hill_Tropics.png",		/* 63 */
 	"Data\\Textures\\Hill_Tundra.png",		/* 64 */
+
+	"Data\\Textures\\Hare.png",				/* 65 */
 };
 
 

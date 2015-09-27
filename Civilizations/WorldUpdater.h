@@ -3,10 +3,12 @@
 #ifndef WORLDUPDATER_H
 #define WORLDUPDATER_H
 
+
 #include "World.h"
 #include "TManager.h"
-#include "Forester.h"
-#include "Weather.h"
+#include "Nature.h"
+#include "Flora.h"
+#include "Fauna.h"
 
 
 class WorldUpdater

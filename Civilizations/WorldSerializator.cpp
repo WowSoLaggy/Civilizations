@@ -94,7 +94,6 @@ bool WorldSerializator::LoadWorld(World &pWorld, std::string pWorldName)
 	pWorld.tiles.clear();
 	pWorld.tiles.resize(pWorld.width * pWorld.height);
 	SURFS.Resize(pWorld.width * pWorld.height);
-	FLORAS.Resize(pWorld.width * pWorld.height / 100);
 	Tile tileTmp;
 	Entity entTmp;
 	for (int y = 0; y < pWorld.height; ++y)

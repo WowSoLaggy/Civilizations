@@ -1,15 +1,15 @@
 #include "stdafx.h"
-#include "Weather.h"
+#include "Nature.h"
 
 #include "Game.h"
 
-float *Weather::tmpf = nullptr;
-short *Weather::tmps = nullptr;
+float *Nature::tmpf = nullptr;
+short *Nature::tmps = nullptr;
 
-float *Weather::heats = nullptr;
+float *Nature::heats = nullptr;
 
 
-void Weather::Load()
+void Nature::Load()
 {
 	tmpf = new float[WWIDTH * WHEIGHT];
 	tmps = new short[WWIDTH * WHEIGHT];
@@ -21,7 +21,7 @@ void Weather::Load()
 		heats[i] = sinf((float)i / WHEIGHT * (float)M_PI) * TEMPERATURE_RANGE * (1 - TEMPERATURE_PENALTY);
 }
 
-void Weather::UnLoad()
+void Nature::UnLoad()
 {
 	delete[] heats;
 

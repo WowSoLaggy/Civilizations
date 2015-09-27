@@ -24,6 +24,8 @@ public:
 	float height;
 	float productivity;
 	short aff;
+	short faunaLand;
+	short faunaWater;
 };
 
 

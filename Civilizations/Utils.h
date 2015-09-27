@@ -32,12 +32,19 @@
 
 #define SURFS (WORLD->entities[lay_surf])
 #define FLORAS (WORLD->entities[lay_flora])
+#define FAUNAS (WORLD->entities[lay_fauna])
+
 #define SURF(pCell) (((pCell) < 0) ? nullptr : &SURFS[pCell])
 #define FLORA(pCell) (((pCell) < 0) ? nullptr : &FLORAS[pCell])
+#define FAUNA(pCell) (((pCell) < 0) ? nullptr : &FAUNAS[pCell])
+
 #define SURFAT(x, y) SURF(TILE(x, y)->cells[lay_surf])
 #define FLORAAT(x, y) FLORA(TILE(x, y)->cells[lay_flora])
+#define FAUNAAT(x, y) FAUNA(TILE(x, y)->cells[lay_fauna])
+
 #define SURFATP(i) SURF(TILEP(i)->cells[lay_surf])
 #define FLORAATP(i) FLORA(TILEP(i)->cells[lay_flora])
+#define FAUNAATP(i) FAUNA(TILEP(i)->cells[lay_fauna])
 
 #define RANDVECT(v) (((v).size() == 0) ? type_unknown : ((v).size() == 1) ? (v)[0] : (v)[RAND0((v).size())])
 

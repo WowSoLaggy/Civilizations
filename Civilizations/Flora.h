@@ -1,20 +1,23 @@
 #pragma once
 
-#ifndef FORESTER_H
-#define FORESTER_H
+#ifndef FLORA_H
+#define FLORA_H
+
 
 #include "Game.h"
-#include "Utils.h"
 
 
-class Forester
+class Flora
 {
 public:
 
-	static void UpdateTrees();
+	static void CheckTile(int pX, int pY);
+
+private:
+
 	static bool TryToPlant(EntityType pType, int pX, int pY);
 	static bool TryToReproduce(Entity &pTree, int pX, int pY);
 };
 
 
-#endif // FORESTER_H
+#endif // FLORA_H

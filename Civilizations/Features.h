@@ -15,6 +15,9 @@
 #define FEAT_LAKE			0x00000080	/* Lake (1) */
 #define FEAT_FLORA			0x00000100	/* Flora (1) */
 #define FEAT_HILL			0x00000200	/* Hill (1) */
+#define FEAT_FAUNA			0x00000400	/* Fauna (1) */
+#define FEAT_SMALLFAUNA		0x00000800	/* Small fauna (1) */
+#define FEAT_LARGEFAUNA		0x00001000	/* Large fauna (1) */
 
 
 #endif // FEATURES_H

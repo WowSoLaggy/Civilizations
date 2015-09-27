@@ -6,7 +6,7 @@
 #include "EManager.h"
 
 
-class Weather
+class Nature
 {
 public:
 
@@ -17,6 +17,7 @@ public:
 	static void UpdateAirTemperature();
 	static void UpdateGroundProductivity();
 	static void UpdateAfforestation();
+	static void UpdateFaunation();
 
 private:
 

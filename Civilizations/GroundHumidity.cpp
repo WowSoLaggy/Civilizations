@@ -1,7 +1,7 @@
 #include "stdafx.h"
-#include "Weather.h"
+#include "Nature.h"
 
-void Weather::UpdateGroundHumidity()
+void Nature::UpdateGroundHumidity()
 {
 	for (int y = 1; y < WHEIGHT - 1; ++y)
 	{

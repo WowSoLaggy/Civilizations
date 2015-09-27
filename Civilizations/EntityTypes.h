@@ -48,21 +48,25 @@ enum EntityType : unsigned char
 	surf_hill_savanna		= 32,
 	surf_hill_tropics		= 33,
 
-	// Objects
+	// Flora
 
-	obj_oak					= 101,
-	obj_fir					= 102,
-	obj_cactus				= 103,
-	obj_palm				= 104,
-	obj_juniper				= 105,
-	obj_baobab				= 106,
-	obj_acacia				= 107,
+	obj_oak					= 51,
+	obj_fir					= 52,
+	obj_cactus				= 53,
+	obj_palm				= 54,
+	obj_juniper				= 55,
+	obj_baobab				= 56,
+	obj_acacia				= 57,
 
-	obj_raspberry			= 108,
-	obj_camelthorn			= 109,
-	obj_dwarfbirch			= 110,
-	obj_aloe				= 111,
-	obj_fern				= 112,
+	obj_raspberry			= 58,
+	obj_camelthorn			= 59,
+	obj_dwarfbirch			= 60,
+	obj_aloe				= 61,
+	obj_fern				= 62,
+
+	// Fauna
+
+	obj_hare				= 151,
 
 	type_end
 };

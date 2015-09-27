@@ -34,7 +34,9 @@ void EntityVector::Resize(int pCount)
 
 Entity *EntityVector::GetFreeCell()
 {
-	if (freeCells.size() == 0)
+	if (m_curSize == 0)
+		Resize(1024);
+	else if (freeCells.size() == 0)
 		Resize(m_curSize * 2);
 
 	int cell = freeCells[freeCells.size() - 1];
@@ -46,7 +48,9 @@ Entity *EntityVector::GetFreeCell()
 
 Entity *EntityVector::GetFreeCell(int &pId)
 {
-	if (freeCells.size() == 0)
+	if (m_curSize == 0)
+		Resize(1024);
+	else if (freeCells.size() == 0)
 		Resize(m_curSize * 2);
 
 	pId = freeCells[freeCells.size() - 1];
