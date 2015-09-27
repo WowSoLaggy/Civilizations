@@ -1093,7 +1093,7 @@ void EBlueprint::InitBlueprints()
 	bp.nativeHills = {};
 	bp.baseProdPen = 0;
 	bp.affBase = 0;
-	bp.affMin = 500;
+	bp.affMin = 800;
 	bp.ageAdulthood = WEEKSFROMMONTHS(3);
 	bp.ageOldness = WEEKSFROMMONTHS(24);
 	bp.ageDecay = WEEKSFROMMONTHS(26);
