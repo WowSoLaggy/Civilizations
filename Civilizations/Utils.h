@@ -48,8 +48,8 @@
 
 #define RANDVECT(v) (((v).size() == 0) ? type_unknown : ((v).size() == 1) ? (v)[0] : (v)[RAND0((v).size())])
 
-// Rand:
-void initRand();
+// Rand
+void InitRand();
 unsigned long xorshf96();
 
 #endif // UTILS_H

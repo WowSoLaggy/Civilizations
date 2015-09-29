@@ -86,7 +86,7 @@ void CBlueprint::InitBlueprints()
 	bp.waterLakeType = surf_lake;
 	bp.nativeTrees = { obj_juniper };
 	bp.nativeBushes = { obj_dwarfbirch };
-	bp.nativeFaunaSmall = { obj_hare };
+	bp.nativeFaunaSmall = { obj_hare, obj_fox };
 	bp.nativeFaunaLarge = {};
 	blueprints[bp.type] = bp;
 
@@ -105,7 +105,7 @@ void CBlueprint::InitBlueprints()
 	bp.waterLakeType = surf_lake;
 	bp.nativeTrees = { obj_oak };
 	bp.nativeBushes = { obj_raspberry };
-	bp.nativeFaunaSmall = { obj_hare };
+	bp.nativeFaunaSmall = { obj_hare, obj_fox };
 	bp.nativeFaunaLarge = {};
 	blueprints[bp.type] = bp;
 

@@ -63,7 +63,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_grass;
 	bp.tis = { 2, 0, 0, 0 };
@@ -86,7 +85,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_desert;
 	bp.tis = { 3, 0, 0, 0 };
@@ -109,7 +107,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_snow;
 	bp.tis = { 13, 0, 0, 0 };
@@ -132,7 +129,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_ice;
 	bp.tis = { 14, 0, 0, 0 };
@@ -155,7 +151,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_mountain_grass;
 	bp.tis = { 21, 0, 0, 0 };
@@ -178,7 +173,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_mountain_snow;
 	bp.tis = { 22, 0, 0, 0 };
@@ -201,7 +195,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_mountain_desert;
 	bp.tis = { 23, 0, 0, 0 };
@@ -224,7 +217,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_mountain_coast;
 	bp.tis = { 29, 0, 0, 0 };
@@ -247,7 +239,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_mountain_oasis;
 	bp.tis = { 30, 0, 0, 0 };
@@ -270,7 +261,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_mountain_tundra;
 	bp.tis = { 34, 0, 0, 0 };
@@ -293,7 +283,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_mountain_savanna;
 	bp.tis = { 35, 0, 0, 0 };
@@ -316,7 +305,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_mountain_tropics;
 	bp.tis = { 36, 0, 0, 0 };
@@ -339,7 +327,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_coast;
 	bp.tis = { 27, 0, 0, 0 };
@@ -362,7 +349,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_oasis;
 	bp.tis = { 28, 0, 0, 0 };
@@ -385,7 +371,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_tropics;
 	bp.tis = { 31, 0, 0, 0 };
@@ -408,7 +393,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_savanna;
 	bp.tis = { 32, 0, 0, 0 };
@@ -431,7 +415,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_tundra;
 	bp.tis = { 33, 0, 0, 0 };
@@ -454,7 +437,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_mountain_reef;
 	bp.tis = { 43, 0, 0, 0 };
@@ -477,7 +459,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_mountain_reefice;
 	bp.tis = { 44, 0, 0, 0 };
@@ -500,7 +481,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_deepwater;
 	bp.tis = { 45, 0, 0, 0 };
@@ -523,7 +503,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_waterfresh;
 	bp.tis = { 46, 0, 0, 0 };
@@ -546,7 +525,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_waterfreshfrozen;
 	bp.tis = { 14, 0, 0, 0 };
@@ -569,7 +547,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_lake;
 	bp.tis = { 46, 0, 0, 0 };
@@ -592,7 +569,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_lakefrozen;
 	bp.tis = { 14, 0, 0, 0 };
@@ -615,7 +591,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_hill_grass;
 	bp.tis = { 59, 0, 0, 0 };
@@ -638,7 +613,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_hill_snow;
 	bp.tis = { 62, 0, 0, 0 };
@@ -661,7 +635,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_hill_desert;
 	bp.tis = { 58, 0, 0, 0 };
@@ -684,7 +657,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_hill_coast;
 	bp.tis = { 57, 0, 0, 0 };
@@ -707,7 +679,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_hill_oasis;
 	bp.tis = { 60, 0, 0, 0 };
@@ -730,7 +701,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_hill_tundra;
 	bp.tis = { 64, 0, 0, 0 };
@@ -753,7 +723,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_hill_savanna;
 	bp.tis = { 61, 0, 0, 0 };
@@ -776,7 +745,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = surf_hill_tropics;
 	bp.tis = { 63, 0, 0, 0 };
@@ -824,7 +792,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = obj_fir;
 	bp.tis = { 16, 15, 16, 17 };
@@ -847,7 +814,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = obj_cactus;
 	bp.tis = { 19, 18, 19, 20 };
@@ -870,7 +836,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = obj_palm;
 	bp.tis = { 25, 24, 25, 26 };
@@ -893,7 +858,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = obj_juniper;
 	bp.tis = { 38, 37, 38, 39 };
@@ -916,7 +880,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = obj_baobab;
 	bp.tis = { 41, 40, 41, 42 };
@@ -939,7 +902,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = obj_acacia;
 	bp.tis = { 55, 54, 55, 56 };
@@ -987,7 +949,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = obj_camelthorn;
 	bp.tis = { 50, 50, 50, 50 };
@@ -1010,7 +971,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = obj_dwarfbirch;
 	bp.tis = { 51, 51, 51, 51 };
@@ -1033,7 +993,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = obj_aloe;
 	bp.tis = { 52, 52, 52, 52 };
@@ -1056,7 +1015,6 @@ void EBlueprint::InitBlueprints()
 	bp.faunationMax = 0;
 	blueprints[bp.type] = bp;
 
-	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = obj_fern;
 	bp.tis = { 53, 53, 53, 53 };
@@ -1094,9 +1052,31 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 0;
 	bp.affMin = 800;
-	bp.ageAdulthood = WEEKSFROMMONTHS(3);
-	bp.ageOldness = WEEKSFROMMONTHS(24);
-	bp.ageDecay = WEEKSFROMMONTHS(26);
+	bp.ageAdulthood = WEEKSFROMMONTHS(0);
+	bp.ageOldness = WEEKSFROMMONTHS(0);
+	bp.ageDecay = WEEKSFROMMONTHS(0);
+	bp.chanceToGrow = 2500;
+	bp.chanceToReproduce = 0;
+	bp.faunationBase = 500;
+	bp.faunationMin = 0;
+	bp.faunationMax = 30;
+	blueprints[bp.type] = bp;
+
+
+	bp.type = obj_fox;
+	bp.tis = { 66, 0, 0, 0 };
+	bp.feats = FEAT_FAUNA | FEAT_SMALLFAUNA;
+	bp.mmColor = 0x00000000;
+	bp.description = "Fox";
+	bp.nativeSurfs = { surf_grass, surf_hill_grass, surf_tundra, surf_hill_tundra };
+	bp.nativeMnts = {};
+	bp.nativeHills = {};
+	bp.baseProdPen = 0;
+	bp.affBase = 0;
+	bp.affMin = 800;
+	bp.ageAdulthood = WEEKSFROMMONTHS(0);
+	bp.ageOldness = WEEKSFROMMONTHS(0);
+	bp.ageDecay = WEEKSFROMMONTHS(0);
 	bp.chanceToGrow = 2500;
 	bp.chanceToReproduce = 0;
 	bp.faunationBase = 500;

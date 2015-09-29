@@ -5,7 +5,7 @@ static unsigned long x = 123456789;
 static unsigned long y = 362436069;
 static unsigned long z = 521288629;
 
-void initRand()
+void InitRand()
 {
 	srand((unsigned int)time(0));
 	x = rand() % 200000000;

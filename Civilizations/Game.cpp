@@ -9,7 +9,7 @@ CRITICAL_SECTION Game::worldLocker;
 
 void Game::Initialize()
 {
-	initRand();
+	InitRand();
 	selectedTileX = -1;
 	selectedTileY = -1;
 

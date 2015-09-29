@@ -1,3 +1,7 @@
+Seasons
+
+Winds?
+
 Blueprints for GUI
 
 Progress bar

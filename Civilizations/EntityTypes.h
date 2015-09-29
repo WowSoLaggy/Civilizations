@@ -67,6 +67,7 @@ enum EntityType : unsigned char
 	// Fauna
 
 	obj_hare				= 151,
+	obj_fox					= 152,
 
 	type_end
 };
