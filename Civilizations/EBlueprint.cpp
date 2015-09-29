@@ -23,6 +23,7 @@ void EBlueprint::Clear()
 	baseProdPen = 0;
 	affBase = 0;
 	affMin = 0;
+	affMax = 0;
 	ageAdulthood = 0;
 	ageOldness = 0;
 	ageDecay = 0;
@@ -53,6 +54,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -75,6 +77,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0.99f;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -97,6 +100,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0.90f;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -119,6 +123,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0.80f;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -141,6 +146,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -163,6 +169,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0.95f;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -185,6 +192,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0.80f;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -207,6 +215,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0.90f;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -229,6 +238,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0.99f;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -251,6 +261,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0.99f;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -273,6 +284,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0.80f;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -295,6 +307,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0.95f;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -317,6 +330,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0.97f;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -339,6 +353,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0.99f;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -361,6 +376,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0.99f;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -383,6 +399,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0.97f;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -405,6 +422,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0.95f;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -427,6 +445,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0.80f;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -449,6 +468,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -471,6 +491,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -493,6 +514,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -515,6 +537,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -537,6 +560,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -559,6 +583,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -581,6 +606,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -603,6 +629,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0.99f;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -625,6 +652,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0.80f;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -647,6 +675,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0.90f;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -669,6 +698,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0.99f;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -691,6 +721,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0.99f;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -713,6 +744,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0.80f;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -735,6 +767,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0.95f;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -757,6 +790,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0.97f;
 	bp.affBase = 0;
 	bp.affMin = 0;
+	bp.affMax = 0;
 	bp.ageAdulthood = 0;
 	bp.ageOldness = 0;
 	bp.ageDecay = 0;
@@ -782,6 +816,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 1000;
 	bp.affMin = 300;
+	bp.affMax = std::numeric_limits<short>::max();
 	bp.ageAdulthood = WEEKSFROMYEARS(3);
 	bp.ageOldness = WEEKSFROMYEARS(30);
 	bp.ageDecay = WEEKSFROMYEARS(35);
@@ -804,6 +839,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 1000;
 	bp.affMin = 0;
+	bp.affMax = std::numeric_limits<short>::max();
 	bp.ageAdulthood = WEEKSFROMYEARS(3);
 	bp.ageOldness = WEEKSFROMYEARS(40);
 	bp.ageDecay = WEEKSFROMYEARS(45);
@@ -826,6 +862,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 1000;
 	bp.affMin = 300;
+	bp.affMax = std::numeric_limits<short>::max();
 	bp.ageAdulthood = WEEKSFROMYEARS(1);
 	bp.ageOldness = WEEKSFROMYEARS(5);
 	bp.ageDecay = WEEKSFROMYEARS(6);
@@ -848,6 +885,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 1000;
 	bp.affMin = 300;
+	bp.affMax = std::numeric_limits<short>::max();
 	bp.ageAdulthood = WEEKSFROMYEARS(3);
 	bp.ageOldness = WEEKSFROMYEARS(30);
 	bp.ageDecay = WEEKSFROMYEARS(35);
@@ -870,11 +908,12 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 1000;
 	bp.affMin = 300;
+	bp.affMax = std::numeric_limits<short>::max();
 	bp.ageAdulthood = WEEKSFROMYEARS(3);
 	bp.ageOldness = WEEKSFROMYEARS(30);
 	bp.ageDecay = WEEKSFROMYEARS(35);
-	bp.chanceToGrow = 300000;
-	bp.chanceToReproduce = 900;
+	bp.chanceToGrow = 200000;
+	bp.chanceToReproduce = 1200;
 	bp.faunationBase = 0;
 	bp.faunationMin = 0;
 	bp.faunationMax = 0;
@@ -892,6 +931,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 1000;
 	bp.affMin = 300;
+	bp.affMax = std::numeric_limits<short>::max();
 	bp.ageAdulthood = WEEKSFROMYEARS(5);
 	bp.ageOldness = WEEKSFROMYEARS(100);
 	bp.ageDecay = WEEKSFROMYEARS(110);
@@ -914,6 +954,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 1000;
 	bp.affMin = 300;
+	bp.affMax = std::numeric_limits<short>::max();
 	bp.ageAdulthood = WEEKSFROMYEARS(3);
 	bp.ageOldness = WEEKSFROMYEARS(50);
 	bp.ageDecay = WEEKSFROMYEARS(60);
@@ -939,6 +980,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 500;
 	bp.affMin = 0;
+	bp.affMax = std::numeric_limits<short>::max();
 	bp.ageAdulthood = WEEKSFROMMONTHS(3);
 	bp.ageOldness = WEEKSFROMMONTHS(24);
 	bp.ageDecay = WEEKSFROMMONTHS(26);
@@ -961,6 +1003,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 500;
 	bp.affMin = 0;
+	bp.affMax = std::numeric_limits<short>::max();
 	bp.ageAdulthood = WEEKSFROMMONTHS(3);
 	bp.ageOldness = WEEKSFROMMONTHS(36);
 	bp.ageDecay = WEEKSFROMMONTHS(39);
@@ -983,6 +1026,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 500;
 	bp.affMin = 0;
+	bp.affMax = std::numeric_limits<short>::max();
 	bp.ageAdulthood = WEEKSFROMMONTHS(3);
 	bp.ageOldness = WEEKSFROMMONTHS(36);
 	bp.ageDecay = WEEKSFROMMONTHS(38);
@@ -1005,6 +1049,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 500;
 	bp.affMin = 0;
+	bp.affMax = std::numeric_limits<short>::max();
 	bp.ageAdulthood = WEEKSFROMMONTHS(3);
 	bp.ageOldness = WEEKSFROMMONTHS(36);
 	bp.ageDecay = WEEKSFROMMONTHS(38);
@@ -1027,6 +1072,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 500;
 	bp.affMin = 0;
+	bp.affMax = std::numeric_limits<short>::max();
 	bp.ageAdulthood = WEEKSFROMMONTHS(3);
 	bp.ageOldness = WEEKSFROMMONTHS(24);
 	bp.ageDecay = WEEKSFROMMONTHS(26);
@@ -1038,12 +1084,12 @@ void EBlueprint::InitBlueprints()
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-	// SMALL ANIMALS
+	// FAUNA
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	bp.type = obj_hare;
 	bp.tis = { 65, 0, 0, 0 };
-	bp.feats = FEAT_FAUNA | FEAT_SMALLFAUNA;
+	bp.feats = FEAT_FAUNA;
 	bp.mmColor = 0x00000000;
 	bp.description = "Hare";
 	bp.nativeSurfs = { surf_grass, surf_hill_grass, surf_tundra, surf_hill_tundra };
@@ -1052,6 +1098,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 0;
 	bp.affMin = 800;
+	bp.affMax = std::numeric_limits<short>::max();
 	bp.ageAdulthood = WEEKSFROMMONTHS(0);
 	bp.ageOldness = WEEKSFROMMONTHS(0);
 	bp.ageDecay = WEEKSFROMMONTHS(0);
@@ -1065,7 +1112,7 @@ void EBlueprint::InitBlueprints()
 
 	bp.type = obj_fox;
 	bp.tis = { 66, 0, 0, 0 };
-	bp.feats = FEAT_FAUNA | FEAT_SMALLFAUNA;
+	bp.feats = FEAT_FAUNA;
 	bp.mmColor = 0x00000000;
 	bp.description = "Fox";
 	bp.nativeSurfs = { surf_grass, surf_hill_grass, surf_tundra, surf_hill_tundra };
@@ -1074,6 +1121,7 @@ void EBlueprint::InitBlueprints()
 	bp.baseProdPen = 0;
 	bp.affBase = 0;
 	bp.affMin = 800;
+	bp.affMax = std::numeric_limits<short>::max();
 	bp.ageAdulthood = WEEKSFROMMONTHS(0);
 	bp.ageOldness = WEEKSFROMMONTHS(0);
 	bp.ageDecay = WEEKSFROMMONTHS(0);
@@ -1082,5 +1130,225 @@ void EBlueprint::InitBlueprints()
 	bp.faunationBase = 500;
 	bp.faunationMin = 0;
 	bp.faunationMax = 30;
+	blueprints[bp.type] = bp;
+
+	bp.type = obj_monkey;
+	bp.tis = { 67, 0, 0, 0 };
+	bp.feats = FEAT_FAUNA;
+	bp.mmColor = 0x00000000;
+	bp.description = "Monkey";
+	bp.nativeSurfs = { surf_savanna, surf_hill_savanna, surf_tropics, surf_hill_tropics };
+	bp.nativeMnts = {};
+	bp.nativeHills = {};
+	bp.baseProdPen = 0;
+	bp.affBase = 0;
+	bp.affMin = 800;
+	bp.affMax = std::numeric_limits<short>::max();
+	bp.ageAdulthood = WEEKSFROMMONTHS(0);
+	bp.ageOldness = WEEKSFROMMONTHS(0);
+	bp.ageDecay = WEEKSFROMMONTHS(0);
+	bp.chanceToGrow = 2500;
+	bp.chanceToReproduce = 0;
+	bp.faunationBase = 500;
+	bp.faunationMin = 0;
+	bp.faunationMax = 30;
+	blueprints[bp.type] = bp;
+
+	bp.type = obj_fish;
+	bp.tis = { 68, 0, 0, 0 };
+	bp.feats = FEAT_FAUNA;
+	bp.mmColor = 0x00000000;
+	bp.description = "Fish";
+	bp.nativeSurfs = { surf_water, surf_deepwater, surf_waterfresh, surf_lake };
+	bp.nativeMnts = {};
+	bp.nativeHills = {};
+	bp.baseProdPen = 0;
+	bp.affBase = 0;
+	bp.affMin = 0;
+	bp.affMax = std::numeric_limits<short>::max();
+	bp.ageAdulthood = WEEKSFROMMONTHS(0);
+	bp.ageOldness = WEEKSFROMMONTHS(0);
+	bp.ageDecay = WEEKSFROMMONTHS(0);
+	bp.chanceToGrow = 50000;
+	bp.chanceToReproduce = 0;
+	bp.faunationBase = 500;
+	bp.faunationMin = 0;
+	bp.faunationMax = 20;
+	blueprints[bp.type] = bp;
+
+	bp.type = obj_horse;
+	bp.tis = { 69, 0, 0, 0 };
+	bp.feats = FEAT_FAUNA;
+	bp.mmColor = 0x00000000;
+	bp.description = "Horse";
+	bp.nativeSurfs = { surf_grass };
+	bp.nativeMnts = {};
+	bp.nativeHills = {};
+	bp.baseProdPen = 0;
+	bp.affBase = 0;
+	bp.affMin = 0;
+	bp.affMax = 300;
+	bp.ageAdulthood = WEEKSFROMMONTHS(0);
+	bp.ageOldness = WEEKSFROMMONTHS(0);
+	bp.ageDecay = WEEKSFROMMONTHS(0);
+	bp.chanceToGrow = 50000;
+	bp.chanceToReproduce = 0;
+	bp.faunationBase = 500;
+	bp.faunationMin = 0;
+	bp.faunationMax = 20;
+	blueprints[bp.type] = bp;
+
+	bp.type = obj_crocodile;
+	bp.tis = { 70, 0, 0, 0 };
+	bp.feats = FEAT_FAUNA;
+	bp.mmColor = 0x00000000;
+	bp.description = "Crocodile";
+	bp.nativeSurfs = { surf_oasis, surf_tropics, surf_coast };
+	bp.nativeMnts = {};
+	bp.nativeHills = {};
+	bp.baseProdPen = 0;
+	bp.affBase = 0;
+	bp.affMin = 500;
+	bp.affMax = std::numeric_limits<short>::max();
+	bp.ageAdulthood = WEEKSFROMMONTHS(0);
+	bp.ageOldness = WEEKSFROMMONTHS(0);
+	bp.ageDecay = WEEKSFROMMONTHS(0);
+	bp.chanceToGrow = 50000;
+	bp.chanceToReproduce = 0;
+	bp.faunationBase = 500;
+	bp.faunationMin = 0;
+	bp.faunationMax = 30;
+	blueprints[bp.type] = bp;
+
+	bp.type = obj_whale;
+	bp.tis = { 71, 0, 0, 0 };
+	bp.feats = FEAT_FAUNA;
+	bp.mmColor = 0x00000000;
+	bp.description = "Whale";
+	bp.nativeSurfs = { surf_deepwater };
+	bp.nativeMnts = {};
+	bp.nativeHills = {};
+	bp.baseProdPen = 0;
+	bp.affBase = 0;
+	bp.affMin = 0;
+	bp.affMax = std::numeric_limits<short>::max();
+	bp.ageAdulthood = WEEKSFROMMONTHS(0);
+	bp.ageOldness = WEEKSFROMMONTHS(0);
+	bp.ageDecay = WEEKSFROMMONTHS(0);
+	bp.chanceToGrow = 100000;
+	bp.chanceToReproduce = 0;
+	bp.faunationBase = 500;
+	bp.faunationMin = 0;
+	bp.faunationMax = 10;
+	blueprints[bp.type] = bp;
+
+	bp.type = obj_bear_polar;
+	bp.tis = { 72, 0, 0, 0 };
+	bp.feats = FEAT_FAUNA;
+	bp.mmColor = 0x00000000;
+	bp.description = "Polar bear";
+	bp.nativeSurfs = { surf_snow };
+	bp.nativeMnts = {};
+	bp.nativeHills = {};
+	bp.baseProdPen = 0;
+	bp.affBase = 0;
+	bp.affMin = 0;
+	bp.affMax = std::numeric_limits<short>::max();
+	bp.ageAdulthood = WEEKSFROMMONTHS(0);
+	bp.ageOldness = WEEKSFROMMONTHS(0);
+	bp.ageDecay = WEEKSFROMMONTHS(0);
+	bp.chanceToGrow = 100000;
+	bp.chanceToReproduce = 0;
+	bp.faunationBase = 500;
+	bp.faunationMin = 0;
+	bp.faunationMax = 10;
+	blueprints[bp.type] = bp;
+
+	bp.type = obj_pinguin;
+	bp.tis = { 73, 0, 0, 0 };
+	bp.feats = FEAT_FAUNA;
+	bp.mmColor = 0x00000000;
+	bp.description = "Pinguin";
+	bp.nativeSurfs = { surf_snow };
+	bp.nativeMnts = {};
+	bp.nativeHills = {};
+	bp.baseProdPen = 0;
+	bp.affBase = 0;
+	bp.affMin = 0;
+	bp.affMax = std::numeric_limits<short>::max();
+	bp.ageAdulthood = WEEKSFROMMONTHS(0);
+	bp.ageOldness = WEEKSFROMMONTHS(0);
+	bp.ageDecay = WEEKSFROMMONTHS(0);
+	bp.chanceToGrow = 50000;
+	bp.chanceToReproduce = 0;
+	bp.faunationBase = 500;
+	bp.faunationMin = 0;
+	bp.faunationMax = 40;
+	blueprints[bp.type] = bp;
+
+	bp.type = obj_seal;
+	bp.tis = { 74, 0, 0, 0 };
+	bp.feats = FEAT_FAUNA;
+	bp.mmColor = 0x00000000;
+	bp.description = "Seal";
+	bp.nativeSurfs = { surf_snow };
+	bp.nativeMnts = {};
+	bp.nativeHills = {};
+	bp.baseProdPen = 0;
+	bp.affBase = 0;
+	bp.affMin = 0;
+	bp.affMax = std::numeric_limits<short>::max();
+	bp.ageAdulthood = WEEKSFROMMONTHS(0);
+	bp.ageOldness = WEEKSFROMMONTHS(0);
+	bp.ageDecay = WEEKSFROMMONTHS(0);
+	bp.chanceToGrow = 100000;
+	bp.chanceToReproduce = 0;
+	bp.faunationBase = 500;
+	bp.faunationMin = 0;
+	bp.faunationMax = 20;
+	blueprints[bp.type] = bp;
+
+	bp.type = obj_deer;
+	bp.tis = { 75, 0, 0, 0 };
+	bp.feats = FEAT_FAUNA;
+	bp.mmColor = 0x00000000;
+	bp.description = "Deer";
+	bp.nativeSurfs = { surf_tundra, surf_hill_tundra };
+	bp.nativeMnts = {};
+	bp.nativeHills = {};
+	bp.baseProdPen = 0;
+	bp.affBase = 0;
+	bp.affMin = 300;
+	bp.affMax = std::numeric_limits<short>::max();
+	bp.ageAdulthood = WEEKSFROMMONTHS(0);
+	bp.ageOldness = WEEKSFROMMONTHS(0);
+	bp.ageDecay = WEEKSFROMMONTHS(0);
+	bp.chanceToGrow = 25000;
+	bp.chanceToReproduce = 0;
+	bp.faunationBase = 1000;
+	bp.faunationMin = 0;
+	bp.faunationMax = 100;
+	blueprints[bp.type] = bp;
+
+	bp.type = obj_bear;
+	bp.tis = { 76, 0, 0, 0 };
+	bp.feats = FEAT_FAUNA;
+	bp.mmColor = 0x00000000;
+	bp.description = "Bear";
+	bp.nativeSurfs = { surf_grass, surf_hill_grass };
+	bp.nativeMnts = {};
+	bp.nativeHills = {};
+	bp.baseProdPen = 0;
+	bp.affBase = 0;
+	bp.affMin = 950;
+	bp.affMax = std::numeric_limits<short>::max();
+	bp.ageAdulthood = WEEKSFROMMONTHS(0);
+	bp.ageOldness = WEEKSFROMMONTHS(0);
+	bp.ageDecay = WEEKSFROMMONTHS(0);
+	bp.chanceToGrow = 50000;
+	bp.chanceToReproduce = 0;
+	bp.faunationBase = 5000;
+	bp.faunationMin = 0;
+	bp.faunationMax = 300;
 	blueprints[bp.type] = bp;
 }

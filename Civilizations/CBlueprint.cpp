@@ -25,8 +25,7 @@ void CBlueprint::Clear()
 	waterLakeType = surf_unknown;
 	nativeTrees.clear();
 	nativeBushes.clear();
-	nativeFaunaSmall.clear();
-	nativeFaunaLarge.clear();
+	nativeFauna.clear();
 }
 
 void CBlueprint::InitBlueprints()
@@ -48,8 +47,7 @@ void CBlueprint::InitBlueprints()
 	bp.waterLakeType = surf_lakefrozen;
 	bp.nativeTrees = {};
 	bp.nativeBushes = {};
-	bp.nativeFaunaSmall = {};
-	bp.nativeFaunaLarge = {};
+	bp.nativeFauna = {};
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -67,8 +65,7 @@ void CBlueprint::InitBlueprints()
 	bp.waterLakeType = surf_lakefrozen;
 	bp.nativeTrees = { obj_fir };
 	bp.nativeBushes = {};
-	bp.nativeFaunaSmall = {};
-	bp.nativeFaunaLarge = {};
+	bp.nativeFauna = { obj_fish, obj_whale, obj_bear_polar, obj_pinguin, obj_seal };
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -86,8 +83,7 @@ void CBlueprint::InitBlueprints()
 	bp.waterLakeType = surf_lake;
 	bp.nativeTrees = { obj_juniper };
 	bp.nativeBushes = { obj_dwarfbirch };
-	bp.nativeFaunaSmall = { obj_hare, obj_fox };
-	bp.nativeFaunaLarge = {};
+	bp.nativeFauna = { obj_hare, obj_fox,  obj_fish, obj_whale, obj_deer };
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -105,8 +101,7 @@ void CBlueprint::InitBlueprints()
 	bp.waterLakeType = surf_lake;
 	bp.nativeTrees = { obj_oak };
 	bp.nativeBushes = { obj_raspberry };
-	bp.nativeFaunaSmall = { obj_hare, obj_fox };
-	bp.nativeFaunaLarge = {};
+	bp.nativeFauna = { obj_hare, obj_fox,  obj_fish, obj_horse, obj_whale, obj_bear };
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -124,8 +119,7 @@ void CBlueprint::InitBlueprints()
 	bp.waterLakeType = surf_lake;
 	bp.nativeTrees = { obj_baobab, obj_acacia, obj_oak };
 	bp.nativeBushes = { obj_aloe, obj_raspberry };
-	bp.nativeFaunaSmall = {};
-	bp.nativeFaunaLarge = {};
+	bp.nativeFauna = { obj_monkey,  obj_fish, obj_crocodile, obj_whale };
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -143,8 +137,7 @@ void CBlueprint::InitBlueprints()
 	bp.waterLakeType = surf_lake;
 	bp.nativeTrees = { obj_palm };
 	bp.nativeBushes = { obj_fern };
-	bp.nativeFaunaSmall = {};
-	bp.nativeFaunaLarge = {};
+	bp.nativeFauna = { obj_monkey, obj_fish, obj_crocodile, obj_whale };
 	blueprints[bp.type] = bp;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -162,7 +155,6 @@ void CBlueprint::InitBlueprints()
 	bp.waterLakeType = surf_lake;
 	bp.nativeTrees = { obj_palm, obj_cactus };
 	bp.nativeBushes = { obj_fern, obj_camelthorn };
-	bp.nativeFaunaSmall = {};
-	bp.nativeFaunaLarge = {};
+	bp.nativeFauna = { obj_fish, obj_crocodile, obj_whale };
 	blueprints[bp.type] = bp;
 }

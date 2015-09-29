@@ -33,6 +33,7 @@ public:
 
 	short affBase;
 	short affMin;
+	short affMax;
 	short ageAdulthood;
 	short ageOldness;
 	short ageDecay;

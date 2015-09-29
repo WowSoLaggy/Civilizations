@@ -7,6 +7,20 @@ void Flora::CheckTile(int pX, int pY)
 	if (ent != nullptr)
 	{
 		// Process an existing object
+		
+
+		// Check whether the surface fits flora
+
+		if (!EManager::IsNativeSurfForObj(ent->type, SURFAT(pX, pY)->type))
+		{
+			if (RAND0EQ0(FLORA_EXTINGUISH_CHANCE))
+			{
+				EManager::DeleteEntityAt(lay_flora, pX, pY);
+				return;
+			}
+		}
+
+		// Check it's age
 
 		int age = AGE(*ent);
 
@@ -70,7 +84,7 @@ bool Flora::TryToPlant(EntityType pType, int pX, int pY)
 	// Planting here
 	Entity *ent = EManager::CreateEntity(lay_flora, pType, pX, pY);
 	ent->state = state_young;
-	TILE(pX, pY)->aff = ent->eblueprint().affBase;
+	TILE(pX, pY)->aff = std::max(TILE(pX, pY)->aff, ent->eblueprint().affBase);
 
 	return true;
 }
@@ -94,7 +108,7 @@ bool Flora::TryToReproduce(Entity &pEnt, int pX, int pY)
 
 	Entity *ent = EManager::CreateEntity(lay_flora, pEnt.type, newX, newY);
 	ent->state = state_young;
-	TILE(pX, pY)->aff = ent->eblueprint().affBase;
+	TILE(pX, pY)->aff = std::max(TILE(pX, pY)->aff, ent->eblueprint().affBase);
 
 	return true;
 }

@@ -23,7 +23,7 @@ void Nature::UpdateFaunation()
 		else if (FAUNAATP(i) != nullptr)
 			TILEP(i)->faunaLand = FAUNAATP(i)->eblueprint().faunationBase;
 		else
-			TILEP(i)->faunaLand = tmps[i];
+			TILEP(i)->faunaLand = (short)(tmps[i] * FAUNATION_PENALTY);
 	}
 
 	// Water
@@ -46,6 +46,6 @@ void Nature::UpdateFaunation()
 		else if (FAUNAATP(i) != nullptr)
 			TILEP(i)->faunaWater = FAUNAATP(i)->eblueprint().faunationBase;
 		else
-			TILEP(i)->faunaWater = tmps[i];
+			TILEP(i)->faunaWater = (short)(tmps[i] * FAUNATION_PENALTY);
 	}
 }

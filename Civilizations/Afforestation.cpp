@@ -19,7 +19,7 @@ void Nature::UpdateAfforestation()
 		if (EManager::IsWaterTile(*SURFATP(i)))
 			TILEP(i)->aff = 0;
 		else if (FLORAATP(i) != nullptr)
-			TILEP(i)->aff = FLORAATP(i)->eblueprint().affBase;
+			TILEP(i)->aff = std::max(tmps[i], FLORAATP(i)->eblueprint().affBase);
 		else
 			TILEP(i)->aff = tmps[i];
 	}

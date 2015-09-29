@@ -35,8 +35,7 @@ public:
 	std::vector<EntityType> nativeTrees;
 	std::vector<EntityType> nativeBushes;
 
-	std::vector<EntityType> nativeFaunaSmall;
-	std::vector<EntityType> nativeFaunaLarge;
+	std::vector<EntityType> nativeFauna;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 

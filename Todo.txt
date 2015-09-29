@@ -1,6 +1,26 @@
+Animals:
+permafrost	| fish+, whale+, polar bear+, pinguin+, seal+
+tundra		| fish+, whale+, hare+, deer+
+temperate	| fish+, whale+, hare+, fox+, horse+, bear+, wolf, elk, boar
+savanna		| fish+, whale+, monkey+, crocodile+, giraffe, hippo, elephant, lion, antelope
+tropics		| fish+, whale+, monkey+, crocodile+, chameleon, jaguar
+desert		| fish+, whale+, shark, crocodile+, lizard, camel
+
+Do something with crocodiles in savanna
+
+Add penalty to afforestation, check other characterstics
+
+Herd power
+
+Show current turn and year
+
 Seasons
 
 Winds?
+
+Inhabitance (ammount of civilization)
+Contamination (large for advanced civs)
+Culture (ammount of culture)
 
 Blueprints for GUI
 

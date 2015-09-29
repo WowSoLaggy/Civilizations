@@ -68,6 +68,16 @@ enum EntityType : unsigned char
 
 	obj_hare				= 151,
 	obj_fox					= 152,
+	obj_monkey				= 153,
+	obj_fish				= 154,
+	obj_horse				= 155,
+	obj_crocodile			= 156,
+	obj_whale				= 157,
+	obj_bear_polar			= 158,
+	obj_pinguin				= 159,
+	obj_seal				= 160,
+	obj_deer				= 161,
+	obj_bear				= 162,
 
 	type_end
 };
