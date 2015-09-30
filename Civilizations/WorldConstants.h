@@ -10,6 +10,7 @@ static int TREE_REPRODUCT_RAD		= 5;
 static float HUMIDITY_PENALTY		= 0.99f;
 static float HUMIDITY_BORDER		= 50;
 static float PRODUCTIVITY_PENALTY	= 0.999f;
+static float AFFORESTATION_PENALTY	= 0.999f;
 static float FAUNATION_PENALTY		= 0.999f;
 
 static float TEMPERATURE_PENALTY	= 0.98f;

@@ -21,6 +21,6 @@ void Nature::UpdateAfforestation()
 		else if (FLORAATP(i) != nullptr)
 			TILEP(i)->aff = std::max(tmps[i], FLORAATP(i)->eblueprint().affBase);
 		else
-			TILEP(i)->aff = tmps[i];
+			TILEP(i)->aff = (short)(tmps[i] * AFFORESTATION_PENALTY);
 	}
 }

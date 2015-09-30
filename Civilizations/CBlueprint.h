@@ -32,9 +32,7 @@ public:
 	EntityType waterFreshType;
 	EntityType waterLakeType;
 
-	std::vector<EntityType> nativeTrees;
-	std::vector<EntityType> nativeBushes;
-
+	std::vector<EntityType> nativeFlora;
 	std::vector<EntityType> nativeFauna;
 
 	// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-

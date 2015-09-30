@@ -56,7 +56,7 @@ void Drawer::DrawWorld()
 				for (int i = 0; i < lay_end; ++i)
 				{
 					if (TILE(x, y)->cells[i] != -1)
-						m_sprite->Draw(RManager::textures[WORLD->entities[i][TILE(x, y)->cells[i]].eblueprint().tis[SURFAT(x, y)->state]],
+						m_sprite->Draw(RManager::textures[WORLD->entities[i][TILE(x, y)->cells[i]].eblueprint().tis[WORLD->entities[i][TILE(x, y)->cells[i]].state]],
 						0, 0, &pos, D3DCOLOR_ARGB(255, 255, 255, 255));
 				}
 			}

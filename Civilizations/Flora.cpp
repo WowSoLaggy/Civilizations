@@ -55,16 +55,7 @@ void Flora::CheckTile(int pX, int pY)
 
 	// Check if something wants to grow here
 
-	// Check trees
-	EntityType eType = RANDVECT(SURFAT(pX, pY)->cblueprint().nativeTrees);
-	if (eType != type_unknown)
-	{
-		if (TryToPlant(eType, pX, pY))
-			return;
-	}
-
-	// Check bushes
-	eType = RANDVECT(SURFAT(pX, pY)->cblueprint().nativeBushes);
+	EntityType eType = RANDVECT(SURFAT(pX, pY)->cblueprint().nativeFlora);
 	if (eType != type_unknown)
 	{
 		if (TryToPlant(eType, pX, pY))
