@@ -6,9 +6,6 @@ int Game::MainLoop()
 	HRESULT hRes = 0;
 	int res = 0;
 
-	RECT rect;
-	SetRect(&rect, 10, 10, 200, 50);
-
 	int fps = 0;
 	int frameCount = 0;
 
