@@ -21,7 +21,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	wc.hCursor = LoadCursor(hInstance, IDC_ARROW);
 	wc.hIcon = LoadIcon(hInstance, IDI_APPLICATION);
 	wc.hInstance = hInstance;
-	wc.lpszClassName = "Ships";
+	wc.lpszClassName = "Civilizations";
 	wc.lpszMenuName = nullptr;
 	RegisterClass(&wc);
 
@@ -29,7 +29,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	RenderDeviceManager::Initialize();
 	RenderDeviceManager::hInstance = hInstance;
 
-	RenderDeviceManager::hWindow = CreateWindowEx(0, "Ships", "Ships", WS_VISIBLE | WS_POPUP,
+	RenderDeviceManager::hWindow = CreateWindowEx(0, "Civilizations", "Civilizations", WS_VISIBLE | WS_POPUP,
 		(RenderDeviceManager::ScreenWidth - RenderDeviceManager::ResolutionWidth) / 2, (RenderDeviceManager::ScreenHeight - RenderDeviceManager::ResolutionHeight) / 2,
 		RenderDeviceManager::ResolutionWidth, RenderDeviceManager::ResolutionHeight,
 		nullptr, nullptr, hInstance, nullptr);
@@ -46,7 +46,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	RManager::UnloadResources();
 	RenderDeviceManager::Dispose();
 
-	UnregisterClass("Ships", hInstance);
+	UnregisterClass("Civilizations", hInstance);
 
 	return res;
 }
